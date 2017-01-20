@@ -59,18 +59,43 @@
                     <label for="destinationCountrySelectList">Destination Country:</label>
                     <select class="form-control" id="destinationCountrySelectList" >
                         <option></option>
-                        <option value="0">germany</option>
-                        <option>3</option>
-                        <option>4</option>
+                        <option>Austria</option>
+                        <option>Belgium</option>
+                        <option>Croatia (Mainland)</option>
+						<option>Czech Republic</option>
+						<option>Denmark</option>
+						<option>Finland</option>
+						<option>France</option>
+						<option>Germany</option>
+						<option>Hungary</option>
+						<option>Ireland</option>
+						<option>Italy (Mainland)</option>
+						<option>Luxembourg</option>
+						<option>Netherlands</option>
+						<option>Portugal (Mainland)</option>
+						<option>Spain (Mainland)</option>
+						<option>Romania</option>
+						<option>Slovakia</option>
+						<option>Slovenia</option>
+						<option>Sweden</option>
+						<option>United Kingdom</option>
+						<option></option>
+						<option></option>
+						<option></option>
                     </select>
                 </div>
+				   <div class="radio">
+                    <label class="radio-inline">
+                        <input type="radio" name="radioAirSea" id="radioSea" value="sea" checked>
+                        Sea
+                    </label>
+					    <div class="radio-inline">
+                    <label class="radio-inline"><input type="radio" name="radioAirSea" id="radioAir" value="air">Air</label>
+                </div>
+                    </div>	
                  <div class="form-group">
                     <label for="destinationCitySelectList">Destination City:</label>
-                    <select class="form-control" id="destinationCitySelectList">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                    <select class="form-control" id="destinationCitySelectList" > 
                     </select>
                 </div>
                  <div class="form-group">
@@ -86,28 +111,18 @@
 			<section class="col-sm-3 col-md-4 range-list">
 				<h3 class="range-title"><b>Package Details</b></h3>
 				<div class="form-group">
-					<label for="packageLenght">Package Length</label> <input class="form-control" name="packageLength" type="number">
+					<label for="packageLenght">Package Length</label> <input class="form-control" name="packageLength" type="number" id="length" >
                 </div>
                 <div class="form-group">
-                    <label for="packageWidth">Package Width</label> <input class="form-control" name="packageWidth" type="number">
+                    <label for="packageWidth">Package Width</label> <input class="form-control" name="packageWidth" type="number" id="width">
                 </div>
                 <div class="form-group">
-                    <label for="packageHeight">Package Height</label> <input class="form-control" name="packageHeight" type="number">
+                    <label for="packageHeight">Package Height</label> <input class="form-control" name="packageHeight" type="number" id="height">
                 </div>
 				<div class="form-group">
-                    <label for="packageWeight">Package Height</label> <input class="form-control" name="packageWeight" type="number">
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="radioAirSea" id="radioSea" value="sea" checked>
-                        Sea
-                    </label>
-                    </div>
-                <div class="radio">
-                    <label><input type="radio" name="radioAirSea" id="radioAir" value="air">Air</label>
-                </div>
-				<button type="button" class="btn btn-success" onclick="test()">Success</button>
-
+                    <label for="packageWeight">Package Weight</label> <input class="form-control" name="packageWeight" type="number" id="weight">
+                </div>      
+				<button type="button" class="btn btn-success" onclick="testDisable()">Success</button>
 			</section>
 		</div>
 	</div>
