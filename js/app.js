@@ -400,3 +400,18 @@ function test() {
     $(ddl).append('<option value="' + "sss" + '">' + "aaa" + "</option>'");
 }
 */
+
+// copare function to sort array of objects for russian regian list
+function compare(a, b) {
+	
+    if (a.region < b.region) {return -1; }
+    if (a.region > b.region) {return 1; }
+    return 0;
+}
+
+russiaRegionAir.sort(compare);
+var i = 0;
+for (i = 0; i < russiaCityAir.length; i++) {
+    console.log(russiaRegionAir[i]);
+}
+
