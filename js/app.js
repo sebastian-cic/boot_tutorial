@@ -22,11 +22,12 @@ var pysankaSea = [];
 var pysankaAir = [];
 var polimexSea = [];
 var polimexAir = [];
+var listAllCountries = [];
 
 // polimex air parcels
 polimexAir.push(new PopRegion("Austria", 11.00, false, 25.00, 1, 30, "5-14 business days", "Polimex"));
 polimexAir.push(new PopRegion("Belgium", 11.00, false, 25.00, 1, 30, "5-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Coatia (Mainland)", 11.00, false, 45.00, 1, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Croatia (Mainland)", 11.00, false, 45.00, 1, 30, "7-14 business days", "Polimex"));
 polimexAir.push(new PopRegion("Czech Republic", 11.00, false, 20.00, 1, 30, "5-10 business days", "Polimex"));
 polimexAir.push(new PopRegion("Denmark", 11.00, false, 25.00, 1, 30, "7-14 business days", "Polimex"));
 
@@ -51,7 +52,7 @@ polimexAir.push(new PopRegion("United Kingdom", 11.00, false, 25.00, 1, 30, "7-1
 // polimex sea parcels
 polimexSea.push(new PopRegion("Austria", 5.25, true, 25.00, 1, 30, "4-7 weeks", "Polimex"));
 polimexSea.push(new PopRegion("Belgium", 5.25, true, 25.00, 1, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Coatia (Mainland)", 5.25, true, 45.00, 1, 30, "4-7 weeks", "Polimex"));
+polimexSea.push(new PopRegion("Croatia (Mainland)", 5.25, true, 45.00, 1, 30, "4-7 weeks", "Polimex"));
 polimexSea.push(new PopRegion("Czech Republic", 5.25, true, 20.00, 1, 30, "4-7 weeks", "Polimex"));
 polimexSea.push(new PopRegion("Denmark", 5.25, true, 25.00, 1, 30, "4-7 weeks", "Polimex"));
 
@@ -304,6 +305,12 @@ russiaRegionAir.push(new PopRegion("Yaroslavskaya obl.", 9.95, false, 25.00, 5, 
 russiaRegionAir.push(new PopRegion("Mari-El Resp.", 13.45, false, 25.00, 5, 20, "N/a", "Pysanka"));
 russiaRegionAir.push(new PopRegion("Sakhalinskaya obl.", 19.95, false, 25.00, 5, 20, "N/a", "Pysanka"));
 
+// list of all available countries, russia added as default to access regions and cities.
+listAllCountries = polimexSea.concat(pysankaSea);
+listAllCountries.push(new PopRegion("Russia"));
+//alert(listAllCountries.length);
+
+
 
 function disableCitySelectMenu() {
 	"use strict";
@@ -374,44 +381,73 @@ function testDisable() {
 }
 
 
-$("#destinationCountrySelectList").change(function () {
-	"use strict";
-    var selectedText = $(this).find("option:selected").text();
-    if (selectedText !== "Russia") {
-		disableCitySelectMenu();
-		disableRegionSelectMenu();
-		//console.log(selectedText);
-	} else {
-		enableCitySelectMenu();
-		enableRegionSelectMenu();
-		//console.log(selectedText);
-	}
-});
 
 /*
 // test func for setting img in carousel
 function testcar() {
 	//$(".carousel").carousel(0);
 }
-
-//test function for populating select list
-function test() {
-	var ddl = "#destinationCitySelectList";
-    $(ddl).append('<option value="' + "sss" + '">' + "aaa" + "</option>'");
-}
 */
 
 // copare function to sort array of objects for russian regian list
 function compare(a, b) {
-	
+	"use strict";
     if (a.region < b.region) {return -1; }
     if (a.region > b.region) {return 1; }
     return 0;
 }
-
-russiaRegionAir.sort(compare);
+//Alphabetize 
+listAllCountries.sort(compare);
 var i = 0;
-for (i = 0; i < russiaCityAir.length; i++) {
-    console.log(russiaRegionAir[i]);
+for (i = 0; i < listAllCountries.length; i += 1) {
+    console.log(listAllCountries[i]);
 }
 
+
+var $destCountry = "#destinationCountrySelectList", i = 0;
+    
+for (i = 0; i < listAllCountries.length; i += 1) {
+    $($destCountry).append('<option value="' + [i] + '">' + listAllCountries[i].region + "</option>'");
+}
+
+$("#destinationCountrySelectList").change(function () {
+	"use strict";
+    var selectedText = $(this).find("option:selected").text();
+    if (selectedText !== "Russia") {
+		disableCitySelectMenu();
+		disableRegionSelectMenu();
+    } else {
+		enableCitySelectMenu();
+		enableRegionSelectMenu();
+	}
+});
+
+
+// Get radio value along with country selection
+$("input:radio[name=radioAirSea]").click(function () {
+    "use strict";
+	var value = $(this).val(), selectedText = $("#destinationCountrySelectList").find("option:selected").text(), $destCity = "#destinationCitySelectList", i = 0, $destRegion = "#destinationRegionSelectList";
+	if (selectedText === "Russia") {
+		if (value === "sea") {
+			$($destCity).empty();
+			$($destRegion).empty();
+			for (i = 0; i < russianCitySea.length; i += 1) {
+				$($destCity).append('<option value="' + [i] + '">' + russianCitySea[i].region + "</option>'");
+			}
+			
+			disableRegionSelectMenu();
+		} else {
+			enableRegionSelectMenu();
+			$($destCity).empty();
+			$($destCity).append('<option value="' + " " + '">' + " " + "</option>'");
+			for (i = 0; i < russiaCityAir.length; i += 1) {
+				$($destCity).append('<option value="' + [i] + '">' + russiaCityAir[i].region + "</option>'");
+			}
+			$($destRegion).empty();
+			for (i = 0; i < russiaRegionAir.length; i += 1) {
+				$($destRegion).append('<option value="' + [i] + '">' + russiaRegionAir[i].region + "</option>'");
+			}
+		}
+	}
+	console.log(value, selectedText, $destCity);
+});
