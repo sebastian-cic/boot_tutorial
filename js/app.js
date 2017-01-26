@@ -308,9 +308,6 @@ russiaRegionAir.push(new PopRegion("Sakhalinskaya obl.", 19.95, false, 25.00, 5,
 // list of all available countries, russia added as default to access regions and cities.
 listAllCountries = polimexSea.concat(pysankaSea);
 listAllCountries.push(new PopRegion("Russia"));
-//alert(listAllCountries.length);
-
-
 
 function disableCitySelectMenu() {
 	"use strict";
@@ -331,7 +328,7 @@ function enableRegionSelectMenu() {
 	"use strict";
 	$("#destinationRegionSelectList").attr("disabled", false);
 }
-
+/*
 function enableHeight() {
 	"use strict";
 	$("#height").attr("disabled", false);
@@ -368,19 +365,7 @@ function disableWeight() {
 	"use strict";
 	$("#weight").attr("disabled", true);
 }
-
-
-function testDisable() {
-	"use strict";
-	disableCitySelectMenu();
-	disableLength();
-	disableWeight();
-	disableWidth();
-	disableHeight();
-    disableRegionSelectMenu();
-}
-
-
+*/
 
 /*
 // test func for setting img in carousel
@@ -403,51 +388,96 @@ for (i = 0; i < listAllCountries.length; i += 1) {
     console.log(listAllCountries[i]);
 }
 
-
-var $destCountry = "#destinationCountrySelectList", i = 0;
-    
+// populate destination country list and set default
+var  i = 0;
 for (i = 0; i < listAllCountries.length; i += 1) {
-    $($destCountry).append('<option value="' + [i] + '">' + listAllCountries[i].region + "</option>'");
+    $("#destinationCountrySelectList").append('<option value="' + [i] + '">' + listAllCountries[i].region + "</option>'");
 }
+$("#destinationCountrySelectList").val('0');
+
+function selectRussiaSea() {
+	"use strict";
+	$("#destinationCitySelectList").empty();
+	$("#destinationRegionSelectList").empty();
+	$("#destinationCitySelectList").append('<option value=' + "default" + '>' + "r_SEA" + "</option>'");
+	for (i = 0; i < russianCitySea.length; i += 1) {
+		$("#destinationCitySelectList").append('<option value="' + [i] + '">' + russianCitySea[i].region + "</option>'");
+	}
+}
+
+function selectRussiaAir() {
+	"use strict";
+	$("#destinationCitySelectList").empty();
+	$("#destinationCitySelectList").append('<option value=' + "default" + '>' + "R_cityAir" + "</option>'");
+	for (i = 0; i < russiaCityAir.length; i += 1) {
+		$("#destinationCitySelectList").append('<option value="' + [i] + '">' + russiaCityAir[i].region + "</option>'");
+	}
+	$("#destinationRegionSelectList").empty();
+	$("#destinationRegionSelectList").append('<option value=' + "default" + '>' + "r_AIRREG" + "</option>'");
+	for (i = 0; i < russiaRegionAir.length; i += 1) {
+		$("#destinationRegionSelectList").append('<option value="' + [i] + '">' + russiaRegionAir[i].region + "</option>'");
+	}
+}
+
+// Get radio value along with country selection
+$("input:radio[name=radioAirSea]").click(function () {
+    "use strict";
+	var value = $(this).val(), selectedText = $("#destinationCountrySelectList").find("option:selected").text();
+	if (selectedText === "Russia") {
+		if (value === "sea") {
+			enableCitySelectMenu();
+			disableRegionSelectMenu();
+			selectRussiaSea();
+		} else {
+			enableRegionSelectMenu();
+			enableCitySelectMenu();
+			selectRussiaAir();
+		}
+	}
+});
+
+$("#destinationCitySelectList").change(function () {
+	"use strict";
+	$("#destinationRegionSelectList").val('default');
+});
+
+$("#destinationRegionSelectList").change(function () {
+	"use strict";
+	$("#destinationCitySelectList").val('default');
+});
 
 $("#destinationCountrySelectList").change(function () {
 	"use strict";
-    var selectedText = $(this).find("option:selected").text();
+    var selectedText = $(this).find("option:selected").text(), radioValue = $('input[name=radioAirSea]:checked').val();
     if (selectedText !== "Russia") {
 		disableCitySelectMenu();
 		disableRegionSelectMenu();
     } else {
 		enableCitySelectMenu();
-		enableRegionSelectMenu();
-	}
-});
-
-
-// Get radio value along with country selection
-$("input:radio[name=radioAirSea]").click(function () {
-    "use strict";
-	var value = $(this).val(), selectedText = $("#destinationCountrySelectList").find("option:selected").text(), $destCity = "#destinationCitySelectList", i = 0, $destRegion = "#destinationRegionSelectList";
-	if (selectedText === "Russia") {
-		if (value === "sea") {
-			$($destCity).empty();
-			$($destRegion).empty();
-			for (i = 0; i < russianCitySea.length; i += 1) {
-				$($destCity).append('<option value="' + [i] + '">' + russianCitySea[i].region + "</option>'");
-			}
-			
+		if (radioValue === "sea") {
+			enableCitySelectMenu();
 			disableRegionSelectMenu();
+			selectRussiaSea();
 		} else {
+			enableCitySelectMenu();
 			enableRegionSelectMenu();
-			$($destCity).empty();
-			$($destCity).append('<option value="' + " " + '">' + " " + "</option>'");
-			for (i = 0; i < russiaCityAir.length; i += 1) {
-				$($destCity).append('<option value="' + [i] + '">' + russiaCityAir[i].region + "</option>'");
-			}
-			$($destRegion).empty();
-			for (i = 0; i < russiaRegionAir.length; i += 1) {
-				$($destRegion).append('<option value="' + [i] + '">' + russiaRegionAir[i].region + "</option>'");
-			}
+			selectRussiaAir();
 		}
 	}
-	console.log(value, selectedText, $destCity);
 });
+
+function search(destination, airSeaType, arrayOfAlldestinations) {
+	var i, packageType;
+	if (airSeaType === 'sea') {
+		packageType = true;
+	} else if (airSeaType === 'air') {
+		packageType = false;
+	}
+    for (i = 0; i < arrayOfAlldestinations.length; i++) {
+        if (arrayOfAlldestinations[i].region === destination && arrayOfAlldestinations[i].seaBool === packageType) {
+            console.log(arrayOfAlldestinations[i]);
+			return arrayOfAlldestinations[i];
+			
+        }
+    }
+}
