@@ -23,6 +23,9 @@ var pysankaAir = [];
 var polimexSea = [];
 var polimexAir = [];
 var listAllCountries = [];
+var listAllDestinations = [];
+
+listAllDestinations = russiaCityAir.concat(russiaRegionAir, russianCitySea, pysankaSea, pysankaAir, polimexAir, polimexSea);
 
 // polimex air parcels
 polimexAir.push(new PopRegion("Austria", 11.00, false, 25.00, 1, 30, "5-14 business days", "Polimex"));
@@ -309,6 +312,8 @@ russiaRegionAir.push(new PopRegion("Sakhalinskaya obl.", 19.95, false, 25.00, 5,
 listAllCountries = polimexSea.concat(pysankaSea);
 listAllCountries.push(new PopRegion("Russia"));
 
+listAllDestinations = russiaCityAir.concat(russiaRegionAir, russianCitySea, pysankaSea, pysankaAir, polimexAir, polimexSea);
+
 function disableCitySelectMenu() {
 	"use strict";
 	$("#destinationCitySelectList").attr("disabled", true);
@@ -383,11 +388,11 @@ function compare(a, b) {
 }
 //Alphabetize 
 listAllCountries.sort(compare);
-var i = 0;
+/*var i = 0;
 for (i = 0; i < listAllCountries.length; i += 1) {
-    console.log(listAllCountries[i]);
+    //console.log(listAllCountries[i]);
 }
-
+*/
 // populate destination country list and set default
 var  i = 0;
 for (i = 0; i < listAllCountries.length; i += 1) {
@@ -399,24 +404,26 @@ function selectRussiaSea() {
 	"use strict";
 	$("#destinationCitySelectList").empty();
 	$("#destinationRegionSelectList").empty();
-	$("#destinationCitySelectList").append('<option value=' + "default" + '>' + "r_SEA" + "</option>'");
+	$("#destinationCitySelectList").append('<option value=' + "default" + '>' + " " + "</option>'");
 	for (i = 0; i < russianCitySea.length; i += 1) {
 		$("#destinationCitySelectList").append('<option value="' + [i] + '">' + russianCitySea[i].region + "</option>'");
 	}
+	$("#destinationCitySelectList").val('0');
 }
 
 function selectRussiaAir() {
 	"use strict";
 	$("#destinationCitySelectList").empty();
-	$("#destinationCitySelectList").append('<option value=' + "default" + '>' + "R_cityAir" + "</option>'");
+	$("#destinationCitySelectList").append('<option value=' + "default" + '>' + " " + "</option>'");
 	for (i = 0; i < russiaCityAir.length; i += 1) {
 		$("#destinationCitySelectList").append('<option value="' + [i] + '">' + russiaCityAir[i].region + "</option>'");
 	}
 	$("#destinationRegionSelectList").empty();
-	$("#destinationRegionSelectList").append('<option value=' + "default" + '>' + "r_AIRREG" + "</option>'");
+	$("#destinationRegionSelectList").append('<option value=' + "default" + '>' + " " + "</option>'");
 	for (i = 0; i < russiaRegionAir.length; i += 1) {
 		$("#destinationRegionSelectList").append('<option value="' + [i] + '">' + russiaRegionAir[i].region + "</option>'");
 	}
+	$("#destinationCitySelectList").val('39');
 }
 
 // Get radio value along with country selection
@@ -452,8 +459,9 @@ $("#destinationCountrySelectList").change(function () {
     if (selectedText !== "Russia") {
 		disableCitySelectMenu();
 		disableRegionSelectMenu();
+		$("#destinationCitySelectList").empty();
+		$("#destinationRegionSelectList").empty();
     } else {
-		enableCitySelectMenu();
 		if (radioValue === "sea") {
 			enableCitySelectMenu();
 			disableRegionSelectMenu();
@@ -466,18 +474,47 @@ $("#destinationCountrySelectList").change(function () {
 	}
 });
 
-function search(destination, airSeaType, arrayOfAlldestinations) {
+function search(destination, airSeaType) {
+	"use strict";
 	var i, packageType;
 	if (airSeaType === 'sea') {
 		packageType = true;
 	} else if (airSeaType === 'air') {
 		packageType = false;
 	}
-    for (i = 0; i < arrayOfAlldestinations.length; i++) {
-        if (arrayOfAlldestinations[i].region === destination && arrayOfAlldestinations[i].seaBool === packageType) {
-            console.log(arrayOfAlldestinations[i]);
-			return arrayOfAlldestinations[i];
-			
+    for (i = 0; i < listAllDestinations.length; i += 1) {
+        if (listAllDestinations[i].region === destination && listAllDestinations[i].seaBool === packageType) {
+			return listAllDestinations[i];
         }
     }
 }
+
+//alert(search("Austria", "sea"));
+for (i = 0; i < listAllCountries.length; i += 1) {
+	console.log(listAllCountries.length);
+    /*if (listAllCountries[i].seaBool === false) {
+		console.log(listAllCountries[i]);
+    }*/
+}
+function calcPrice() {
+	"use strict";
+	var packageType, destination, total, destObject, weight;
+	weight = $("#weight").val();
+	if(weight < 1){
+		alert();
+	}
+	packageType = $('input[name=radioAirSea]:checked').val();
+	destination = $("#destinationCountrySelectList").find("option:selected").text();
+	if ($("#destinationCitySelectList").find("option:selected").text() !== " " && destination === "Russia") {
+		destination = $("#destinationCitySelectList").find("option:selected").text();
+	} else if ($("#destinationRegionSelectList").find("option:selected").text() !== " "  && destination === "Russia") {
+		destination = $("#destinationRegionSelectList").find("option:selected").text();
+	}
+	
+	destObject = search(destination, packageType);
+	total = destObject.price * weight + destObject.deliveryCharge;
+	console.log(destObject.region, destObject.deliveryCharge, destObject.price);
+	console.log(total);
+}
+
+$("#weight").attr("placeholder", "MIN "+" "+ "MAX " +" "+"KG");
