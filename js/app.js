@@ -3,7 +3,7 @@
 /*global $, jQuery, alert*/
 
 
-function PopRegion(region, price, seaBool, deliveryCharge, minKg, maxKg, deliveryMessage, sender) {
+function PopRegion(region, price, seaBool, deliveryCharge, minKg, maxKg, deliveryMessage, sender, minAirKg, maxAirKg) {
 	"use strict";
 	this.region = region;
 	this.price = price;
@@ -11,9 +11,12 @@ function PopRegion(region, price, seaBool, deliveryCharge, minKg, maxKg, deliver
 	this.deliveryCharge = deliveryCharge;
 	this.minKg = minKg;
 	this.maxkg = maxKg;
-	this.deliveryCharge = deliveryCharge;
+	this.deliveryMessage = deliveryMessage;
 	this.sender = sender;
+	this.minAirKg = minAirKg;
+	this.maxAirKg = maxAirKg;
 }
+
 
 var russiaRegionAir = [];
 var russiaCityAir = [];
@@ -25,7 +28,7 @@ var polimexAir = [];
 var listAllCountries = [];
 var listAllDestinations = [];
 
-listAllDestinations = russiaCityAir.concat(russiaRegionAir, russianCitySea, pysankaSea, pysankaAir, polimexAir, polimexSea);
+//listAllDestinations = russiaCityAir.concat(russiaRegionAir, russianCitySea, pysankaSea, pysankaAir, polimexAir, polimexSea);
 
 // polimex air parcels
 polimexAir.push(new PopRegion("Austria", 11.00, false, 25.00, 1, 30, "5-14 business days", "Polimex"));
@@ -97,7 +100,7 @@ pysankaSea.push(new PopRegion("Estonia", 5.75, true, 20.00, 1, 30, "N/a", "Pysan
 pysankaSea.push(new PopRegion("Belarus", 5.25, true, 20.00, 1, 30, "N/a", "Pysanka"));
 pysankaSea.push(new PopRegion("Kazakhstan", 8.25, true, 25.00, 1, 30, "N/a", "Pysanka"));
 pysankaSea.push(new PopRegion("Uzbekistan", 8.25, true, 25.00, 1, 30, "N/a", "Pysanka"));
-pysankaSea.push(new PopRegion("Kirgizstan", 8.25, true, 25.00, 1, 30, "N/a", "Pysanka"));
+pysankaSea.push(new PopRegion("Kyrgyzstan", 8.25, true, 25.00, 1, 30, "N/a", "Pysanka"));
 
 //russian city sea
 russianCitySea.push(new PopRegion("Moscow", 7.75, true, 25.00, 1, 30, "N/a", "Pysanka"));
@@ -311,9 +314,11 @@ russiaRegionAir.push(new PopRegion("Sakhalinskaya obl.", 19.95, false, 25.00, 5,
 // list of all available countries, russia added as default to access regions and cities.
 listAllCountries = polimexSea.concat(pysankaSea);
 listAllCountries.push(new PopRegion("Russia"));
-
+listAllCountries.push(new PopRegion("Poland"));
+//list of all destinations, air and sea.
 listAllDestinations = russiaCityAir.concat(russiaRegionAir, russianCitySea, pysankaSea, pysankaAir, polimexAir, polimexSea);
 
+//functions to disable and enable select/dropdown menus 
 function disableCitySelectMenu() {
 	"use strict";
 	$("#destinationCitySelectList").attr("disabled", true);
@@ -333,73 +338,31 @@ function enableRegionSelectMenu() {
 	"use strict";
 	$("#destinationRegionSelectList").attr("disabled", false);
 }
-/*
-function enableHeight() {
+
+
+function setFlagImage(location) {
 	"use strict";
-	$("#height").attr("disabled", false);
+	$(".carousel").carousel(location);
 }
 
-function enableLength() {
-	"use strict";
-	$("#length").attr("disabled", false);
-}
-
-function enableWidth() {
-	"use strict";
-	$("#width").attr("disabled", false);
-}
-
-function enableWeight() {
-	"use strict";
-	$("#weight").attr("disabled", false);
-}
-
-function disableHeight() {
-	"use strict";
-	$("#height").attr("disabled", true);
-}
-function disableLength() {
-	"use strict";
-	$("#length").attr("disabled", true);
-}
-function disableWidth() {
-	"use strict";
-	$("#width").attr("disabled", true);
-}
-function disableWeight() {
-	"use strict";
-	$("#weight").attr("disabled", true);
-}
-*/
-
-/*
-// test func for setting img in carousel
-function testcar() {
-	//$(".carousel").carousel(0);
-}
-*/
-
-// copare function to sort array of objects for russian regian list
+// compare function to sort array of objects for russian regian list, alphabetic sort.
 function compare(a, b) {
 	"use strict";
     if (a.region < b.region) {return -1; }
     if (a.region > b.region) {return 1; }
     return 0;
 }
-//Alphabetize 
+//Alphabetize countries
 listAllCountries.sort(compare);
-/*var i = 0;
-for (i = 0; i < listAllCountries.length; i += 1) {
-    //console.log(listAllCountries[i]);
-}
-*/
-// populate destination country list and set default
+
+// populate destination country list and set default to 0(Austria)
 var  i = 0;
 for (i = 0; i < listAllCountries.length; i += 1) {
     $("#destinationCountrySelectList").append('<option value="' + [i] + '">' + listAllCountries[i].region + "</option>'");
 }
 $("#destinationCountrySelectList").val('0');
 
+//populate select dropdown menu for russian Sea parcels
 function selectRussiaSea() {
 	"use strict";
 	$("#destinationCitySelectList").empty();
@@ -411,6 +374,7 @@ function selectRussiaSea() {
 	$("#destinationCitySelectList").val('0');
 }
 
+//populate select dropdown for russian air parcels
 function selectRussiaAir() {
 	"use strict";
 	$("#destinationCitySelectList").empty();
@@ -427,15 +391,24 @@ function selectRussiaAir() {
 }
 
 // Get radio value along with country selection
+// if russia selected, switching between air and sea disable/enables dropdown menus for city and region
+//if screen is tablet or smaller hide/show select menu only when russia selected
 $("input:radio[name=radioAirSea]").click(function () {
     "use strict";
-	var value = $(this).val(), selectedText = $("#destinationCountrySelectList").find("option:selected").text();
+	var value = $(this).val(), selectedText = $("#destinationCountrySelectList").find("option:selected").text(), screenSize = $(window).width();
 	if (selectedText === "Russia") {
 		if (value === "sea") {
+			if (screenSize < 992) {
+				$("#russianDestinationCityId").show();
+				$("#russianDestinationRegionId").hide();
+			}
 			enableCitySelectMenu();
 			disableRegionSelectMenu();
 			selectRussiaSea();
 		} else {
+			if (screenSize < 992) {
+				$(".russianDestination").show();
+			}
 			enableRegionSelectMenu();
 			enableCitySelectMenu();
 			selectRussiaAir();
@@ -443,6 +416,7 @@ $("input:radio[name=radioAirSea]").click(function () {
 	}
 });
 
+//disable city or region for russia air parcels to allow only one selection at a time
 $("#destinationCitySelectList").change(function () {
 	"use strict";
 	$("#destinationRegionSelectList").val('default');
@@ -453,27 +427,43 @@ $("#destinationRegionSelectList").change(function () {
 	$("#destinationCitySelectList").val('default');
 });
 
+//when clicking on country select dropdown
+//
 $("#destinationCountrySelectList").change(function () {
 	"use strict";
-    var selectedText = $(this).find("option:selected").text(), radioValue = $('input[name=radioAirSea]:checked').val();
+    var selectedText = $(this).find("option:selected").text(), radioValue = $('input[name=radioAirSea]:checked').val(), screenSize = $(window).width(), optionVal = $(this).find("option:selected").val();
     if (selectedText !== "Russia") {
 		disableCitySelectMenu();
 		disableRegionSelectMenu();
 		$("#destinationCitySelectList").empty();
 		$("#destinationRegionSelectList").empty();
+		if (screenSize < 992) {
+			$(".russianDestination").hide();
+		} else {
+			$(".russianDestination").show();
+		}
+		
     } else {
 		if (radioValue === "sea") {
+			if (screenSize < 992) {
+				$("#russianDestinationCityId").show();
+			}
 			enableCitySelectMenu();
 			disableRegionSelectMenu();
 			selectRussiaSea();
 		} else {
+			if (screenSize < 992) {
+				$(".russianDestination").show();
+			}
 			enableCitySelectMenu();
 			enableRegionSelectMenu();
 			selectRussiaAir();
 		}
 	}
+	setFlagImage(Number(optionVal));
 });
 
+//search and return specific destination object
 function search(destination, airSeaType) {
 	"use strict";
 	var i, packageType;
@@ -488,63 +478,87 @@ function search(destination, airSeaType) {
         }
     }
 }
-
+/*
 //alert(search("Austria", "sea"));
 for (i = 0; i < listAllCountries.length; i += 1) {
 	console.log(listAllCountries.length);
-    /*if (listAllCountries[i].seaBool === false) {
+    if (listAllCountries[i].seaBool === false) {
 		console.log(listAllCountries[i]);
-    }*/
-}
+    }
+}*/
+
+
 function calcPrice() {
 	"use strict";
 	var packageType, destination, total, destObject, weight;
 	weight = $("#weight").val();
-	if(weight < 1){
+	if (weight < 1) {
 		alert();
 	}
 	packageType = $('input[name=radioAirSea]:checked').val();
 	destination = $("#destinationCountrySelectList").find("option:selected").text();
+	// checks city and region drop down sets destination to dropdown that is not blank
 	if ($("#destinationCitySelectList").find("option:selected").text() !== " " && destination === "Russia") {
 		destination = $("#destinationCitySelectList").find("option:selected").text();
 	} else if ($("#destinationRegionSelectList").find("option:selected").text() !== " "  && destination === "Russia") {
 		destination = $("#destinationRegionSelectList").find("option:selected").text();
 	}
-	
+	// get the destination object
 	destObject = search(destination, packageType);
 	total = destObject.price * weight + destObject.deliveryCharge;
-	console.log(destObject.region, destObject.deliveryCharge, destObject.price);
-	console.log(total);
+	$("#totalSpan").html(total);
+	$("#deliverySpan").html(destObject.deliveryMessage);
+	
+	//console.log(destObject.region, destObject.deliveryCharge, destObject.price);
+
 }
 
-$("#weight").attr("placeholder", "MIN "+" "+ "MAX " +" "+"KG");
+$("#weight").attr("placeholder", "MIN " + " " + "MAX " + " " + "KG");
 
 
+//hide russian city region on devices smaller then desktop
+if ($(window).width() < 992) {
+    $(".russianDestination").hide();
+} else {
+    $(".russianDestination").show();
+}
 
-///////// more less js
+//show hide russian dropdowns when resizing desktop
+$(document).ready(function () {
+	"use strict";
+    var $window = $(window);
+	
+    function checkWidth() {
+        var windowsize = $window.width();
+        if (windowsize < 992) {
+            $(".russianDestination").hide();
+        } else {
+			$(".russianDestination").show();
+		}
+    }
+    // Execute on load
+    checkWidth();
+    // Bind event listener
+    $(window).resize(checkWidth);
+});
+///////// more and less js
 
-$(document).ready(function() {
-	var showChar = 200;
-	var ellipses = "...";
-	var moretext = "more";
-	var lesstext = "less";
-	$('.more').each(function() {
-		var content = $(this).html();
+$(document).ready(function () {
+	"use strict";
+	var showChar = 200, ellipses = "...", moretext = "more", lesstext = "less";
 
-		if(content.length > showChar) {
+	$('.more').each(function () {
+		var content = $(this).html(), c = content.substr(0, showChar),  h = content.substr(showChar - 1, content.length - showChar), html = c + '<span class="moreellipses">' + ellipses + '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
 
-			var c = content.substr(0, showChar);
-			var h = content.substr(showChar-1, content.length - showChar);
-
-			var html = c + '<span class="moreellipses">' + ellipses+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+		if (content.length > showChar) {
 
 			$(this).html(html);
 		}
 
 	});
 
-	$(".morelink").click(function(){
-		if($(this).hasClass("less")) {
+	$(".morelink").click(function () {
+		if ($(this).hasClass("less")) {
 			$(this).removeClass("less");
 			$(this).html(moretext);
 		} else {
@@ -557,4 +571,23 @@ $(document).ready(function() {
 	});
 });
 
+//toggle between showing map and europe img
+$("#showHideMap").click(function () {
+    "use strict";
+	$("#map").toggle();
+	$("#mapImg").toggle();
+});
 
+
+function initMap() {
+	"use strict";
+	var uluru = {lat: 51.017334, lng: -114.0532739999};
+	var map = new google.maps.Map(document.getElementById('map'), {
+		    zoom: 14,
+		    center: uluru
+	    });
+	var marker = new google.maps.Marker({
+			position: uluru,
+			map: map
+	    });
+}
