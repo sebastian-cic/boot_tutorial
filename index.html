@@ -13,9 +13,9 @@
   	<meta property="og:title"         content="Polimark Shipping" />
   	<meta property="og:description"   content="Calgary's affordable alternative for shipping parcels to Europe and Russia." />
 	<meta property="og:image"         content="http://www.polimark.com/img/PolimarkLogoSmall2.jpg" />
-	
+	<meta name="description" content="Calgary's affordable alternative for shipping parcels to Europe and Russia."/>
 </head>
-<body onload="disableCitySelectMenu(), disableRegionSelectMenu()">
+<body onload="init()">
 	<header class="container-fluid">
 		<div id="headerImg"><img class="img-responsive center-block" id="polimark" src="img/PolimarkLogo.png"></div>
 	</header>
@@ -92,9 +92,14 @@
 				<section class="col-xs-12 col-sm-3 col-md-4 main-cols" id="centerBlock">
 					<h3 class="destinationHeader"><b>Package Details</b></h3>
 					<div class="radio">
-						<label class="radio-inline"><input checked id="radioSea" name="radioAirSea" type="radio" value="sea"> Sea</label>
+						<div class="radio-inline ecoTest" >
+						<label class="radio-inline"><input checked id="radioSea" name="radioAirSea" type="radio" value="sea">Sea</label>
+						</div>
 						<div class="radio-inline">
 							<label class="radio-inline"><input id="radioAir" name="radioAirSea" type="radio" value="air">Air</label>
+						</div>
+						<div class="radio-inline economyRadio" >
+							<label class="radio-inline"  ><input hidden="" id="eco" name="radioAirSea" type="radio" value="economy"><span hidden="" id="ecoRad" >Economy</span></label>
 						</div>
 						
 					</div>
@@ -164,23 +169,7 @@
 	</section>
 	<footer class="container-fluid">
 		<div class="row">
-			<div class="col-xs-12  col-sm-12 col-md-4">
-				<h3>Hours</h3>Tuesday - Thursday: 10 - 5<br>
-				Friday: 10-6<br>
-				Saturday: 10 - 2<br>
-				Sunday - Monday: Closed<br>
-				<h3>Contact</h3>
-				<p><span class="glyphicon glyphicon-envelope"></span> &nbsp;&nbsp; <a href="mailto:Adam@polimark.com">Adam@polimark.com</a><br></p>
-				<p><span class="glyphicon glyphicon-phone-alt"></span> &nbsp;&nbsp; 403-243-7333</p>
-				<p><span class="glyphicon glyphicon-phone-alt"></span> &nbsp;&nbsp; 1-888-888-1186</p>
-			</div>
-			<div class="col-xs-12 col-sm-12  col-md-4">
-				<h3>Location</h3>538 Cleveland Cres. S.E.<br>
-				Calgary Alberta<br>
-				T2G 4A9<br>
-				Canada
-				<p id="mapBottom"><span class="glyphicon glyphicon-map-marker"></span><u>Show location on map</u></p>
-			</div>
+			
 			<div class="col-xs-12 col-sm-12  col-md-4">
 				<h3>Share</h3>
 				<div class="row">
@@ -218,12 +207,30 @@
 					</div>
 					<div class="col-sm-12 hidden-xs">
 						<div ><span class="shareCols">&nbsp;</span></div>
-					</div>
-					
-					
-				
-					
+					</div>	
 				</div>
+			</div>
+			<div class="col-xs-12  col-sm-12 col-md-4">
+				<h3>Hours</h3>Tuesday - Thursday: 10 - 5<br>
+				Friday: 10-6<br>
+				Saturday: 10 - 2<br>
+				Sunday - Monday: Closed<br>
+				<h3>Contact</h3>
+				<p><span class="glyphicon glyphicon-envelope"></span> &nbsp;&nbsp; <a href="mailto:Adam@polimark.com">Adam@polimark.com</a><br></p>
+				<p><span class="glyphicon glyphicon-phone-alt"></span> &nbsp;&nbsp; 403-243-7333</p>
+				<p><span class="glyphicon glyphicon-phone-alt"></span> &nbsp;&nbsp; 1-888-888-1186</p>
+			</div>
+			<div class="col-xs-12 col-sm-12  col-md-4">
+				<h3>Location</h3>538 Cleveland Cres. S.E.<br>
+				Calgary Alberta<br>
+				T2G 4A9<br>
+				Canada
+				<p id="mapBottom"><span class="glyphicon glyphicon-map-marker"></span><u>Show location on map</u></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class=" cols-md-12 " id="copyright">
+				<p class="text-center"> &#9400; 2017  Polimark </p>
 			</div>
 		</div>
 	</footer>

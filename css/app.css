@@ -1,6 +1,23 @@
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+
+
 body {
 	font-family: 'Open Sans', sans-serif;
 }
+
+#copyright{
+	margin-top: 30px;
+}
+
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
@@ -121,6 +138,21 @@ header, footer {
 		max-width: 80%;
 	}
 }
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 1)  { 
+	
+	#map {
+		max-height: 200px;
+		
+	}
+	
+}
+
+
 #mailto{
 	max-height: 20px;
 }
