@@ -31,10 +31,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="shipping-pricing.html">Home</a></li>
-                <li><a href="about.php">Price details</a></li>
-                <li><a href="#portfolio">Insurance</a></li>
-                <li><a href="#">delivery Time</a></li>			
+                <li class="active"><a href="index.html">Shipping Calculator</a></li>
+                <li><a href="shipping-pricing.html">Price Details</a></li>
+                <li><a href="shipping-information.html">Before You Ship</a></li>		
             </ul>
         </div>
     </div>
@@ -48,7 +47,7 @@
 					<div class="col-sm-1 col-md-1"></div>
 					<div class="col-sm-6 col-md-7">
 						<h2>Shipping To Austria</h2>
-						<p class="more">For 30 years we have offered Calgarians an affordable alternative to ship parcels to Europe and Russia.</p><p> Use the price calculator below to get a quote for shipping your parcel to Austria. Prices start at $5.25 per kilogram by sea and $11.00 per kilogram by air plus a delivery charge.</p>
+						<p class="more">For 30 years we have offered Calgarians an affordable alternative to ship parcels to Europe and Russia.</p><p> Use the price calculator below to get a quote for shipping your parcel to Austria. Prices start at $<span id="seaPriceSpan"></span> per kilogram by sea and $<span id="airPriceSpan"></span> per kilogram by air plus a delivery charge.</p>
 					</div>
 					<div class="col-sm-4 col-md-3 hidden-xs">
 						<div class="carousel slide" data-interval="false" data-ride="carousel" id="carousel-example-generic">

@@ -311,6 +311,10 @@ td {
 	color: aliceblue;
 	background-color: black; !important;
 }
+
+.spanHover{
+	cursor:pointer;
+}
 /*
 .botnav{
 	text-align: center;

@@ -369,28 +369,7 @@ function setFlagImage(location) {
 	$(".carousel").carousel(location);
 }
 
-// onload init
-function init(valOfCountryToSet) {
-	"use strict";
-	//disable russian city and region 
-	disableCitySelectMenu();
-	disableRegionSelectMenu();
-	//set drop down select to display country matching landing page
-	$("#destinationCountrySelectList").val(valOfCountryToSet);
-	//22 is russia, enable russian city selections
-	if (valOfCountryToSet === 22) {
-		selectRussiaSea();
-		var screenSize = $(window).width();
-		if (screenSize < 992) {
-			$("#russianDestinationCityId").show();
-		}
-		enableCitySelectMenu();
-		//19 = poland, display economy radio button
-	} else if (valOfCountryToSet === 19) {
-		showEcoRadio();
-	}
-	
-}
+
 // compare function to sort array of objects , alphabetic sort.
 function compare(a, b) {
 	"use strict";
@@ -526,7 +505,16 @@ $("#destinationCountrySelectList").change(function () {
 //function takes in destination and redirects to landing page for specific country
 function redirectToSpecificCountryPage(destination) {
 	"use strict";
-	window.location.replace("file:///C:/Users/seb/gitclones/boot_tutorial/shipping-to-" + destination + ".html");
+	var dest = destination.replace(/\s+/g, '-');
+	if (dest.includes("(")) {
+		if (!dest.includes("East") && !dest.includes("West")) {
+			dest = dest.substring(0, dest.indexOf("(") - 1);
+		}
+		
+	}
+	
+	window.location = "shipping-to-" + dest + ".html";
+	//window.location.replace("file:///C:/Users/seb/gitclones/boot_tutorial/shipping-to-" + destination + ".html");
 }
 
 // onclick for country select menu, redirect to landing page for that country
@@ -816,9 +804,48 @@ function populateTable() {
 }
 
 populateTable();
+
 // on click on shipping-pricing page scroll to country
 $("#destinationCountrySelectList2").change(function () {
 	"use strict";
     var selectedText = $(this).find("option:selected").text();
 	scroll("#" + selectedText);
 });
+
+function addPriceTolandingPage() {
+	"use strict";
+	// get object for country
+	var air, sea;
+	sea = search($("#destinationCountrySelectList").find("option:selected").text(), "sea");
+	air = search($("#destinationCountrySelectList").find("option:selected").text(), "air");
+	// russia is undefined 
+	if (sea === undefined) {
+		sea = search("Moscow", "sea");
+		air = search("Moscow", "air");
+	}
+	//attach to landing page
+	$("#seaPriceSpan").html(sea.price.toFixed(2));
+	$("#airPriceSpan").html(air.price.toFixed(2));
+}
+// onload init
+function init(valOfCountryToSet) {
+	"use strict";
+	//disable russian city and region 
+	disableCitySelectMenu();
+	disableRegionSelectMenu();
+	//set drop down select to display country matching landing page
+	$("#destinationCountrySelectList").val(valOfCountryToSet);
+	//22 is russia, enable russian city selections
+	if (valOfCountryToSet === 22) {
+		selectRussiaSea();
+		var screenSize = $(window).width();
+		if (screenSize < 992) {
+			$("#russianDestinationCityId").show();
+		}
+		enableCitySelectMenu();
+		//19 = poland, display economy radio button
+	} else if (valOfCountryToSet === 19) {
+		showEcoRadio();
+	}
+	addPriceTolandingPage();
+}
