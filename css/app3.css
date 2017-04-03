@@ -294,7 +294,7 @@ a.morelink {
     margin-right:0;
 }
 
-.navbar .nav > .active > a {
+.navbar .nav > .inactive > a {
     color: #6b6d72;
 }
 

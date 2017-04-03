@@ -111,9 +111,9 @@ pysankaSea.push(new PopRegion("Uzbekistan", 8.25, "sea", 25.00, 5, 30, "6-8 week
 pysankaSea.push(new PopRegion("Kyrgyzstan", 8.25, "sea", 25.00, 5, 30, "6-8 weeks", "Pysanka"));
 
 //russian city sea
-russianCitySea.push(new PopRegion("Moscow", 7.75, "sea", 25.00, 4, 30, "6-8 weeks", "Pysanka"));
-russianCitySea.push(new PopRegion("St.Petersburg", 7.75, "sea", 25.00, 4, 30, "6-8 weeks", "Pysanka"));
-russianCitySea.push(new PopRegion("Other", 8.25, "sea", 25.00, 4, 30, "8 weeks for European area, 16+ weeks for Asian area.", "Pysanka"));
+russianCitySea.push(new PopRegion("Moscow", 7.75, "sea", 25.00, 5, 30, "6-8 weeks", "Pysanka"));
+russianCitySea.push(new PopRegion("St.Petersburg", 7.75, "sea", 25.00, 5, 30, "6-8 weeks", "Pysanka"));
+russianCitySea.push(new PopRegion("Other", 8.25, "sea", 25.00, 5, 30, "8 weeks for European area, 16+ weeks for Asian area.", "Pysanka"));
 
 //Array of russian city objects Air
 russiaCityAir.push(new PopRegion("Abakan", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));

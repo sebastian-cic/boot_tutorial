@@ -31,9 +31,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="index.html">Shipping Calculator</a></li>
-                <li><a href="shipping-pricing.html">Price Details</a></li>
-                <li><a href="shipping-information.html">Before You Ship</a></li>		
+                <li class="active"><a href="index.html">Shipping Calculator</a></li>
+                <li class="inactive"><a href="shipping-pricing.html">Price Details</a></li>
+                <li class="inactive"><a href="shipping-information.html">Before You Ship</a></li>		
             </ul>
         </div>
     </div>
@@ -107,7 +107,7 @@
 						<div hidden="" id="mapHide">
 							<div id="map"></div>
 						</div>
-						<p id="showHideMap" class="spanHover"><span class="glyphicon glyphicon-map-marker spanHover"></span><u>Find Us</u></p>
+						<p id="showHideMap" class="spanHover" onclick="ga('send', 'event', 'map2', 'click', 'index');"><span class="glyphicon glyphicon-map-marker spanHover"></span><u>Find Us</u></p>
 					</div>
 				</section>
 				<section class="col-xs-12 col-sm-3 col-md-4 main-cols" id="centerBlock">
@@ -166,7 +166,7 @@
 							</div>
 						</div>
 						<div class="col-xs-4 col-sm-12 col-md-5">
-							<button class="btn btn-success" onclick="calcPrice()" type="button">Get Cost</button>
+							<button class="btn btn-success" onclick="calcPrice() , ga('send', 'event', 'calc', 'click', 'index')" type="button">Get Cost</button>
 						</div>
 					</div>
 					
@@ -256,7 +256,7 @@
 				Calgary Alberta<br>
 				T2G 4A9<br>
 				Canada
-				<p id="mapBottom" class="spanHover"><span class="glyphicon glyphicon-map-marker spanHover"></span><u>Show location on map</u></p>
+				<p id="mapBottom" class="spanHover" onclick="ga('send', 'event', 'map2', 'click', 'index');"><span class="glyphicon glyphicon-map-marker spanHover"></span><u>Show location on map</u></p>
 			</div>
 		</div>
 		<div class="row">
