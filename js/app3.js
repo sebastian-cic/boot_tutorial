@@ -513,7 +513,7 @@ function redirectToSpecificCountryPage(destination) {
 		
 	}
 	
-	window.location = "shipping-to-" + dest + ".html";
+	window.location = "shipping-to-" + dest.toLowerCase() + ".html";
 	//window.location.replace("file:///C:/Users/seb/gitclones/boot_tutorial/shipping-to-" + destination + ".html");
 }
 
@@ -585,6 +585,7 @@ function setDeliveryCharge(weight, deliveryCharge, maxWeight) {
 	if (weight > maxWeight) {
 		return;
 	}
+	
 	if (weight > 20) {
 		return deliveryCharge * (Math.ceil(weight / 10) - 1);
 	} else {
@@ -659,7 +660,13 @@ function calcPrice() {
 		return;
 	}
 	// calculate total append to results totalspan
-	total = destObject.price * weight + setDeliveryCharge(weight, destObject.deliveryCharge, destObject.maxkg);
+	if (destObject.region.toLowerCase() === "poland") {
+		total = destObject.price * weight + setDeliveryCharge(weight, destObject.deliveryCharge, destObject.maxkg);
+	} else {
+		total = destObject.price * weight + destObject.deliveryCharge;
+	}
+	
+	
 	$("#totalSpan").html("$" + total.toFixed(2));
 	$("#deliverySpan").html(destObject.deliveryMessage);
 	if ($(window).width() < 768) {
