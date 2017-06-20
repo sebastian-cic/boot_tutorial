@@ -86,7 +86,7 @@ polimexSea.push(new PopRegion("United Kingdom", 5.25, "sea", 25.00, 4, 30, "4-7 
 
 polimexSea.push(new PopRegion("Poland", 5.00, "sea", 8.00, 4, 70, "4-7 weeks", "Polimex"));
 
-
+/*
 //pysanka air parcels
 pysankaAir.push(new PopRegion("Ukraine (West)", 8.45, "air", 15.00, 5, 30, "N/a", "Pysanka"));
 pysankaAir.push(new PopRegion("Ukraine (East)", 8.45, "air", 15.00, 5, 30, "2-3 weeks", "Pysanka"));
@@ -316,10 +316,10 @@ russiaRegionAir.push(new PopRegion("Sakha(Yakutiya) ", 19.95, "air", 25.00, 5, 2
 russiaRegionAir.push(new PopRegion("Yaroslavskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
 russiaRegionAir.push(new PopRegion("Mari-El ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
 russiaRegionAir.push(new PopRegion("Sakhalinskaya", 19.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
+*/
 // list of all available countries, russia added as default to access regions and cities.
 listAllCountries = polimexSea.concat(pysankaSea);
-listAllCountries.push(new PopRegion("Russia"));
+//listAllCountries.push(new PopRegion("Russia"));
 //list of all destinations, air and sea.
 listAllDestinations = russiaCityAir.concat(russiaRegionAir, russianCitySea, pysankaSea, pysankaAir, polimexAir, polimexSea, econo);
 
@@ -563,9 +563,7 @@ function setDeliveryCharge(weight, deliveryCharge, maxWeight) {
 	}
 	if (weight > 30) {
 		//
-		if (weight === 70) {
-			weight = weight - 1;
-		}
+	
 		return deliveryCharge  * ((Math.ceil(weight / 10) - 2));
 		
 		//this is for polimark
@@ -714,7 +712,7 @@ $(document).ready(function () {
 
 function initMap() {
 	"use strict";
-	var uluru = {lat: 51.017334, lng: -114.0532739999};
+	var uluru = {lat: 43.643506, lng: -79.447637};
 	var map = new google.maps.Map(document.getElementById('map'), {
 		    zoom: 14,
 		    center: uluru
