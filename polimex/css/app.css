@@ -1,0 +1,267 @@
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+#copyright{
+	margin-top: 30px;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+header, footer {
+	/*background-color: #333;*/
+	background-color: black;
+	color: #ddd;
+	padding: 20px;
+	text-align: center;
+}
+#polimark {
+	box-sizing: 50%:
+}
+.jumbotron {
+	max-height: inherit;
+	margin-bottom: 0px;
+	background-color: #8eaebd;
+	background-image: linear-gradient( to top right, #fff, #8eaebd);
+}
+@media (max-width: 1200px) {
+	.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+		display: block;
+		height: auto;
+		line-height: 1;
+		margin: 0 auto;
+		/*max-width: 100%;*/
+		height: 150px;
+		width: 250px;
+	}
+}
+@media (max-width: 769px) {
+	.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+		display: block;
+		height: auto;
+		line-height: 1;
+		margin: 0 auto;
+		/*max-width: 100%;*/
+		height: 100px;
+		width: 165px;
+	}
+}
+#mainContainer {
+	background-color: #8eaebd;
+	background-image: linear-gradient( to bottom right, #fff, #8eaebd);
+}
+.main-cols {
+	float: left;
+	height: auto;
+	overflow: auto;
+}
+@media (min-width: 1001px) {
+	aside img {
+		/*margin-left: 50px;*/
+		width: 100%;
+		text-align: center;
+		box-shadow: 6px 6px 8px #777;
+		margin-bottom: 0px;
+	}
+}
+@media (max-width: 1000px) {
+	aside img {
+		margin-left: 0px;
+		width: 100%;
+		text-align: center;
+		box-shadow: 6px 6px 8px #777;
+		margin-bottom: 18px;
+	}
+}
+@media (max-width: 1000px) {
+	#map {
+		max-height: 212px;
+	}
+}
+@media (min-device-width: 481px) and (max-device-width: 1024px) {
+	#map {
+		max-height: 193px;
+	}
+}
+@media (min-device-width: 735px) and (max-device-width: 800px) {
+	#map {
+		max-height: 493px;
+		max-width: 70%;
+	}
+	#leftPanel {
+		margin-left: 60px;
+	}
+	aside img {
+		margin-left: 0px;
+		max-height: 400px;
+		width: 80%;
+		text-align: center;
+		box-shadow: 6px 6px 8px #777;
+		margin-bottom: 18px;
+	}
+}
+@media (min-device-width: 560px) and (max-device-width: 734px) {
+	#map {
+		max-height: 493px;
+		max-width: 80%;
+	}
+	#leftPanel {
+		margin-left: 60px;
+	}
+	aside img {
+		margin-left: 0px;
+		max-height: 400px;
+		width: 80%;
+		text-align: center;
+		box-shadow: 6px 6px 8px #777;
+		margin-bottom: 18px;
+	}
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+	#map {
+		max-height: 200px !important;
+		margin-bottom: 10px;
+		max-width: 80%;
+	}
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 1)  { 
+	
+	#map {
+		max-height: 200px;
+		
+	}
+	
+}
+
+
+#mailto{
+	max-height: 20px;
+}
+.center-text{
+	text-align: center;
+	
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+	#map {
+		max-height: 200px !important;
+		margin-bottom: 10px;
+		max-width: 80%;
+	}
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+	body {
+		background-color: black;
+	}
+}
+.glyphicon-map-marker {
+	font-size: 18px;
+	margin: 2px;
+}
+#dimensionsRow {
+	margin-bottom: 10px;
+}
+.num {
+	max-width: 70px;
+	min-width: 49px;
+	margin-left: 0px;
+}
+.btn {
+	float: right;
+	margin-bottom: 10px;
+}
+#packageHeader {
+	margin-bottom: 20px;
+}
+.resultDisplay {
+	/* border-radius: 15px 50px;
+    background: #c7d8c6;*/
+	padding: 00px;
+	max-width: inherit;
+	height: 250px;
+}
+a {
+	color: #0254EB
+}
+a:visited {
+	color: #0254EB
+}
+a.morelink {
+	text-decoration: none;
+	outline: none;
+}
+.morecontent span {
+	display: none;
+}
+.comment {
+	width: 400px;
+	background-color: #f0f0f0;
+	margin: 10px;
+}
+#leftPanel {
+	width: 100%;
+	height: 100%;
+}
+#map {
+	width: 100%;
+	height: 300px;
+	background-color: grey
+}
+.glyphicon-menu-down {
+	font-size: 150%;
+}
+
+/*
+**************************
+.aboutUs{
+	
+   
+    background: #73AD21;
+    padding: 20px; 
+	max-width: inherit;
+    
+    height: 120px; 
+
+}
+
+
+
+#dimensionLabel{
+	padding-left: 0px;
+	padding-bottom: 0px;
+}
+
+
+.label label-info{
+	padding-left: 11.8em ;
+}
+
+#resultsBottom{
+	background-color: aquamarine;
+	margin-top: 20px;
+}
+
+*/
