@@ -86,237 +86,8 @@ polimexSea.push(new PopRegion("United Kingdom", 3.00, "sea", 30.00, 1, 30, "4-7 
 
 polimexSea.push(new PopRegion("Poland", 2.00, "sea", 15.00, 1, 70, "4-7 weeks", "Polimex"));
 
-/*
-//pysanka air parcels
-pysankaAir.push(new PopRegion("Ukraine (West)", 8.45, "air", 15.00, 5, 30, "N/a", "Pysanka"));
-pysankaAir.push(new PopRegion("Ukraine (East)", 8.45, "air", 15.00, 5, 30, "2-3 weeks", "Pysanka"));
-pysankaAir.push(new PopRegion("Lithuania", 7.45, "air", 20.00, 5, 30, "2-3 weeks", "Pysanka"));
-pysankaAir.push(new PopRegion("Latvia", 7.45, "air", 20.00, 5, 30, "2-3 weeks", "Pysanka"));
-pysankaAir.push(new PopRegion("Estonia", 7.45, "air", 20.00, 5, 30, "2-3 weeks", "Pysanka"));
-pysankaAir.push(new PopRegion("Belarus", 7.45, "air", 20.00, 5, 10, "2-3 weeks", "Pysanka"));
-pysankaAir.push(new PopRegion("Kazakhstan", 0, "air", 0, 0, 999, "Air shipping not available", "Pysanka"));
-pysankaAir.push(new PopRegion("Uzbekistan", 0, "air", 0, 0, 999, "Air shipping not available", "Pysanka"));
-pysankaAir.push(new PopRegion("Kyrgyzstan", 0, "air", 0, 0, 999, "Air shipping not available", "Pysanka"));
-//pysanka sea parcels
-pysankaSea.push(new PopRegion("Ukraine (West)", 5.75, "sea", 10.00, 5, 30, "N/a", "Pysanka"));
-pysankaSea.push(new PopRegion("Ukraine (East)", 5.75, "sea", 15.00, 5, 30, "6-8 weeks", "Pysanka"));
-pysankaSea.push(new PopRegion("Lithuania", 5.75, "sea", 20.00, 5, 30, "6-8 weeks", "Pysanka"));
-pysankaSea.push(new PopRegion("Latvia", 5.75, "sea", 20.00, 5, 30, "6-8 weeks", "Pysanka"));
-pysankaSea.push(new PopRegion("Estonia", 5.75, "sea", 20.00, 5, 30, "6-8 weeks", "Pysanka"));
-pysankaSea.push(new PopRegion("Belarus", 5.25, "sea", 20.00, 5, 10, "6-8 weeks", "Pysanka"));
-pysankaSea.push(new PopRegion("Kazakhstan", 8.25, "sea", 25.00, 5, 30, "6-8 weeks", "Pysanka"));
-pysankaSea.push(new PopRegion("Uzbekistan", 8.25, "sea", 25.00, 5, 30, "6-8 weeks", "Pysanka"));
-pysankaSea.push(new PopRegion("Kyrgyzstan", 8.25, "sea", 25.00, 5, 30, "6-8 weeks", "Pysanka"));
 
-//russian city sea
-russianCitySea.push(new PopRegion("Moscow", 7.75, "sea", 25.00, 4, 30, "6-8 weeks", "Pysanka"));
-russianCitySea.push(new PopRegion("St.Petersburg", 7.75, "sea", 25.00, 4, 30, "6-8 weeks", "Pysanka"));
-russianCitySea.push(new PopRegion("Other", 8.25, "sea", 25.00, 4, 30, "8 weeks for European area, 16+ weeks for Asian area.", "Pysanka"));
 
-//Array of russian city objects Air
-russiaCityAir.push(new PopRegion("Abakan", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Anadyr", 16.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Arkhangelsk", 11.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Astrakhan", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Barnaul", 11.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaCityAir.push(new PopRegion("Belgorod", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Birobidzhan", 11.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Blagoveshchensk", 11.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Bryansk", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Cheboksary", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaCityAir.push(new PopRegion("Chelyabinsk", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Cherkessk", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Chita", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Yekaterinburg", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Elista", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaCityAir.push(new PopRegion("Gorno-Altaysk", 16.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Grozny", 16.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Irkutsk", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Ivanovo", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Izhevsk", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaCityAir.push(new PopRegion("Kaliningrad", 11.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Kaluga", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Kazan", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Kemerovo", 11.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Khabarovsk", 11.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaCityAir.push(new PopRegion("Khanty-Mansiysk", 11.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Kirov", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Kostroma", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Krasnodar", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Krasnoyarsk", 11.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaCityAir.push(new PopRegion("Kudymkar", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Kurgan", 11.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Kursk", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Kyzyl", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Lipetsk", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaCityAir.push(new PopRegion("Magadan", 16.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Magas", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Makhachkala", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Maykop", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Moscow", 9.95, "air", 25.00, 5, 20, "2-3 weeks", "Pysanka"));
-
-russiaCityAir.push(new PopRegion("Murmansk", 11.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Nalchik", 11.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Naryan-Mar", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Nizhny Novgorod", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Norilsk", 16.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaCityAir.push(new PopRegion("Novgorod", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Novosibirsk", 11.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Omsk", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Orel", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Orenburg", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaCityAir.push(new PopRegion("Penza", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Perm", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Petropavlovsk", 16.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Petrozavodsk", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Pskov", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaCityAir.push(new PopRegion("Ryazan", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Rostov-on-Don", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Salekhard", 16.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Samara", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Saransk", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaCityAir.push(new PopRegion("Saratov", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Smolensk", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Stavropol", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("St.Petersburg", 9.95, "air", 25.00, 5, 20, "2-3 weeks", "Pysanka"));
-russiaCityAir.push(new PopRegion("Syktyvkar", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaCityAir.push(new PopRegion("Tambov", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Tyumen", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Tomsk", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Tula", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Tver", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaCityAir.push(new PopRegion("Ufa", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Ulan-Ude", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Ulyanovsk", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Vladikavkaz", 11.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Vladimir", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-		  
-russiaCityAir.push(new PopRegion("Vladivostok", 11.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Volgograd", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Vologda", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Voronezh", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Yakutsk", 16.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaCityAir.push(new PopRegion("Yaroslavl", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Yoshkar-Ola", 11.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaCityAir.push(new PopRegion("Yuzhno-Sakhalinsk", 16.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-		  
-//Array of russian region objects
-
-russiaRegionAir.push(new PopRegion("Khakassia ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Chukotskiy A.O.", 19.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Arkhangelskaya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Astrakhanskaya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Altayskiy kray", 13.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaRegionAir.push(new PopRegion("Belgorodskaya", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Yevreyskiy A.O.", 13.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Amurskaya", 13.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Brianskaya", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Chuvashiya", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaRegionAir.push(new PopRegion("Cheliabinskaya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Karachaevo-Cherkesiya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Chitinskaya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Sverdlovskaya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Kalmykiya", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaRegionAir.push(new PopRegion("Altay ", 19.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Chechnya ", 19.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Irkutskaya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Ivanovskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Udmurtiya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaRegionAir.push(new PopRegion("Kaliningradskaya", 13.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Kaluzhskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Tatarstan ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Kemerovskaya ", 13.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Khabarovskiy", 13.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaRegionAir.push(new PopRegion("Khanty-Mansiyski A.O.", 13.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Kirovskaya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Kostromskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Krasnodarskiy kray", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Krasnoyarskiy kray", 13.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaRegionAir.push(new PopRegion("Komi-Permyatskiy A.O.", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Kurganskaya ", 13.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Kurskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Tyva ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Lipetskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaRegionAir.push(new PopRegion("Magadanskaya ", 19.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Ingushetiya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Dagestan ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Adygea ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Moskovskaya ", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaRegionAir.push(new PopRegion("Murmanskaya ", 13.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Kabardyno-Balkarskaya ", 13.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Nenetskiy A.O.", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Nizhegorodskaya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Taymyrskiy A.O.", 19.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaRegionAir.push(new PopRegion("Novgorodskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Novosibirskaya ", 13.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Omskaya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Orlovskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Orenburgskaya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaRegionAir.push(new PopRegion("Penzenskaya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Permskaya", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Kamchatskiy kray", 19.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Kareliya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Pskovskaya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaRegionAir.push(new PopRegion("Riazanskaya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Rostovskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Yamalo-Nenetskiy A.O.", 19.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Samarskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Mordovia ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaRegionAir.push(new PopRegion("Saratovskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Smolenskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Stavropolskiy kray", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Leningradskaya ", 9.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Komi ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaRegionAir.push(new PopRegion("Tambovskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Tiumenskaya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Tomskaya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Tulskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Tverskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaRegionAir.push(new PopRegion("Bashkortostan ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Buriatiya ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Ulianovskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Sev.Osetia Resp.Alanya", 13.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Vladimirskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaRegionAir.push(new PopRegion("Primorskiy kray", 13.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Volgogradskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Vologodskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Voronezhskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Sakha(Yakutiya) ", 19.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-
-russiaRegionAir.push(new PopRegion("Yaroslavskaya ", 9.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Mari-El ", 13.45, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-russiaRegionAir.push(new PopRegion("Sakhalinskaya", 19.95, "air", 25.00, 5, 20, "N/a", "Pysanka"));
-*/
 // list of all available countries, russia added as default to access regions and cities.
 listAllCountries = polimexSea.concat(pysankaSea);
 //listAllCountries.push(new PopRegion("Russia"));
@@ -388,37 +159,9 @@ russiaCityAir.sort(compare);
 var  i = 0;
 for (i = 0; i < listAllCountries.length; i += 1) {
     $("#destinationCountrySelectList").append('<option value="' + [i] + '">' + listAllCountries[i].region + "</option>'");
+	$("#destinationCountrySelectList2").append('<option value="' + [i] + '">' + listAllCountries[i].region + "</option>'");
 }
 $("#destinationCountrySelectList").val('0');
-
-//populate select dropdown menu for russian Sea parcels
-function selectRussiaSea() {
-	"use strict";
-	$("#destinationCitySelectList").empty();
-	$("#destinationRegionSelectList").empty();
-	$("#destinationCitySelectList").append('<option value=' + "default" + '>' + " " + "</option>'");
-	for (i = 0; i < russianCitySea.length; i += 1) {
-		$("#destinationCitySelectList").append('<option value="' + [i] + '">' + russianCitySea[i].region + "</option>'");
-	}
-	$("#destinationCitySelectList").val('0');
-	$("#destinationRegionSelectList").append('<option hidden value=' + "default" + '>' + "Not Required" + "</option>'");
-}
-
-//populate select dropdown for russian air parcels
-function selectRussiaAir() {
-	"use strict";
-	$("#destinationCitySelectList").empty();
-	$("#destinationCitySelectList").append('<option hidden value=' + "default" + '>' + "City OR Region" + "</option>'");
-	for (i = 0; i < russiaCityAir.length; i += 1) {
-		$("#destinationCitySelectList").append('<option value="' + [i] + '">' + russiaCityAir[i].region + "</option>'");
-	}
-	$("#destinationRegionSelectList").empty();
-	$("#destinationRegionSelectList").append('<option hidden value=' + "default" + '>' + "City OR Region" + "</option>'");
-	for (i = 0; i < russiaRegionAir.length; i += 1) {
-		$("#destinationRegionSelectList").append('<option value="' + [i] + '">' + russiaRegionAir[i].region + "</option>'");
-	}
-	$("#destinationCitySelectList").val('39');
-}
 
 // Get radio value along with country selection
 // if russia selected, switching between air and sea disable/enables dropdown menus for city and region
@@ -509,14 +252,7 @@ function search(destination, type) {
 		}
 	}
 }
-/*
-//alert(search("Austria", "sea"));
-for (i = 0; i < listAllCountries.length; i += 1) {
-	console.log(listAllCountries.length);
-    if (listAllCountries[i].seaBool === false) {
-		console.log(listAllCountries[i]);
-    }
-}*/
+
 function verifyUserInput(length, height, width, dest) {
 	"use strict";
 	var arr;
@@ -555,7 +291,7 @@ function verifyUserInput(length, height, width, dest) {
 			return false;
 		} else if (Number(arr[0] * 2)  + Number(arr[1] * 2) + Number(arr[2]) > 300) {
 			$("#note").show();
-			$("#noteSpan").html("Please contact us for size restrictions to the EU, max size is Longest side(width) + (2 * height) + (2 * width) totaling no more than 300cm");
+			$("#noteSpan").html("Please contact us for size restrictions to the EU, max size is Longest side + (2 * height) + (2 * width) totaling no more than 300cm");
 			return false;
 		}
 		return true;
@@ -644,7 +380,7 @@ function calcPrice() {
 	}
 	// get the destination object
 	destObject = search(destination, packageType);
-	console.log(packageType);
+	
 	// set min weight if under
 	if (weight < destObject.minKg) {
 		weight = destObject.minKg;
@@ -665,13 +401,14 @@ function calcPrice() {
 	}
 	//set chargeable weight 
 	charWeight = chargeableWeight(length, width, height, weight);
-	/*console.log(typeof weight);
-	console.log(typeof  destObject.price);
-		console.log(typeof weight);
-	console.log(typeof destObject.deliveryCharge);
-	console.log(typeof destObject.maxkg);
-*/
-	total = destObject.price * Number(charWeight) + setDeliveryCharge(weight, destObject.deliveryCharge, destObject.maxkg);
+	
+	if (destObject.region.toLowerCase() === "poland") {
+		total = destObject.price * charWeight + setDeliveryCharge(weight, destObject.deliveryCharge, destObject.maxkg);
+	} else {
+		total = destObject.price * charWeight + destObject.deliveryCharge;
+	}
+	
+	
 	$("#totalSpan").html("$" + total.toFixed(2));
 	$("#deliverySpan").html(destObject.deliveryMessage);
 	if ($(window).width() < 768) {
@@ -778,3 +515,48 @@ $("#mapBottom").click(function () {
 });
 
 
+// populates table for shipping-pricing page from list of all available destinations
+function populateTable() {
+	"use strict";
+	var j, e;
+	//for each country create header, table and table header. Add class to table, add id to header for scrolling 
+	for (i = 0; i < listAllCountries.length; i += 1) {
+		$('#testerTable').append("<h3 id='" + listAllCountries[i].region.split(" ")[0] + "'>" + listAllCountries[i].region + "</h3>");
+		e = $(document.createElement('table'));
+		e.addClass("table table-inverse" + " table" + listAllCountries[i].region);
+		e.append('<thead class="table"><tr><th>Shipping<br> Type</th><th>Price /KG</th><th>Min KG</th><th>Max KG</th><th>Delivery charge</th></tr></thead> <tbody>');
+		//for each country find all matches of shipping type (ie sea,air economy) and append to table object info
+		for (j = 0; j < listAllDestinations.length; j += 1) {
+			if (listAllDestinations[j].region === listAllCountries[i].region && listAllDestinations[j].price !== 0) {
+				e.append("<tr>" + "<td>" + listAllDestinations[j].packageType.toUpperCase()  + "</td>" + "<td>" + listAllDestinations[j].price.toFixed(2)  + "</td>" + "<td>" + listAllDestinations[j].minKg  + "</td>" + "<td>" + listAllDestinations[j].maxkg  + "</td>" + "<td>" + listAllDestinations[j].deliveryCharge.toFixed(2)  + "</td>" + "</tr>");
+			}
+		}
+		//append to div on page
+		$('#testerTable').append(e);
+	}
+	//append russian cities by sea to russian table created in first for loop
+	$('.tableRussia').append("<tr id='Row'><td class='russiaRow'>Cities by sea </td></tr>");
+	for (i = 0; i < russianCitySea.length; i += 1) {
+		$('.tableRussia').append("<tr>" + "<td>" + russianCitySea[i].region  + "</td>" + "<td>" + russianCitySea[i].price.toFixed(2)  + "</td>" + "<td>" + russianCitySea[i].minKg  + "</td>" + "<td>" + russianCitySea[i].maxkg  + "</td>" + "<td>" + russianCitySea[i].deliveryCharge.toFixed(2)  + "</td>" + "</tr>");
+	}
+	//append russian cities by air to russian table created in first for loop
+	$('.tableRussia').append("<tr><td class='russiaRow'>Cities by air </td></tr>");
+	for (i = 0; i < russiaCityAir.length; i += 1) {
+		$('.tableRussia').append("<tr>" + "<td>" + russiaCityAir[i].region  + "</td>" + "<td>" + russiaCityAir[i].price.toFixed(2)  + "</td>" + "<td>" + russiaCityAir[i].minKg  + "</td>" + "<td>" + russiaCityAir[i].maxkg  + "</td>" + "<td>" + russiaCityAir[i].deliveryCharge.toFixed(2)  + "</td>" + "</tr>");
+	}
+	//append russian regions by air to russian table created in first for loop
+	$('.tableRussia').append("<tr ><td class='russiaRow'>Regions by air </td></tr>");
+	for (i = 0; i < russiaRegionAir.length; i += 1) {
+		$('.tableRussia').append("<tr>" + "<td>" + russiaRegionAir[i].region  + "</td>" + "<td>" + russiaRegionAir[i].price.toFixed(2)  + "</td>" + "<td>" + russiaRegionAir[i].minKg  + "</td>" + "<td>" + russiaRegionAir[i].maxkg  + "</td>" + "<td>" + russiaRegionAir[i].deliveryCharge.toFixed(2)  + "</td>" + "</tr>");
+	}
+}
+
+populateTable();
+
+// on click on shipping-pricing page scroll to country
+$("#destinationCountrySelectList2").change(function () {
+	"use strict";
+    var selectedText = $(this).find("option:selected").text();
+	selectedText = selectedText.split(" ")[0];
+	scroll("#" + selectedText);
+});

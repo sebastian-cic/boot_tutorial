@@ -457,13 +457,12 @@ $("#destinationRegionSelectList").change(function () {
 
 
 
-/*
+
 //when clicking on country select dropdown
 //
 $("#destinationCountrySelectList").change(function () {
 	"use strict";
 	hideEcoRadio();
-	redirectToSpecificCountryPage("germany");
     var selectedText = $(this).find("option:selected").text(), radioValue = $('input[name=radioAirSea]:checked').val(), screenSize = $(window).width(), optionVal = $(this).find("option:selected").val();
     if (selectedText !== "Russia") {
 		disableCitySelectMenu();
@@ -500,8 +499,8 @@ $("#destinationCountrySelectList").change(function () {
 		showEcoRadio();
 	}
 });
-*/
 
+/*
 //function takes in destination and redirects to landing page for specific country
 function redirectToSpecificCountryPage(destination) {
 	"use strict";
@@ -524,7 +523,7 @@ $("#destinationCountrySelectList").change(function () {
 	redirectToSpecificCountryPage(selectedText);
 });
 
-
+*/
 
 //search and return specific destination object
 function search(destination, type) {
@@ -601,7 +600,7 @@ function calcPrice() {
 	$("#note").hide();
 	$("#msg").hide();
 	
-	var packageType, destination, total, destObject, weight, length, width, height, $window;
+	var packageType, destination, total, destObject, weight, length, width, height, $window, charWeight;
 	
 	weight = $("#weight").val();
 	length  = $("#length").val();
@@ -647,7 +646,7 @@ function calcPrice() {
 		$("#noteSpan").html("Results for minimum weight of " + destObject.minKg + " kg.");
 	}
 	//set chargeable weight 
-	weight = chargeableWeight(length, width, height, weight);
+	
 	//check overweight
 	if (weight > destObject.maxkg) {
 		$("#totalSpan").html("$0.00");
@@ -659,11 +658,14 @@ function calcPrice() {
 		}
 		return;
 	}
+	
+	charWeight = chargeableWeight(length, width, height, weight);
 	// calculate total append to results totalspan
+	
 	if (destObject.region.toLowerCase() === "poland") {
-		total = destObject.price * weight + setDeliveryCharge(weight, destObject.deliveryCharge, destObject.maxkg);
+		total = destObject.price * charWeight + setDeliveryCharge(weight, destObject.deliveryCharge, destObject.maxkg);
 	} else {
-		total = destObject.price * weight + destObject.deliveryCharge;
+		total = destObject.price * charWeight + destObject.deliveryCharge;
 	}
 	
 	
@@ -841,7 +843,7 @@ function init(valOfCountryToSet) {
 	disableCitySelectMenu();
 	disableRegionSelectMenu();
 	//set drop down select to display country matching landing page
-	$("#destinationCountrySelectList").val(valOfCountryToSet);
+	$("#destinationCountrySelectList").val(0);
 	//22 is russia, enable russian city selections
 	if (valOfCountryToSet === 22) {
 		selectRussiaSea();

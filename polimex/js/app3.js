@@ -780,7 +780,7 @@ function populateTable() {
 	var j, e;
 	//for each country create header, table and table header. Add class to table, add id to header for scrolling 
 	for (i = 0; i < listAllCountries.length; i += 1) {
-		$('#testerTable').append("<h3 id='" + listAllCountries[i].region + "'>" + listAllCountries[i].region + "</h3>");
+		$('#testerTable').append("<h3 id='" + listAllCountries[i].region.split(" ")[0] + "'>" + listAllCountries[i].region + "</h3>");
 		e = $(document.createElement('table'));
 		e.addClass("table table-inverse" + " table" + listAllCountries[i].region);
 		e.append('<thead class="table"><tr><th>Shipping<br> Type</th><th>Price /KG</th><th>Min KG</th><th>Max KG</th><th>Delivery charge</th></tr></thead> <tbody>');
@@ -816,6 +816,7 @@ populateTable();
 $("#destinationCountrySelectList2").change(function () {
 	"use strict";
     var selectedText = $(this).find("option:selected").text();
+	selectedText = selectedText.split(" ")[0];
 	scroll("#" + selectedText);
 });
 
