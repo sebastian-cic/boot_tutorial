@@ -126,7 +126,8 @@ If you declare a parcel to have a value over $50.00 then you need to inform the 
 						</div>
 					</div>
 					<div class="col-sm-12 col-xs-4">
-						<div class="fb-like" data-action="like" data-href="http://www.polimark.com" data-layout="button" data-share="false" data-show-faces="true"></div>
+						<!--<div class="fb-like" data-action="like" data-href="http://www.polimark.com" data-layout="button" data-share="false" data-show-faces="true"></div>-->
+					<div class="fb-like" data-href="http://www.polimark.com" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
 					</div>
 					<div class="col-sm-12 hidden-xs">
 						<div>
@@ -191,9 +192,9 @@ If you declare a parcel to have a value over $50.00 then you need to inform the 
 	</script> 
 	<script src="js/bootstrap.min.js">
 	</script> 
-	<script src="js/app3.js">
+	<script src="js/app5.js">
 	</script> 
-	
+	<!--
 	<div id="fb-root"></div>
 	<script>
 	(function(d, s, id) {
@@ -204,6 +205,17 @@ If you declare a parcel to have a value over $50.00 then you need to inform the 
 	 fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 	</script> 
+	-->
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+	
 	<script>
 	 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -216,7 +228,7 @@ If you declare a parcel to have a value over $50.00 then you need to inform the 
 		
 	</script>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/app3.css" rel="stylesheet">
+	<link href="css/app4.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </body>
 </html>

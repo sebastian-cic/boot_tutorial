@@ -92,10 +92,10 @@ polimexSea.push(new PopRegion("Poland", 5.00, "sea", 8.00, 4, 70, "4-7 weeks", "
 //pysanka air parcels
 pysankaAir.push(new PopRegion("Ukraine (West)", 8.45, "air", 15.00, 5, 30, "N/a", "Pysanka"));
 pysankaAir.push(new PopRegion("Ukraine (East)", 8.45, "air", 15.00, 5, 30, "2-3 weeks", "Pysanka"));
-pysankaAir.push(new PopRegion("Lithuania", 7.45, "air", 20.00, 5, 30, "2-3 weeks", "Pysanka"));
-pysankaAir.push(new PopRegion("Latvia", 7.45, "air", 20.00, 5, 30, "2-3 weeks", "Pysanka"));
-pysankaAir.push(new PopRegion("Estonia", 7.45, "air", 20.00, 5, 30, "2-3 weeks", "Pysanka"));
-pysankaAir.push(new PopRegion("Belarus", 7.45, "air", 20.00, 5, 10, "2-3 weeks", "Pysanka"));
+pysankaAir.push(new PopRegion("Lithuania", 8.45, "air", 20.00, 5, 30, "2-3 weeks", "Pysanka"));
+pysankaAir.push(new PopRegion("Latvia", 8.45, "air", 20.00, 5, 30, "2-3 weeks", "Pysanka"));
+pysankaAir.push(new PopRegion("Estonia", 8.45, "air", 20.00, 5, 30, "2-3 weeks", "Pysanka"));
+pysankaAir.push(new PopRegion("Belarus", 8.45, "air", 20.00, 5, 10, "2-3 weeks", "Pysanka"));
 pysankaAir.push(new PopRegion("Kazakhstan", 0, "air", 0, 0, 999, "Air shipping not available", "Pysanka"));
 pysankaAir.push(new PopRegion("Uzbekistan", 0, "air", 0, 0, 999, "Air shipping not available", "Pysanka"));
 pysankaAir.push(new PopRegion("Kyrgyzstan", 0, "air", 0, 0, 999, "Air shipping not available", "Pysanka"));
@@ -782,7 +782,7 @@ function populateTable() {
 	var j, e;
 	//for each country create header, table and table header. Add class to table, add id to header for scrolling 
 	for (i = 0; i < listAllCountries.length; i += 1) {
-		$('#testerTable').append("<h3 id='" + listAllCountries[i].region + "'>" + listAllCountries[i].region + "</h3>");
+		$('#testerTable').append("<h3 id='"  + listAllCountries[i].region.split(" ")[0]+ "'>" + listAllCountries[i].region + "</h3>");
 		e = $(document.createElement('table'));
 		e.addClass("table table-inverse" + " table" + listAllCountries[i].region);
 		e.append('<thead class="table"><tr><th>Shipping<br> Type</th><th>Price /KG</th><th>Min KG</th><th>Max KG</th><th>Delivery charge</th></tr></thead> <tbody>');
@@ -818,6 +818,7 @@ populateTable();
 $("#destinationCountrySelectList2").change(function () {
 	"use strict";
     var selectedText = $(this).find("option:selected").text();
+	selectedText = selectedText.split(" ")[0];
 	scroll("#" + selectedText);
 });
 
