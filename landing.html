@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Polimark Shipping</title>
+</head>
+<body onload="initMap()">
+	<div id="loadOverlay" style="background-color:#333; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<meta content="http://www.polimark.com/index.html" property="og:url">
+	<meta content="website" property="og:type">
+	<meta content="Polimark Shipping" property="og:title">
+	<meta content="Calgary's affordable alternative for shipping parcels to Europe and Russia." property="og:description">
+	<meta content="http://www.polimark.com/img/PolimarkLogoSmall2.jpg" property="og:image">
+	<meta content="Calgary's affordable alternative for shipping parcels to Europe and Russia." name="description">
+	<header class="container-fluid">
+		<div id="headerImg"><img class="img-responsive center-block" id="polimark" src="img/PolimarkLogo.png"></div>
+		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+				</div><!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="inactive">
+							<a href="index.html">Shipping Calculator</a>
+						</li>
+						<li class="active">
+							<a href="shipping-pricing.html">Pricing Details</a>
+						</li>
+						<li class="inactive">
+							<a href="shipping-information.html">Before You Ship</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<section id="top">
+		<div class="jumbotron">
+			<div class="container-fluid">
+				<div class="row equal">
+					<div class="col-sm-1 col-md-2"></div>
+					<div class="col-sm-10 col-md-8">
+						<h1>SHIPPING TO EUROPE</h1>
+					</div>
+					<div class="col-sm-1 col-md-2"></div>
+				</div>
+			</div>
+			
+			<div class="container-fluid">
+				<div class="row equal">
+					<div class="col-sm-1 col-md-2"></div>
+					<div class="col-sm-5 col-md-4">
+						<button class="btn btn-danger btn-lg btn-block" onclick="initMap()" type="button"><u>GO TO SHIPPING CALCULATOR</u></button>
+						<h3>Try our shipping calculator and get a price quote for your parcel to Europe right now!</h3><br>
+						<p><b>Hungary promotional offer.</b> To help spread awarenes in the Hungarian comunity we are offering a dollar off per KG on parcels shipped by August 15th. </p><div class="fb-like" data-action="like" data-href="http://www.polimark.com" data-layout="button_count" data-share="false" data-show-faces="false" data-size="small"></div>
+					</div>
+					<div class="col-sm-5 col-md-4 pic1"><img class="img-responsive center-block" id="" src="img/hungary_promo.jpg"></div>
+					<div class="col-sm-1 col-md-2"></div>
+				</div>
+			</div>
+			<div class="container-fluid">
+				<div class="row equal">
+					<div class="col-sm-1 col-md-2"></div>
+					<div class="col-sm-10 col-md-8">
+						<h3>Calgary's Affordable Parcle Shipping</h3>
+						<p>For 30 years we have offered Calgarians an affordable alternative to send packages to Europe and Russia. Try our shipping calculator and than compare our prices with the big shipping companies.</p>
+						<p>We ship exclusivley to Europe and Russia, allowing us to offer low prices and with 30 years of experience we you can rest assured your parcel will arrive at its destination safely and in a timely fashion.</p>
+						<p>Our parcels service includes insurance for $50 dollars on each parcel and additional inusrance can be purchased. See our pricing details page for more information.</p>
+					</div>
+					<div class="col-sm-1 col-md-2"></div>
+				</div>
+			</div>
+			<section id="middle">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-hidden col-sm-0 col-md-2 main-cols" id="leftCol"></div>
+						<section class="col-xs-12 col-sm-10 col-md-8 main-cols" id="leftBlock">
+							<div id="leftPanel">
+								<h3>Our Location</h3>
+								<p>We are located at 536 Cleveland cresent SE in Calgary. See below for a list of our partners and drop off locations across Canada</p>
+								<div id="map"></div>
+							</div>
+						</section>
+						<div class="col-xs-hidden col-sm-2 col-md-2 main-cols" id=""></div>
+					</div>
+				</div>
+			</section>
+			<div class="container-fluid">
+				<div class="row equal">
+					<div class="col-sm-1 col-md-2"></div>
+					<div class="col-sm-10 col-md-8">
+						<h3>Where We Ship</h3>
+						<p>Our destination countries are Austria, Belarus, Belgium Croatia (Mainland), Czech Republic, Denmark, Estonia, Finlan, France, Germany, Hungary, Ireland, Italy, (Mainland), Kazakhstan, Kyrgyzstan, Latvia, Lithuania, Luxembourg, Netherlands, Poland, Portugal (Mainland), Romania, Russia,Slovakia, Slovenia, Spain (Mainland), Sweden, Ukraine ,United Kingdom and Uzbekistan.</p>
+					</div>
+					<div class="col-sm-1 col-md-2"></div>
+				</div>
+			</div>
+			<div class="container-fluid">
+				<div class="row equal">
+					<div class="col-sm-1 col-md-2"></div>
+					<div class="col-sm-10 col-md-8">
+						<h3>Tracking</h3>
+						<p>We are currently working to add online tracking to our service and expect to have it up soon. Currrently you can email us to get an update on where your parcel is.</p>
+					</div>
+					<div class="col-sm-1 col-md-2"></div>
+				</div>
+			</div>
+			<div class="container-fluid">
+				<div class="row equal">
+					<div class="col-sm-1 col-md-2"></div>
+					<div class="col-sm-10 col-md-8">
+						<h3>Drop Off Locations</h3>
+						<p>We are one of over fitfy agents that Ship to Europe. Below is a list of all of our partners across Canada. Please contact your closest agent to get rates for sending packages from your area.</p>
+					</div>
+					<div class="col-sm-1 col-md-2"></div>
+				</div>
+			</div>
+			<div class="container-fluid">
+				<div class="row equal">
+					<div class="col-sm-1 col-md-2"></div>
+					<div class="col-sm-5 col-md-4">
+						
+						<div class="container">
+							
+							
+							<table class="table">
+								<thead>
+									<tr>
+										<td></td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<h3>Barrie</h3>
+										</td>
+									</tr>
+									<tr>
+										<td>Polski Deli<br>
+										555 Mapleview Dr West Unit 5<br>
+										Barrie, ON N3T 1E6<br>
+										Tel. 705-735-6005<br></td>
+									</tr>
+									<tr>
+										<td>The European Food Centre<br>
+										91 B Hart Dr.<br>
+										Barrie, ON<br>
+										Tel. 705-722-4263<br></td>
+									</tr>
+									<tr>
+										<td>European Fine Food and Deli<br>
+										11 Cundles Rd W. unit 2<br>
+										Barrie, ON<br>
+										Tel. 705-728-4858</td>
+									</tr>
+									<tr>
+										<td>
+											<h3>Brampton</h3>
+										</td>
+									</tr>
+									<tr>
+										<td>Polimex Travel Trading<br>
+										190 Bouvaird Dr. Unit 59 <br>
+											Brampton, ON L7A 1A2 
+											<br>Tel.905-451-0606</td>
+									</tr>
+									<tr>
+										<td><h3>Brantford</h3></td>
+									</tr>
+									<tr>
+										<td>Super Sausage Factory<br>
+											84 Charing Cross St. #10a<br>
+											Brantford, ON N3R 2H6<br>
+											Tel. 519-753-2020</td>
+									</tr>
+									<tr>
+										<td>D&J Sausage Factory Inc.<br>
+											165 Hachborn Rd. Brantford,<br>
+											ON N3T 5M1 <br>
+											Tel. 519-751-8077</td>
+									</tr>
+									<tr>
+										<td><h3>Burlington</h3></td>
+									</tr>
+									<tr>
+										<td>Euro Market Delicatessen<br>
+											3480 Fairview St <br>
+											Burlington On.
+											<br>Tel: 905 333 5831</td>
+									</tr>
+									<tr>
+										<td><h3>Calgary</h3></td>
+									</tr>
+									<tr>
+										<td>Polimark Ltd.<br>
+											538 Cleveland Cr.SE.<br>
+											Calgary, AB T2G 4A9<br>
+											Tel. 403-243-7333</td>
+									</tr>
+									<tr>
+										<td><h3>Cambridge</h3></td>
+									</tr>
+									<tr>
+										<td>Euro Mart & Deli<br>
+											1001 Langs Dr Unit 6<br>
+											Cambridge, ON N1R 7K7 
+											<br>Tel. 519-622-0005</td>
+									</tr>
+									<tr>
+										<td><h3>Etobicoke</h3></td>
+									</tr>
+									<tr>
+										<td>96 Rexdale Blvd.<br>
+											Etobicoke, ON M9W 1N7 <br>
+											Tel. 416-742-5195</td>
+									</tr>
+									<tr>
+										<td>Alicja<br>
+											Twenty First St (near Lakeshore Blv W)
+											Etobicoke,<br>
+											ON M8V 3L7 <br>
+											Tel: 416-503-0391 <br>
+											cell: 647 303 2614</td>
+									</tr>
+									<tr>
+										<td><h3>Edmonton</h3></td>
+									</tr>
+									<tr>
+										<td>Polonez Travel Agency <br>
+											9915-108 Ave.<br>
+											Edmonton, AB T5H 1A5 <br>
+											Tel. 780-424-0521</td>
+									</tr>
+									<tr>
+										<td>Polish Food Centre<br>
+											10133 Princess Elizabeth Ave.<br>
+											Edmonton, AB T5G 0X9<br>
+											Tel. 780-477-8687</td>
+									</tr>
+									<tr>
+										<td><h3>Guelph</h3></td>
+									</tr>
+									<tr>
+										<td>Klops Meat&Deli<br>
+											442 York Road 
+											<br>Guelph, ON N1H 8L3 Tel.
+											<br>519-837-8705</td>
+									</tr>
+									<tr>
+										<td><h3>Hamilton</h3></td>
+									</tr>
+									<tr>
+										<td>Polimex Travel Trading<br>
+											705 Barton Str. <br>
+											East Hamilton, ON L8L 3A5<br>
+											Tel.905-312-8200</td>
+									</tr>
+									<tr>
+										<td><h3>Kitchener</h3></td>
+									</tr>
+									<tr>
+										<td>Euro Food<br>
+											403 Highland Rd Kitchener, ON<br>
+											Tel: 519 584 7190</td>
+									</tr>
+									<tr>
+										<td>Eva Frak<br> 232 Zeller Crt. Kitchener,<br>
+											N2A 4AG <br>Tel. cell: 519-571-7462 <br>*optional pick up from home</td>
+									</tr>
+									<tr>
+										<td>D&M Silesia Travel<br>
+											324 Highland Rd W. Unit 10 <br>
+											Kitchener, ON N2M 5G2 <br>
+											Tel. 519-741-8555</td>
+									</tr>
+									<tr>
+										<td><h3>London</h3></td>
+									</tr>
+									<tr>
+										<td>Polonia Travel Agency<br>
+											1246 Trafalgar Str.<br> London, ON N5Z 1H5<br> Tel. 519-451-4112</td>
+									</tr>
+									<tr>
+										<td>Varsovia Delicatessen <br>1275 Highbury Ave.<br> London, ON L5Y 1A8<br> Tel. 519-659-4196</td>
+									</tr>
+									<tr>
+										<td><h3>Midland</h3></td>
+									</tr>
+									<tr>
+										<td>Glob Deli<br> 478 Elizabeth St.<br> Midland ON <br>Tel. 705-527-4145</td>
+									</tr>
+									<tr>
+										<td><h3>Milton</h3></td>
+									</tr>
+									<tr>
+										<td></td>
+									</tr>
+									<tr>
+										<td>EuroMax<br>
+											61 James Snow Pkwy, <br>
+											Milton ON L9T 0R3<br>
+											Tel. 905-693-6661</td>
+									</tr>
+									<tr>
+										<td><h3>Mississauga</h3></td>
+									</tr>
+									<tr>
+										<td>Polimex Travel Trading<br>
+											3615 Dixie Rd.<br> Unit 11 Mississauga,
+											<br>ON L4Y 4H4 <br>
+											Tel. 905-238-6683</td>
+									</tr>
+									<tr>
+										<td>Polimex Travel Trading<br> 3145 Dundas St. West Unit 6<br>
+											Mississauga, ON L5L 5V8 <br>
+											Tel. 905-820-8800</td>
+									</tr>
+									<tr>
+										<td>Karpaty Pastry & Deli<br>
+											1525 Bristol Rd. W. Unit 7,<br> Mississauga On. L5M 4Z1<br>
+											Tel: 905-567-2562</td>
+									</tr>
+									<tr>
+										<td>Studio Optika<br>
+											168 Queen St. South Unit 104<br>
+											Streetsville<br>
+											Tel. 905-369-0270</td>
+									</tr>
+									<tr>
+										<td>Tavora Foods<br>
+											1030 Dundas St. East Mississauga,<br>
+											ON L4Y 2B8 <br>
+											Tel: 905-949-1592</td>
+									</tr>
+									<tr>
+										<td>Orbis Vacations<br>
+											2065 Dundas St E #107 - near Starsky<br>
+											Mississauga, ON L4X 2W1 <br>
+											Tel: 905-624-1115<br>
+											www.orbisvacations.ca</td>
+									</tr>
+									
+										
+									
+								</tbody>
+							</table>
+						</div>
+						
+					</div>
+					<div class="col-sm-5 col-md-4">
+						<table class="table">
+								<thead>
+									<tr>
+										<td></td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><h3>Oshawa</h3></td>
+									</tr>
+									<tr>
+										<td>302 Variety Store & Deli<br>
+											302 Oshawa Blvd.<br>
+											S. Oshawa, ON L1H 5S2 <br>
+											Tel. 905-728-7257</td>
+									</tr>
+									<tr>
+										<td>Christopher Delicatessen<br>
+											73 Ontario St Oshawa,<br>
+											ON L19 4Y9<br>
+											tel: 905-579-4369</td>
+									</tr>
+									<tr>
+										<td><h3>Oakville</h3></td>
+									</tr>
+									<tr>
+										<td>Vars Delicatessen<br>
+											380 Kerr Str. Oakville,<br>
+											ON L6K 3B9<br>
+											Tel. 905-338-0962</td>
+									</tr>
+									<tr>
+										<td>Polimex Travel Trading<br>
+											3145 Dundas St. West Unit 6 <br>
+											Mississauga, ON L5L 5V8 <br>
+											Tel. 905-820-8800</td>
+									</tr>
+									<tr>
+										<td><h3>Ottawa-Nepean</h3></td>
+									</tr>
+									<tr>
+										<td>Andrzej Arkuszewski<br>
+											46 Armadale Cr. Nepean,<br>
+											ON K2J 3Z3 <br>
+											Tel. 613-825-6360</td>
+									</tr>
+									<tr>
+										<td><h3>Peterborough</h3></td>
+									</tr>
+									<tr>
+										<td>Regina <br>
+											341 Downig Str. Peterborough,<br>
+											ON K9H 4J1 <br>
+											Tel. 705-743-0514</td>
+									</tr>
+									<tr>
+										<td><h3>Saskatoon</h3></td>
+									</tr>
+									<tr>
+										<td>Mariusz Pabisiak<br>
+											304-1700 Main St. E.<br>
+											Saskatoon, Saskachewan <br>
+											S7H 5S1<br>
+											Tel. 306-665-8026,<br>
+											Cell. 306-221-902</td>
+									</tr>
+									<tr>
+										<td><h3>Scarborough</h3></td>
+									</tr>
+									<tr>
+										<td>Polimex Travel Trading<br>
+											3482 Lawrence Ave.<br>
+											Scarborough, ON M1H 3E5 <br>
+											Tel. 416-439-7132</td>
+									</tr>
+									<tr>
+										<td>Kmicic Delicatessen<br>
+											209 Ellesmere Rd.# 5 <br>
+											Scarborough, ON M1R4E2 <br>
+											Tel. 416-391-2002</td>
+									</tr>
+									<tr>
+										<td><h3>St. Catharines</h3></td>
+									</tr>
+									<tr>
+										<td>Your Deli Polonez<br> 25 Facer Str. St.Catharines,<br>
+											ON L2M 5H3 <br>
+											Tel. 905-938-0348</td>
+									</tr>
+									<tr>
+										<td><h3>Sudbury</h3></td>
+									</tr>
+									<tr>
+										<td>Janina Pasternak<br>
+											166 Riverside Dr.<br>
+											Sudbury, ON P3E 1H2 <br>
+											Tel. 705-+673-7453</td>
+									</tr>
+									<tr>
+										<td>European Smoked Deli<br>
+											387 Burton St.<br>
+											Sudbury, ON<br>
+											Tel. 705-671-4764</td>
+									</tr>
+									<tr>
+										<td><h3>Tiny</h3></td>
+									</tr>
+									<tr>
+										<td>Tiny Treats European Deli<br>
+											745 Lafontaine Rd. West.<br>
+											Tiny ON <br>
+											Tel. 705-533-4774</td>
+									</tr>
+									<tr>
+										<td><h3>Toronto</h3></td>
+									</tr>
+									<tr>
+										<td>Polimex Travel Trading<br>
+											141 Roncesvalles Ave Toronto,<br>
+											ON M6R 2L2 <br>
+											Tel. 416-537-0000</td>
+									</tr>
+									<tr>
+										<td>Zakopane Deli<br>
+											3061 Lakeshore Blvd. W.<br>
+											Toronto, ON M8V 1K6<br>
+											Tel. 416-503-3354</td>
+									</tr>
+									<tr>
+										<td>Correia Travel<br>
+											912 Dundas St. W<br>
+											Toronto, ON M6J 1W1<br>
+											Tel. 416-603-0869</td>
+									</tr>
+									<tr>
+										<td>Pionieer Deli<br>
+											747 Don Mills Rd.# 23<br>
+											Don Mills, ON M3C 1T2 <br>
+											Tel. 416-422-4383</td>
+									</tr>
+									<tr>
+										<td>M & M Fruit & Grocery <br>1263 Dundas St. W.,<br>
+											Toronto,ON, M6J 1X6 <br>
+											Tel.: 416-533-9017</td>
+									</tr>
+									<tr>
+										<td><h3>Thunder Bay</h3></td>
+									</tr>
+									<tr>
+										<td>London Variety, European Delicatessen<br>
+											320 Balsam St Thunder Bay,<br>
+											Ont P7A 5N8<br>
+											Tel: 807 344 2268</td>
+									</tr>
+									<tr>
+										<td><h3>Vancouver</h3></td>
+									</tr>
+									<tr>
+										<td>Zofia-Polish Store<br>
+											4007 Knight Str.,<br>
+											Vancouver, BC V5N 3L9 <br>
+											Tel. 604-874-3338 <br>
+											Fax 604-430-6849</td>
+									</tr>
+									<tr>
+										<td>Krakus Deli Coffee Shop<br>
+											10725 King George Highway<br>
+											Surrey B.C.<br>
+											Tel. 604-583-0466</td>
+									</tr>
+									<tr>
+										<td>Touch Of Europe Deli<br>
+											105-2504 Government Str.<br>
+											Victoria B.C.<br>
+											Tel. 604-386-4204</td>
+									</tr>
+									<tr>
+										<td><h3>Windsor</h3></td>
+									</tr>
+									<tr>
+										<td>Polish Village Deli <br>
+											920 Ottawa Str.<br>
+											Windsor, ON N8X 2E1 <br>
+											Tel. 519-258-2399</td>
+									</tr>
+									<tr>
+										<td><h3>Winipeg</h3></td>
+									</tr>
+									<tr>
+										<td>Polsat Centre <br>
+											217 Selkirk Ave<br>
+											Winnipeg MB. R2W 2L5 <br>
+											tel: 204 582 2884</td>
+									</tr>
+									<tr>
+										<td><h3>Woodbridge</h3></td>
+									</tr>
+									<tr>
+										<td>Nova Deli<br>
+											3600 Langstaff<br>
+											Woodbridge <br>
+											Tel: 905-856-8472</td>
+									</tr>
+									<tr>
+										<td><h3>Woodstock</h3></td>
+									</tr>
+									<tr>
+										<td>European Meat & Deli <br>
+											13 Burtch Street.<br>
+											Woodstock, N4S 3M3<br>
+											Tel. 519-421-3868</td>
+									</tr>
+									
+								</tbody>
+							</table>
+					</div>
+					<div class="col-sm-1 col-md-2"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<h3>Share</h3>
+				<div class="row">
+					<div class="col-sm-12 col-xs-4">
+						<div class="fb-share-button" data-href="http://www.polimark.com/index.html" data-layout="button" data-mobile-iframe="true">
+							<a class="fb-xfbml-parse-ignore" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.polimark.com%2F&amp;src=sdkpreparse" target="_blank">Share</a>
+						</div>
+					</div>
+					<div class="col-sm-12 hidden-xs">
+						<div>
+							<span class="shareCols">&nbsp;</span>
+						</div>
+					</div>
+					<div class="col-sm-12 col-xs-4">
+						<!--    <div class="fb-like" data-action="like" data-href="http://www.polimark.com" data-layout="button_count" data-share="false" data-show-faces="true"></div>-->
+						<div class="fb-like" data-action="like" data-href="http://www.polimark.com" data-layout="button_count" data-share="false" data-show-faces="false" data-size="small"></div>
+					</div>
+					<div class="col-sm-12 hidden-xs">
+						<div>
+							<span class="shareCols">&nbsp;</span>
+						</div>
+					</div>
+					<div class="col-sm-12 cols-xs-4">
+						<div>
+							<span class="center-text"><a href="mailto:?subject=Polimark%20Shipping&body=Shipping%20to%20Europe%20and%20Russia.%0Awww.polimark.com"><img id="mailto" src="img/mail-square.png"></a></span>
+						</div>
+					</div>
+					<div class="col-sm-12 hidden-xs">
+						<div>
+							<span class="shareCols">&nbsp;</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="visible-xs">
+						<div>
+							<span class="shareCols">&nbsp;</span>
+						</div>
+					</div>
+					<div class="col-sm-12 cols-xs-6">
+						<a class="twitter-share-button" data-show-count="false" data-text="Calgary&#39;s affordable alternative for shipping to Europe and Russia." href="https://twitter.com/share">Tweet</a> 
+						<script async charset="utf-8" src="//platform.twitter.com/widgets.js">
+						</script>
+					</div>
+					<div class="col-sm-12 hidden-xs">
+						<div>
+							<span class="shareCols">&nbsp;</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<h3>Hours</h3>Tuesday - Thursday: 10 - 5<br>
+				Friday: 10-6<br>
+				Saturday: 10 - 2<br>
+				Sunday - Monday: Closed<br>
+				<h3>Contact</h3>
+				<p><span class="glyphicon glyphicon-envelope"></span> &nbsp;&nbsp; <a href="mailto:Adam@polimark.com">Adam@polimark.com</a><br></p>
+				<p><span class="glyphicon glyphicon-phone-alt"></span> &nbsp;&nbsp; 403-243-7333</p>
+				<p><span class="glyphicon glyphicon-phone-alt"></span> &nbsp;&nbsp; 1-888-888-1186</p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<h3>Location</h3>538 Cleveland Cres. S.E.<br>
+				Calgary Alberta<br>
+				T2G 4A9<br>
+				Canada
+				<p class="spanHover" id="mapBottom" onclick="ga('send', 'event', 'map2', 'click', 'index');"><span class="glyphicon glyphicon-map-marker spanHover"></span><u>Show location on map</u></p>
+				<h3>Partners</h3><a href="http://www.polimex.com/en/content/parcels-to-europe">Polimex</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class=" cols-md-12" id="copyright">
+				<p class="text-center">&#9400; 2017 Polimark</p>
+			</div>
+		</div>
+	</footer>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2_tmLk42iDJTuXoINjrZk0Zg8b44HVdo&callback=initMap">
+	</script> <!--<div id="fb-root"></div>
+     <script>
+    (function(d, s, id) {
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) return;
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+     fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script> -->
+	<div id="fb-root"></div>
+	<script>
+	(function(d, s, id) {
+	 var js, fjs = d.getElementsByTagName(s)[0];
+	 if (d.getElementById(id)) return;
+	 js = d.createElement(s); js.id = id;
+	 js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+	 fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script> 
+	<script>
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	    ga('create', 'UA-92908511-1', 'auto');
+	    ga('send', 'pageview');
+
+	</script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/app4.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+	</script> 
+	<script src="js/bootstrap.min.js">
+	</script> 
+	<script src="js/app3.js">
+	</script>
+</body>
+</html>
