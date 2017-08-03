@@ -33,58 +33,58 @@ var econo = [];
 
 
 // polimex air parcels
-polimexAir.push(new PopRegion("Austria", 7.00, "air", 30.00, 1, 30, "5-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Belgium", 7.00, "air", 25.00, 1, 30, "5-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Croatia (Mainland)", 7.00, "air", 45.00, 1, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Czech Republic", 7.00, "air", 20.00, 1, 30, "5-10 business days", "Polimex"));
-polimexAir.push(new PopRegion("Denmark", 7.00, "air", 25.00, 1, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Austria", 7.00, "air", 30.00, 1, 30, "5-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexAir.push(new PopRegion("Belgium", 7.00, "air", 25.00, 1, 30, "5-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexAir.push(new PopRegion("Croatia (Mainland)", 7.00, "air", 45.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexAir.push(new PopRegion("Czech Republic", 7.00, "air", 20.00, 1, 30, "5-10 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexAir.push(new PopRegion("Denmark", 7.00, "air", 25.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 
-polimexAir.push(new PopRegion("Finland", 7.00, "air", 45.00, 1, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("France", 7.00, "air", 30.00, 1, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Germany", 7.00, "air", 20.00, 1, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Hungary", 7.00, "air", 25.00, 1, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Ireland", 7.00, "air", 35.00, 1, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Finland", 7.00, "air", 45.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexAir.push(new PopRegion("France", 7.00, "air", 30.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexAir.push(new PopRegion("Germany", 7.00, "air", 20.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexAir.push(new PopRegion("Hungary", 7.00, "air", 25.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexAir.push(new PopRegion("Ireland", 7.00, "air", 35.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 
-polimexAir.push(new PopRegion("Italy (Mainland)", 7.00, "air", 35.00, 1, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Luxembourg", 7.00, "air", 25.00, 1, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Netherlands", 7.00, "air", 25.00, 1, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Portugal (Mainland)", 7.00, "air", 45.00, 1, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Spain (Mainland)", 7.00, "air", 35.00, 1, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Italy (Mainland)", 7.00, "air", 35.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexAir.push(new PopRegion("Luxembourg", 7.00, "air", 25.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexAir.push(new PopRegion("Netherlands", 7.00, "air", 25.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexAir.push(new PopRegion("Portugal (Mainland)", 7.00, "air", 45.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexAir.push(new PopRegion("Spain (Mainland)", 7.00, "air", 35.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 
-polimexAir.push(new PopRegion("Romania", 7.00, "air", 45.00, 1, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Slovakia", 7.00, "air", 20.00, 1, 30, "5-10 business days", "Polimex"));
-polimexAir.push(new PopRegion("Slovenia", 7.00, "air", 35.00, 1, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Sweden", 7.00, "air", 30.00, 1, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("United Kingdom", 7.00, "air", 30.00, 1, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Romania", 7.00, "air", 45.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexAir.push(new PopRegion("Slovakia", 7.00, "air", 20.00, 1, 30, "5-10 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexAir.push(new PopRegion("Slovenia", 7.00, "air", 35.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexAir.push(new PopRegion("Sweden", 7.00, "air", 30.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexAir.push(new PopRegion("United Kingdom", 7.00, "air", 30.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 
-polimexAir.push(new PopRegion("Poland", 6.00, "air", 15.00, 1, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Poland", 6.00, "air", 15.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 
 // polimex sea parcels
-polimexSea.push(new PopRegion("Austria", 3.00, "sea", 30.00, 1, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Belgium", 3.00, "sea", 25.00, 1, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Croatia (Mainland)", 3.00, "sea", 45.00, 1, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Czech Republic", 3.00, "sea", 20.00, 1, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Denmark", 3.00, "sea", 25.00, 1, 30, "4-7 weeks", "Polimex"));
+polimexSea.push(new PopRegion("Austria", 3.00, "sea", 30.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexSea.push(new PopRegion("Belgium", 3.00, "sea", 25.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexSea.push(new PopRegion("Croatia (Mainland)", 3.00, "sea", 45.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexSea.push(new PopRegion("Czech Republic", 3.00, "sea", 20.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexSea.push(new PopRegion("Denmark", 3.00, "sea", 25.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 
-polimexSea.push(new PopRegion("Finland", 3.00, "sea", 45.00, 1, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("France", 3.00, "sea", 30.00, 1, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Germany", 3.00, "sea", 20.00, 1, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Hungary", 3.00, "sea", 25.00, 1, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Ireland", 3.00, "sea", 35.00, 1, 30, "4-7 weeks", "Polimex"));
+polimexSea.push(new PopRegion("Finland", 3.00, "sea", 45.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexSea.push(new PopRegion("France", 3.00, "sea", 30.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexSea.push(new PopRegion("Germany", 3.00, "sea", 20.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexSea.push(new PopRegion("Hungary", 3.00, "sea", 25.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexSea.push(new PopRegion("Ireland", 3.00, "sea", 35.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 
-polimexSea.push(new PopRegion("Italy (Mainland)", 3.00, "sea", 35.00, 1, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Luxembourg", 3.00, "sea", 25.00, 1, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Netherlands", 3.00, "sea", 25.00, 1, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Portugal (Mainland)", 3.00, "sea", 45.00, 1, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Spain (Mainland)", 3.00, "sea", 35.00, 1, 30, "4-7 weeks", "Polimex"));
+polimexSea.push(new PopRegion("Italy (Mainland)", 3.00, "sea", 35.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexSea.push(new PopRegion("Luxembourg", 3.00, "sea", 25.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexSea.push(new PopRegion("Netherlands", 3.00, "sea", 25.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexSea.push(new PopRegion("Portugal (Mainland)", 3.00, "sea", 45.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexSea.push(new PopRegion("Spain (Mainland)", 3.00, "sea", 35.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 
-polimexSea.push(new PopRegion("Romania", 3.00, "sea", 45.00, 1, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Slovakia", 3.00, "sea", 20.00, 1, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Slovenia", 3.00, "sea", 35.00, 1, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Sweden", 3.00, "sea", 30.00, 1, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("United Kingdom", 3.00, "sea", 30.00, 1, 30, "4-7 weeks", "Polimex"));
+polimexSea.push(new PopRegion("Romania", 3.00, "sea", 45.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexSea.push(new PopRegion("Slovakia", 3.00, "sea", 20.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexSea.push(new PopRegion("Slovenia", 3.00, "sea", 35.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexSea.push(new PopRegion("Sweden", 3.00, "sea", 30.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexSea.push(new PopRegion("United Kingdom", 3.00, "sea", 30.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 
-polimexSea.push(new PopRegion("Poland", 2.00, "sea", 15.00, 1, 70, "4-7 weeks", "Polimex"));
+polimexSea.push(new PopRegion("Poland", 2.00, "sea", 15.00, 1, 70, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 
 
 
