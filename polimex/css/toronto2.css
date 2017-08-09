@@ -24,18 +24,33 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 header, footer {
 	/*background-color: #333;*/
-	background-color: black;
+	background-color: #31373e;
 	color: #ddd;
 	padding: 0px;
 	text-align: center;
 }
 #polimex {
-	box-sizing: 50%;
+	box-sizing: 10%;
+	padding-top: 15px;
+	max-height: 100px;
+}
+
+#polimex2 {
+	
+	max-height: 60pt;
+	box-sizing: 10%;
+	padding-top: 15px;
+}
+#polimex3 {
+	max-height: 90pt;
+	max-width: 380pt;
+	box-sizing: 10%;
 	padding-top: 15px;
 }
 .jumbotron {
 	max-height: inherit;
 	margin-bottom: 0px;
+	margin-top: 0px;
 	background-color: #8eaebd;
 	background-image: linear-gradient( to top right, #fff, #8eaebd);
 }
@@ -240,7 +255,7 @@ a.morelink {
 	border: none;
 	margin-bottom: 0;
 	min-height: 30px;
-	background-color: black;
+	background-color: #31373e;
 }
 
 .nav li {
@@ -261,6 +276,9 @@ a.morelink {
 	
 	
 }
+.navbar-inverse .navbar-nav > .active > a {
+	background-color: #31373e !important; 
+}
 
 .navbar-inverse .navbar-nav li a:hover {
 	background-color: #444444;
@@ -269,6 +287,10 @@ a.morelink {
 	
 }
 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #E7E7E7;
+}
 .navbar-inverse .navbar-nav  {
 	/*background-color: black;*/
 	transition: 0.7s all linear;
@@ -315,6 +337,7 @@ td {
 .spanHover{
 	cursor:pointer;
 }
+
 #loadOverlay{display: none;}
 /*
 .botnav{
