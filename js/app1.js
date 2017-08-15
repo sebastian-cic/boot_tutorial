@@ -44,7 +44,7 @@ polimexAir.push(new PopRegion("Denmark", 11.00, "air", 25.00, 4, 30, "7-14 busin
 polimexAir.push(new PopRegion("Finland", 11.00, "air", 45.00, 4, 30, "7-14 business days", "Polimex"));
 polimexAir.push(new PopRegion("France", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
 polimexAir.push(new PopRegion("Germany", 11.00, "air", 20.00, 4, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Hungary", 11.00, "air", 25.00, 4, 30, "7-14 business days", "Polimex", "Send your parcel before August 15th and save $1/kg"));
+polimexAir.push(new PopRegion("Hungary", 11.00, "air", 25.00, 4, 30, "7-14 business days", "Polimex"));
 polimexAir.push(new PopRegion("Ireland", 11.00, "air", 45.00, 4, 30, "7-14 business days", "Polimex"));
 
 polimexAir.push(new PopRegion("Italy (Mainland)", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
@@ -73,7 +73,7 @@ polimexSea.push(new PopRegion("Denmark", 5.25, "sea", 25.00, 4, 30, "4-7 weeks",
 polimexSea.push(new PopRegion("Finland", 5.25, "sea", 45.00, 4, 30, "4-7 weeks", "Polimex"));
 polimexSea.push(new PopRegion("France", 5.25, "sea", 35.00, 4, 30, "4-7 weeks", "Polimex"));
 polimexSea.push(new PopRegion("Germany", 5.25, "sea", 20.00, 4, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Hungary", 5.25, "sea", 25.00, 4, 30, "4-7 weeks", "Polimex", "Send your parcel before August 15th and save $1/kg"));
+polimexSea.push(new PopRegion("Hungary", 5.25, "sea", 25.00, 4, 30, "4-7 weeks", "Polimex"));
 polimexSea.push(new PopRegion("Ireland", 5.25, "sea", 45.00, 4, 30, "4-7 weeks", "Polimex"));
 
 polimexSea.push(new PopRegion("Italy (Mainland)", 5.25, "sea", 35.00, 4, 30, "4-7 weeks", "Polimex"));
