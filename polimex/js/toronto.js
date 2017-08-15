@@ -222,7 +222,7 @@ $("#destinationCountrySelectList").change(function () {
 	}
 	setFlagImage(Number(optionVal));
 	if (selectedText === "Poland") {
-		showEcoRadio();
+		//showEcoRadio();
 	}
 });
 //search and return specific destination object
