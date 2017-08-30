@@ -337,7 +337,10 @@ td {
 .spanHover{
 	cursor:pointer;
 }
-
+a{
+	 text-decoration: underline !important;
+    color: white !important;
+}
 #loadOverlay{display: none;}
 /*
 .botnav{
