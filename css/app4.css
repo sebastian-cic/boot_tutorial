@@ -78,6 +78,9 @@ header, footer {
 		box-shadow: 6px 6px 8px #777;
 		margin-bottom: 0px;
 	}
+	#linkText{
+	font-size: 40px;
+}
 }
 @media (max-width: 1000px) {
 	aside img {
@@ -339,6 +342,7 @@ td {
   display: -webkit-flex;
   flex-wrap: wrap;
 }
+
 
 #landPic{
 	max-height: 450px;
