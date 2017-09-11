@@ -30,6 +30,7 @@ polimexAir.push(new PopRegion("Belgium", 7.00, "air", 25.00, 1, 30, "5-14 busine
 polimexAir.push(new PopRegion("Croatia (Mainland)", 7.00, "air", 45.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 polimexAir.push(new PopRegion("Czech Republic", 7.00, "air", 20.00, 1, 30, "5-10 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 polimexAir.push(new PopRegion("Denmark", 7.00, "air", 25.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexAir.push(new PopRegion("Estonia", 1.00, "air", 45.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 polimexAir.push(new PopRegion("Finland", 7.00, "air", 45.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 polimexAir.push(new PopRegion("France", 7.00, "air", 30.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 polimexAir.push(new PopRegion("Germany", 7.00, "air", 20.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
@@ -55,6 +56,7 @@ polimexSea.push(new PopRegion("Belgium", 3.00, "sea", 25.00, 1, 30, "4-7 weeks",
 polimexSea.push(new PopRegion("Croatia (Mainland)", 3.00, "sea", 45.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 polimexSea.push(new PopRegion("Czech Republic", 3.00, "sea", 20.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 polimexSea.push(new PopRegion("Denmark", 3.00, "sea", 25.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
+polimexSea.push(new PopRegion("Estonia", 1.00, "sea", 25.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 polimexSea.push(new PopRegion("Finland", 3.00, "sea", 45.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 polimexSea.push(new PopRegion("France", 3.00, "sea", 30.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 polimexSea.push(new PopRegion("Germany", 3.00, "sea", 20.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
@@ -224,7 +226,7 @@ $("#destinationCountrySelectList").change(function () {
 	if (selectedText === "Poland") {
 		//showEcoRadio();
 	}
-});
+s});
 //search and return specific destination object
 function search(destination, type) {
 	"use strict";
@@ -485,6 +487,9 @@ function populateTable() {
 	//for each country create header, table and table header. Add class to table, add id to header for scrolling 
 	for (i = 0; i < listAllCountries.length; i += 1) {
 		$('#testerTable').append("<h3 id='" + listAllCountries[i].region.split(" ")[0] + "'>" + listAllCountries[i].region + "</h3>");
+        if(listAllCountries[i].region === "Poland"){
+            $('#testerTable').append('* <a id="deliveryChargeLink" href="#polandId">See How Delivery Charge Is Applied for Poland</a>');
+           }
 		e = $(document.createElement('table'));
 		e.addClass("table table-inverse" + " table" + listAllCountries[i].region);
 		e.append('<thead class="table"><tr><th>Shipping<br> Type</th><th>Price /KG</th><th>Min KG</th><th>Max KG</th><th>Delivery charge</th></tr></thead> <tbody>');

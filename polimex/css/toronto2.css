@@ -341,6 +341,9 @@ a{
 	 text-decoration: underline !important;
     color: white !important;
 }
+#deliveryChargeLink{
+    color: cornflowerblue!important;
+}
 #loadOverlay{display: none;}
 /*
 .botnav{
