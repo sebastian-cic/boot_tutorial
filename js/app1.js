@@ -58,8 +58,8 @@ polimexAir.push(new PopRegion("Slovakia", 11.00, "air", 20.00, 4, 30, "5-10 busi
 polimexAir.push(new PopRegion("Slovenia", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
 polimexAir.push(new PopRegion("Sweden", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
 polimexAir.push(new PopRegion("United Kingdom", 11.00, "air", 25.00, 4, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Lithuania", 11.00, "air", 20.00, 5, 30, "2-3 weeks", "Polimex"));
-polimexAir.push(new PopRegion("Latvia", 11.00, "air", 20.00, 5, 30, "2-3 weeks", "Polimex"));
+polimexAir.push(new PopRegion("Lithuania", 11.00, "air", 20.00, 4, 30, "2-3 weeks", "Polimex"));
+polimexAir.push(new PopRegion("Latvia", 11.00, "air", 20.00, 4, 30, "2-3 weeks", "Polimex"));
 
 polimexAir.push(new PopRegion("Poland", 11.00, "air", 18.00, 4, 30, "7-14 business days", "Polimex"));
 
@@ -87,16 +87,21 @@ polimexSea.push(new PopRegion("Slovakia", 5.25, "sea", 20.00, 4, 30, "4-7 weeks"
 polimexSea.push(new PopRegion("Slovenia", 5.25, "sea", 35.00, 4, 30, "4-7 weeks", "Polimex"));
 polimexSea.push(new PopRegion("Sweden", 5.25, "sea", 35.00, 4, 30, "4-7 weeks", "Polimex"));
 polimexSea.push(new PopRegion("United Kingdom", 5.25, "sea", 25.00, 4, 30, "4-7 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Lithuania", 5.25, "sea", 20.00, 5, 30, "6-8 weeks", "Polimex"));
-polimexSea.push(new PopRegion("Latvia", 5.25, "sea", 20.00, 5, 30, "6-8 weeks", "Polimex"));
+polimexSea.push(new PopRegion("Lithuania", 5.25, "sea", 20.00, 4, 30, "6-8 weeks", "Polimex"));
+polimexSea.push(new PopRegion("Latvia", 5.25, "sea", 20.00, 4, 30, "6-8 weeks", "Polimex"));
+
+polimexAir.push(new PopRegion("Estonia", 11.00, "air", 20.00, 4, 30, "2-3 weeks", "Polimex"));
 
 polimexSea.push(new PopRegion("Poland", 5.00, "sea", 8.00, 4, 70, "4-7 weeks", "Polimex"));
+
+
+polimexSea.push(new PopRegion("Estonia", 5.25, "sea", 20.00, 4, 30, "6-8 weeks", "Polimex"));
 
 
 //pysanka air parcels
 pysankaAir.push(new PopRegion("Ukraine (West)", 8.45, "air", 15.00, 5, 30, "N/a", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));
 pysankaAir.push(new PopRegion("Ukraine (East)", 8.45, "air", 15.00, 5, 30, "2-3 weeks", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));
-pysankaAir.push(new PopRegion("Estonia", 8.45, "air", 20.00, 5, 30, "2-3 weeks", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));
+
 pysankaAir.push(new PopRegion("Belarus", 8.45, "air", 20.00, 5, 10, "2-3 weeks", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));
 pysankaAir.push(new PopRegion("Kazakhstan", 0, "air", 0, 0, 999, "Air shipping not available", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));
 pysankaAir.push(new PopRegion("Uzbekistan", 0, "air", 0, 0, 999, "Air shipping not available", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));
@@ -104,7 +109,7 @@ pysankaAir.push(new PopRegion("Kyrgyzstan", 0, "air", 0, 0, 999, "Air shipping n
 //pysanka sea parcels
 pysankaSea.push(new PopRegion("Ukraine (West)", 5.75, "sea", 10.00, 5, 30, "N/a", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));
 pysankaSea.push(new PopRegion("Ukraine (East)", 5.75, "sea", 15.00, 5, 30, "6-8 weeks", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));
-pysankaSea.push(new PopRegion("Estonia", 5.75, "sea", 20.00, 5, 30, "6-8 weeks", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));
+
 pysankaSea.push(new PopRegion("Belarus", 5.25, "sea", 20.00, 5, 10, "6-8 weeks", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));
 pysankaSea.push(new PopRegion("Kazakhstan", 8.25, "sea", 25.00, 5, 30, "6-8 weeks", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));
 pysankaSea.push(new PopRegion("Uzbekistan", 8.25, "sea", 25.00, 5, 30, "6-8 weeks", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));

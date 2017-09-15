@@ -49,7 +49,6 @@ polimexAir.push(new PopRegion("United Kingdom", 7.00, "air", 30.00, 1, 30, "7-14
 polimexAir.push(new PopRegion("Poland", 6.00, "air", 15.00, 1, 70, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 polimexAir.push(new PopRegion("Latvia", 7.45, "air", 20.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 polimexAir.push(new PopRegion("Lithuania", 7.45, "air", 20.00, 1, 30, "7-14 business days", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
-
 // polimex sea parcels
 polimexSea.push(new PopRegion("Austria", 3.00, "sea", 30.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
 polimexSea.push(new PopRegion("Belgium", 3.00, "sea", 25.00, 1, 30, "4-7 weeks", "Polimex", "Prices for shipping from GTA only. Contact us for pricing at other locations."));
@@ -151,7 +150,7 @@ $("#destinationCountrySelectList").val('0');
 // Get radio value along with country selection
 // if russia selected, switching between air and sea disable/enables dropdown menus for city and region
 //if screen is tablet or smaller hide/show select menu only when russia selected
-$("input:radio[name=radioAirSea]").click(function () {
+$("input:radio[name=radioAirSea]").click(function() {
 	"use strict";
 	var value = $(this).val(),
 		selectedText = $("#destinationCountrySelectList").find("option:selected").text(),
@@ -176,17 +175,17 @@ $("input:radio[name=radioAirSea]").click(function () {
 	}
 });
 //disable city or region for russia air parcels to allow only one selection at a time
-$("#destinationCitySelectList").change(function () {
+$("#destinationCitySelectList").change(function() {
 	"use strict";
 	$("#destinationRegionSelectList").val('default');
 });
-$("#destinationRegionSelectList").change(function () {
+$("#destinationRegionSelectList").change(function() {
 	"use strict";
 	$("#destinationCitySelectList").val('default');
 });
 //when clicking on country select dropdown
 //
-$("#destinationCountrySelectList").change(function () {
+$("#destinationCountrySelectList").change(function() {
 	"use strict";
 	hideEcoRadio();
 	var selectedText = $(this).find("option:selected").text(),
@@ -226,7 +225,8 @@ $("#destinationCountrySelectList").change(function () {
 	if (selectedText === "Poland") {
 		//showEcoRadio();
 	}
-s});
+	s
+});
 //search and return specific destination object
 function search(destination, type) {
 	"use strict";
@@ -402,7 +402,7 @@ if ($(window).width() < 992) {
 	$(".russianDestination").show();
 }
 //show hide russian dropdowns when resizing desktop
-$(document).ready(function () {
+$(document).ready(function() {
 	"use strict";
 	var $window = $(window);
 
@@ -420,7 +420,7 @@ $(document).ready(function () {
 	$(window).resize(checkWidth);
 });
 ///////// more and less js
-$(document).ready(function () {
+$(document).ready(function() {
 	"use strict";
 	var showChar = 200,
 		ellipses = "...",
@@ -435,7 +435,7 @@ $(document).ready(function () {
 			$(this).html(html);
 		}
 	});
-	$(".morelink").click(function () {
+	$(".morelink").click(function() {
 		if ($(this).hasClass("less")) {
 			$(this).removeClass("less");
 			$(this).html(moretext);
@@ -465,13 +465,13 @@ function initMap() {
 	});
 }
 //toggle between showing map and europe img
-$("#showHideMap").click(function () {
+$("#showHideMap").click(function() {
 	"use strict";
 	$("#mapHide").toggle();
 	$("#mapImg").toggle();
 	initMap();
 });
-$("#mapBottom").click(function () {
+$("#mapBottom").click(function() {
 	"use strict";
 	$("#mapHide").toggle();
 	$("#mapImg").toggle();
@@ -487,9 +487,9 @@ function populateTable() {
 	//for each country create header, table and table header. Add class to table, add id to header for scrolling 
 	for (i = 0; i < listAllCountries.length; i += 1) {
 		$('#testerTable').append("<h3 id='" + listAllCountries[i].region.split(" ")[0] + "'>" + listAllCountries[i].region + "</h3>");
-        if(listAllCountries[i].region === "Poland"){
-            $('#testerTable').append('* <a id="deliveryChargeLink" href="#polandId">See How Delivery Charge Is Applied for Poland</a>');
-           }
+		if (listAllCountries[i].region === "Poland") {
+			$('#testerTable').append('* <a id="deliveryChargeLink" href="#polandId">See How Delivery Charge Is Applied for Poland</a>');
+		}
 		e = $(document.createElement('table'));
 		e.addClass("table table-inverse" + " table" + listAllCountries[i].region);
 		e.append('<thead class="table"><tr><th>Shipping<br> Type</th><th>Price /KG</th><th>Min KG</th><th>Max KG</th><th>Delivery charge</th></tr></thead> <tbody>');
@@ -520,7 +520,7 @@ function populateTable() {
 }
 populateTable();
 // on click on shipping-pricing page scroll to country
-$("#destinationCountrySelectList2").change(function () {
+$("#destinationCountrySelectList2").change(function() {
 	"use strict";
 	var selectedText = $(this).find("option:selected").text();
 	selectedText = selectedText.split(" ")[0];
