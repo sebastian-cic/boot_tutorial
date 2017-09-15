@@ -49,15 +49,30 @@
                             <div class="form-group">
                                
                                 <div class="col-xs-10">
-                                     <label for="firstName" class="col-xs-2 hidden-print">name</label>
-                                    <input type="text" class="form-control hidden-print" id="firstName" placeholder="Your first Name" />
-                                    <input type="text" class="form-control hidden-print" id="lastname" placeholder="Your last Name" />
-                                    <input type="text" class="form-control hidden-print" id="street" placeholder="Your street address " />
-                                    <input type="text" class="form-control hidden-print" id="city" placeholder="city" />
-                                     <input type="text" class="form-control hidden-print" id="postalCode" placeholder="Postal" />
-                                     <input type="number" class="form-control hidden-print" id="phone" placeholder="phone" />
-                                     <input type="email" class="form-control hidden-print" id="email" placeholder="email" />
-                                    <input type="text" class="form-control hidden-print" id="country" placeholder="country" />
+                                    <span id="senderNotification1"></span>
+                                     <label for="firstName" class="col-xs-2 hidden-print">First Name</label>
+                                    <input type="text" class="form-control hidden-print" id="firstName" placeholder="Your First Name" />
+                                    <span id="senderNotification2"></span>
+                                    <label for="lastname" class="col-xs-2 hidden-print">Last Name</label>
+                                    <input type="text" class="form-control hidden-print" id="lastname" placeholder="Your Last Name" />
+                                    <span id="senderNotification3"></span>
+                                    <label for="street" class="col-xs-2 hidden-print">Street Address</label>
+                                    <input type="text" class="form-control hidden-print" id="street" placeholder="Your Street Address " />
+                                    <span id="senderNotification4"></span>
+                                    <label for="city" class="col-xs-2 hidden-print">City</label>
+                                    <input type="text" class="form-control hidden-print" id="city" placeholder="Your City" />
+                                    <span id="senderNotification5"></span>
+                                    <label for="postalCode" class="col-xs-2 hidden-print">Postal Code</label>
+                                     <input type="text" class="form-control hidden-print" id="postalCode" placeholder="Your Postal Code" />
+                                    <span id="senderNotification6"></span>
+                                    <label for="phone" class="col-xs-2 hidden-print">Phone Number</label>
+                                     <input type="number" class="form-control hidden-print" id="phone" placeholder="Your Phone Number" />
+                                    <span id="senderNotification7"></span>
+                                    <label for="email" class="col-xs-2 hidden-print">Email</label>
+                                     <input type="email" class="form-control hidden-print" id="email" placeholder="Your Email" />
+                                    <span id="senderNotification8"></span>
+                                    <label for="country" class="col-xs-2 hidden-print">Country</label>
+                                    <input type="text" class="form-control hidden-print" id="country" placeholder="Your Country" />
                                     <button class="btn btn-success hidden-print" onclick="myFunction2() , ga('send', 'event', 'calc', 'click', 'index')" type="button">Get Cost</button>
                                      <button class="btn btn-success hidden-print" onclick="myFunction() , ga('send', 'event', 'calc', 'click', 'index')" type="button">print</button>
                                 </div>
@@ -69,15 +84,41 @@
                             <div class="form-group">
                                
                                 <div class="col-xs-10">
-                                     <label for="firstName hidden-print" class="col-xs-2">name</label>
-                                    <input type="text" class="form-control hidden-print" id="firstNameReceiver" placeholder="Your first Name" />
-                                    <input type="text" class="form-control hidden-print" id="lastnameReceiver" placeholder="Your last Name" />
-                                    <input type="text" class="form-control hidden-print" id="streetReceiver" placeholder="Your street address " />
-                                    <input type="text" class="form-control hidden-print" id="cityReceiver" placeholder="city" />
-                                     <input type="text" class="form-control hidden-print" id="postalCodeReceiver" placeholder="Postal" />
-                                     <input type="number" class="form-control hidden-print" id="phoneReceiver" placeholder="phone" />
-                                     <input type="email" class="form-control hidden-print" id="emailReceiver" placeholder="email" />
-                                     <input type="text" class="form-control hidden-print" id="countryReceiver" placeholder="country" />
+                                    <span id="receiverNotification1"></span>
+                                     <label for="firstNameReceiver" class="col-xs-2  hidden-print">First Name</label>
+                                    <input type="text" class="form-control hidden-print" id="firstNameReceiver" placeholder="Receiver First Name" />
+                                    
+                                    <span id="receiverNotification2"></span>
+                                     <label for="lastnameReceiver" class="col-xs-2  hidden-print">Last Name</label>
+                                    <input type="text" class="form-control hidden-print" id="lastnameReceiver" placeholder="Receiver Last Name" />
+                                    
+                                    <span id="receiverNotification3"></span>
+                                     <label for="streetReceiver" class="col-xs-2  hidden-print">Street Address</label>
+                                    <input type="text" class="form-control hidden-print" id="streetReceiver" placeholder="Receiver Street Address " />
+                                    
+                                    <span id="receiverNotification4"></span>
+                                     <label for="cityReceiver" class="col-xs-2  hidden-print">City</label>
+                                    <input type="text" class="form-control hidden-print" id="cityReceiver" placeholder="Receiver City" />
+                                    
+                                    <span id="receiverNotification5"></span>
+                                     <label for="postalCodeReceiver" class="col-xs-2  hidden-print">Postal Code</label>
+                                     <input type="text" class="form-control hidden-print" id="postalCodeReceiver" placeholder="Receiver Postal Code" />
+                                    
+                                    <span id="receiverNotification6"></span>
+                                     <label for="phoneReceiver" class="col-xs-2  hidden-print">Mobile Phone</label>
+                                     <input type="number" class="form-control hidden-print" id="phoneReceiver" placeholder="Receiver Mobile Phone" />
+                                    
+                                    <span id="receiverNotification9"></span>
+                                     <label for="phoneReceiver2" class="col-xs-2  hidden-print">Land Line</label>
+                                    <input type="number" class="form-control hidden-print" id="phoneReceiver2" placeholder="Receiver Land Line" />
+                                    
+                                    <span id="receiverNotification7"></span>
+                                     <label for="emailReceiver" class="col-xs-2  hidden-print">Email</label>
+                                     <input type="email" class="form-control hidden-print" id="emailReceiver" placeholder="Receiver Email" />
+                                    
+                                    <span id="receiverNotification8"></span>
+                                     <label for="countryReceiver" class="col-xs-2  hidden-print">Country</label>
+                                     <input type="text" class="form-control hidden-print" id="countryReceiver" placeholder="Receiver Country" />
                                 </div>
                             </div>
                         
