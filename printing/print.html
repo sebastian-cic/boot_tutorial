@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="jquery-barcode.js"></script>
 	<title>Parcel Shipping To Europe. Parcel Price Calculator</title>
 	<meta charset="utf-8">
 	
@@ -13,7 +15,7 @@
 	<meta content="http://www.polimark.com/img/PolimarkLogoSmall2.jpg" property="og:image">
 	<meta name="description" content="Calgary affordable parcel shipping. Get a price quote with our shipping calculator for sending your parcel to Europe by air or sea." >
 </head>
-<body onload="init()">
+<body>
 	
 	<header class="container-fluid">
 		<div id="headerImg"><img class="img-responsive center-block" id="polimark" src="img/PolimarkLogo.png"> </div>
@@ -38,6 +40,60 @@
     </div>
 </nav>			
 	</header>
+    <section id="top">
+		<div class="jumbotron">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-1 col-md-1"></div>
+					<div class="col-sm-6 col-md-7">
+						<h1>Parcel Shipping To Europe </h1>
+						<p class="more">For 30 years we have offered Calgarians an affordable alternative to ship parcels to Europe and Russia. Get a price quote below and compare our low prices with the other guys.</p>
+					</div>
+					<div class="col-sm-4 col-md-3 hidden-xs">
+						<div class="carousel slide" data-interval="false" data-ride="carousel" id="carousel-example-generic">
+							<div class="carousel-inner" role="listbox">
+								<div class="item active">
+									<img alt="Austria" class="img-responsive" src="img/218px-Flag_of_Austria.svg.png">
+									<div class="carousel-caption"></div>
+								</div>
+								<div class="item"><img alt="Belarus" class="img-responsive" src="img/220px-Flag_of_Belarus.svg.png"></div>
+								<div class="item"><img alt="Belgium" class="img-responsive" src="img/218px-Flag_of_Belgium_(civil).svg.png"></div>
+								<div class="item"><img alt="Croatia" class="img-responsive" src="img/220px-Flag_of_Croatia.svg.png"></div>
+								<div class="item"><img alt="Czech" class="img-responsive" src="img/218px-Flag_of_the_Czech_Republic.svg.png"></div>
+								<div class="item"><img alt="Denmark" class="img-responsive" src="img/192px-Flag_of_Denmark.svg.png"></div>
+								<div class="item"><img alt="Estonia" class="img-responsive" src="img/220px-Flag_of_Estonia.svg.png"></div>
+								<div class="item"><img alt="Finland" class="img-responsive" src="img/220px-Flag_of_Finland.svg.png"></div>
+								<div class="item"><img alt="France" class="img-responsive" src="img/218px-Flag_of_France.svg.png"></div>
+								<div class="item"><img alt="Germany" class="img-responsive" src="img/220px-Flag_of_Germany.svg.png"></div>
+								<div class="item"><img alt="Hungary" class="img-responsive" src="img/220px-Flag_of_Hungary.svg.png"></div>
+								<div class="item"><img alt="Ireland" class="img-responsive" src="img/220px-Flag_of_Ireland.svg.png"></div>
+								<div class="item"><img alt="Italy" class="img-responsive" src="img/218px-Flag_of_Italy.svg.png"></div>
+								<div class="item"><img alt="Kazakhstan" class="img-responsive" src="img/220px-Flag_of_Kazakhstan.svg.png"></div>
+								<div class="item"><img alt="Kyrgyzstan" class="img-responsive" src="img/220px-Flag_of_Kyrgyzstan.svg.png"></div>
+								<div class="item"><img alt="latvia" class="img-responsive" src="img/220px-Flag_of_Latvia.svg.png"></div>
+								<div class="item"><img alt="Lithuania" class="img-responsive" src="img/220px-Flag_of_Lithuania.svg.png"></div>
+								<div class="item"><img alt="Luxembourg" class="img-responsive" src="img/220px-Flag_of_Luxembourg.svg.png"></div>
+								<div class="item"><img alt=" The Netherlands" class="img-responsive" src="img/218px-Flag_of_the_Netherlands.svg.png"></div>
+								<div class="item"><img alt="Poland" class="img-responsive" src="img/220px-Flag_of_Poland.svg.png"></div>
+								<div class="item"><img alt="Portugal" class="img-responsive" src="img/218px-Flag_of_Portugal.svg.png"></div>
+								<div class="item"><img alt="Romania" class="img-responsive" src="img/218px-Flag_of_Romania.svg.png"></div>
+								<div class="item"><img alt="Russia" class="img-responsive" src="img/218px-Flag_of_Russia.svg.png"></div>
+								<div class="item"><img alt="Slovakia" class="img-responsive" src="img/218px-Flag_of_Slovakia.svg.png"></div>
+								<div class="item"><img alt="Slovenia" class="img-responsive" src="img/220px-Flag_of_Slovenia.svg.png"></div>
+								<div class="item"><img alt="Spain" class="img-responsive" src="img/218px-Flag_of_Spain.svg.png"></div>
+								<div class="item"><img alt="Sweden" class="img-responsive" src="img/220px-Flag_of_Sweden.svg.png"></div>
+								<div class="item"><img alt="Ukraine" class="img-responsive" src="img/218px-Flag_of_Ukraine.svg.png"></div>
+								<div class="item"><img alt="Ukraine" class="img-responsive" src="img/218px-Flag_of_Ukraine.svg.png"></div>
+								<div class="item"><img alt="UK U.k." class="img-responsive" src="img/220px-Flag_of_the_United_Kingdom.svg.png"></div>
+								<div class="item"><img alt="Uzbekistan" class="img-responsive" src="img/220px-Flag_of_Uzbekistan.svg.png"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-1 col-md-1"></div>
+				</div>
+			</div>
+		</div>
+	</section>
 	<section id="top">
 		<div class="container">
 			<div class="container-fluid">
@@ -73,7 +129,10 @@
                                     <span id="senderNotification8"></span>
                                     <label for="country" class="col-xs-2 hidden-print">Country</label>
                                     <input type="text" class="form-control hidden-print" id="country" placeholder="Your Country" />
-                                    <button class="btn btn-success hidden-print" onclick="myFunction2() , ga('send', 'event', 'calc', 'click', 'index')" type="button">Get Cost</button>
+                                    <button class="btn btn-success hidden-print" onclick='$("#demo").barcode(
+"1234567890128", 
+"ean13" 
+);' type="button">Get Cost</button>
                                      <button class="btn btn-success hidden-print" onclick="myFunction() , ga('send', 'event', 'calc', 'click', 'index')" type="button">print</button>
                                 </div>
                             </div><br>
@@ -167,13 +226,15 @@
 				<div class="row">
 					<div class="col-sm-1 col-md-1"></div>
 					<div class="col-sm-6 col-md-6">
-                         <img id="parcelImg" src="imagesicons/parcel.png">
+                        <div id="demo"></div>
+                        
+					</div>
+				<div class="col-sm-4 col-md-4">
+                  <img id="parcelImg" src="imagesicons/parcel.png">
+                        
                         <img id="parcelImg" src="imagesicons/ship.png">
                         <img id="parcelImg" src="imagesicons/plane.png">
                         <img id="polimarkImg" src="imagesicons/PolimarkLogoLarge.jpg">
-					</div>
-				<div class="col-sm-4 col-md-4">
-                 
                     </div>
 					<div class="col-sm-1 col-md-1"></div>
 				</div>
@@ -380,18 +441,17 @@
 
 	 ga('create', 'UA-92908511-1', 'auto');
 	 ga('send', 'pageview');
+        <link href="css/app4.css" rel="stylesheet">
+	
 
 	</script>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/app4.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> 
-	</script>
+	
+	
 	<script src="js/bootstrap.min.js">
 	</script> 
 	<script src="p.js">
 	</script> 
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="jquery-barcode.js"></script>
+	
 </body>
 </html>

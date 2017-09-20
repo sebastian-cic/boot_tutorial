@@ -1,6 +1,7 @@
 /*jslint browser: true*/
 /*global $, jQuery, alert*/
 
+
 function validateInput() {
 	"use strict";
 	if (!$('#firstName').val()) {
@@ -130,8 +131,11 @@ function myFunction() {
 }
 
 function myFunction2() {
-    "use strict";
-
+  
+ $("#demo").barcode(
+"12345688", 
+"ean8" 
+);     
     validateInput();
     $("#senderFirstName").html($('#firstName').val());
     $("#senderLastName").html($('#lastname').val());
@@ -152,12 +156,16 @@ function myFunction2() {
     $("#receivercountry").html($('#countryReceiver').val());
 }
 
+$(document).ready(function(){
 
-
-$("#demo").barcode(
-    "1234567890128", // Value barcode (dependent on the type of barcode)
-    "ean13" // type (string)
-);
-
+    var settings = {
+        
+          bgColor: "#000000",
+          color:"#666666"
+          
+        };
+    
+$("#demo").barcode("11111678", "ean8", settings );
+});
 
 
