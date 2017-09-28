@@ -1,0 +1,43 @@
+.printOutResults{
+   border: 1px solid black;
+    font-size: 20px;
+}
+#demo{
+    width: 175px;
+    height: auto;
+}
+.underLine{
+    text-decoration: underline;
+}
+#parcelImg{
+    width: 80px;
+    height: auto;
+}
+
+#parcelImg2{
+    width: 80px;
+    height: auto;
+}
+#polimarkImg{
+    height: 60px;
+    width: auto;
+}
+
+#servivceType{
+    height: 90px;
+    width: auto;
+}
+
+
+
+@media print{
+    .printOutResults{
+        width: 70%;
+        float: left;
+        margin: 5px;
+    }  
+    .printOutResults{
+       
+    }
+    
+}

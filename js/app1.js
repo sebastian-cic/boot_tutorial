@@ -391,6 +391,7 @@ var  i = 0;
 for (i = 0; i < listAllCountries.length; i += 1) {
     $("#destinationCountrySelectList").append('<option value="' + [i] + '">' + listAllCountries[i].region + "</option>'");
 	$("#destinationCountrySelectList2").append('<option value="' + [i] + '">' + listAllCountries[i].region + "</option>'");
+    $("#destinationCountrySelectList3").append('<option value="' + [i] + '">' + listAllCountries[i].region + "</option>'");
 }
 
 
