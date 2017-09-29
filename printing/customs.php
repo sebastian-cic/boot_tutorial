@@ -35,10 +35,17 @@
 	//echo "Connected successfully";
 
     if( !empty($_POST)){
- echo $_POST; 
+ echo $_POST; //item,qty,item,qty
+        
+          /* 
+       
+           
+            ,item8,qty8 */
+
 print_r($_POST);
-$sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province,s_country,s_postal, s_email, s_mobile, s_home, r_name, r_last, r_unit,r_street)
-        VALUES ('".$_POST["s_name"]."','".$_POST["s_last"]."','".$_POST["s_unit"]."','".$_POST["s_street"]."','".$_POST["s_city"]."','".$_POST["s_province"]."','".$_POST["s_country"]."','".$_POST["s_postal"]."','".$_POST["s_email"]."','".$_POST["s_mobile"]."','".$_POST["s_home"]."','".$_POST["r_name"]."','".$_POST["r_last"]."')";
+$sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province,s_country,s_postal, s_email, s_mobile, s_home, r_name, r_last, r_unit,r_street, r_city, r_province, r_country, r_postal, r_mobile, r_home, service, h, l , w,value,item1,qty1, item2,qty2,item3,qty3,item4,qty4 ,item5,qty5,item6,qty6,item7,qty7,item8,qty8,item9,qty9,item10,qty10,item11,qty11,item12,qty12,item13,qty13,item14,qty14,submitDate)
+        VALUES ('".$_POST["s_name"]."','".$_POST["s_last"]."','".$_POST["s_unit"]."','".$_POST["s_street"]."','".$_POST["s_city"]."','".$_POST["s_province"]."','".$_POST["s_country"]."','".$_POST["s_postal"]."','".$_POST["s_email"]."','".$_POST["s_mobile"]."','".$_POST["s_home"]."','".$_POST["r_name"]."','".$_POST["r_last"]."','".$_POST["r_unit"]."','".$_POST["r_street"]."','".$_POST["r_city"]."','".$_POST["r_province"]."','".$_POST["r_country"]."','".$_POST["r_postal"]."','".$_POST["r_mobile"]."','".$_POST["r_home"]."','".$_POST["service"]."','".$_POST["h"]."','".$_POST["l"]."','".$_POST["w"]."','".$_POST["value"]."','".$_POST["item1"]."','".$_POST["qty1"]. "','".$_POST["item2"]."','".$_POST["qty2"]."','".$_POST["item3"]."','".$_POST["qty3"]."','".$_POST["item4"]."','".$_POST["qty4"]."','".$_POST["item5"]."','".$_POST["qty5"]."','".$_POST["item6"]."','".$_POST["qty6"]."','".$_POST["item7"]."','".$_POST["qty7"]."','".$_POST["item8"]."','".$_POST["qty8"]."','".$_POST["item9"]."','".$_POST["qty9"]."','".$_POST["item10"]."','".$_POST["qty10"]."','".$_POST["item11"]."','".$_POST["qty11"]."','".$_POST["item12"]."','".$_POST["qty12"]."','".$_POST["item13"]."','".$_POST["qty13"]."','".$_POST["item14"]."','".$_POST["qty14"]."','".date('Y-m-d').
+"')";
         $conn->query($sql);
   }
     
@@ -51,13 +58,13 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 	    echo "Error: " . $sql . "<br>" . $conn->error;
 	}
 */
-	$sql = "SELECT id,s_name, s_last, s_unit, s_street,s_city,s_province,s_country,s_postal, s_email, s_mobile, s_home, r_name, r_last FROM customs3";
+	$sql = "SELECT id,s_name, s_last, s_unit, s_street,s_city,s_province,s_country,s_postal, s_email, s_mobile, s_home, r_name, r_last,r_unit, r_street, r_city, r_province, r_country, r_postal, r_mobile, r_home,service,h , l ,w,value ,item1,qty1, item2,qty2,item3,qty3,item4,qty4 ,item5,qty5,item6,qty6,item7,qty7,item8,qty8,item9,qty9,item10,qty10,item11,qty11,item12,qty12,item13,qty13,item14,qty14, submitDate FROM customs3";
 	$result = $conn->query($sql);
 
 	if ($result->num_rows > 0) {
 	    // output data of each row
 	    while($row = $result->fetch_assoc()) {
-	        echo "id: " . $row["id"]. " - Name: " . $row["s_name"]. " last " . $row["s_last"]. " unit: " . $row["s_unit"]." street: " . $row["s_street"]. " city " . $row["s_city"]. " prov: " . $row["s_province"]." country: " . $row["s_country"]." postal: " . $row["s_postal"]. " email " . $row["s_email"]. " mobile: " . $row["s_mobile"]." home: " . $row["s_home"]. "<br> - Name: " . $row["r_name"]. " last " . $row["r_last"]."<br>";
+	        echo "id: " . $row["id"]. " - Name: " . $row["s_name"]. " last " . $row["s_last"]. " unit: " . $row["s_unit"]." street: " . $row["s_street"]. " city " . $row["s_city"]. " prov: " . $row["s_province"]." country: " . $row["s_country"]." postal: " . $row["s_postal"]. " email " . $row["s_email"]. " mobile: " . $row["s_mobile"]." home: " . $row["s_home"]. "<br> - Name: " . $row["r_name"]. " last " . $row["r_last"]. " unit: " . $row["r_unit"]." street: " . $row["r_street"]. " city " . $row["r_city"]. " prov: " . $row["r_province"]." country: " . $row["r_country"]." postal: " . $row["r_postal"]." mobile: " . $row["r_mobile"]." home: " . $row["r_home"]." service: " . $row["service"]." height: " . $row["h"]." length: " . $row["l"]." width: " . $row["w"]." value: " . $row["value"]."<br>"." item1: " . $row["item1"]." qty1: " . $row["qty1"]." item2: " . $row["item2"]." qty2: " . $row["qty2"]." item3: " . $row["item3"]." qty3: " . $row["qty3"]. " item4: " . $row["item4"]." qty4: " . $row["qty4"]." item5: " . $row["item5"]." qty5: " . $row["qty5"]." item6: " . $row["item6"]." qty6: " . $row["qty6"]." item7: " . $row["item7"]." qty7: " . $row["qty7"]." item8: " . $row["item8"]." qty8: " . $row["qty8"]." item9: " . $row["item9"]." qty9: " . $row["qty9"]." item10: " . $row["item10"]." qty10: " . $row["qty10"]." item11: " . $row["item11"]." qty11: " . $row["qty11"]." item12: " . $row["item12"]." qty12: " . $row["qty12"]." item13: " . $row["item13"]." qty13: " . $row["qty13"]." item14: " . $row["item14"]." qty14: " . $row["qty14"].$row["submitDate"]."<br>";
 	    }
 	} else {
 	    echo "0 results";
@@ -231,10 +238,10 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 						<div class="row">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-1">
-								<label class="hidden-print" for="unitRecipient">Unit #</label> <input class="form-control hidden-print" id="unitRecipient" placeholder="N/A" type="text">
+								<label class="hidden-print" for="unitRecipient">Unit #</label> <input class="form-control hidden-print" id="unitRecipient" name="r_unit" placeholder="N/A" type="text">
 							</div>
 							<div class="col-xs-12 col-sm-7 col-md-7 col-lg-9">
-								<label class="hidden-print" for="streetAddressRecipient">Street Address</label> <input class="form-control hidden-print" id="streetAddressRecipient" placeholder="Recipient's Street Address" type="text">
+								<label class="hidden-print" for="streetAddressRecipient">Street Address</label> <input class="form-control hidden-print" id="streetAddressRecipient" name="r_street" placeholder="Recipient's Street Address" type="text">
 							</div>
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 						</div>
@@ -245,14 +252,14 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 						<div class="row">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-								<label class="hidden-print" for="cityRecipient">City</label> <input class="form-control hidden-print" id="cityRecipient" placeholder="Recipient's City" value="" type="text">
+								<label class="hidden-print" for="cityRecipient">City</label> <input class="form-control hidden-print" id="cityRecipient" name="r_city" placeholder="Recipient's City" value="" type="text">
 							</div>
 							<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-								<label class="hidden-print" for="provinceRecipient">Region</label> <input class="form-control hidden-print" id="provinceRecipient" placeholder="If Applicable" value="" type="text">
+								<label class="hidden-print" for="provinceRecipient">Region</label> <input class="form-control hidden-print" id="provinceRecipient" name="r_province" placeholder="If Applicable" value="" type="text">
 							</div>
                             <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
                                 <div class="form-group">
-                                    <label  class="hidden-print" for="destinationCountrySelectList">Country</label> <select class="form-control hidden-print" id="destinationCountrySelectList" name="country"></select></div>
+                                    <label  class="hidden-print" for="destinationCountrySelectList">Country</label> <select class="form-control hidden-print" id="destinationCountrySelectList" name="r_country"></select></div>
 							</div>
                             
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -264,7 +271,7 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							
                             <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-								<label class="hidden-print" for="postalCodeRecipient">Postal Code</label> <input class="form-control hidden-print" id="postalCodeRecipient" placeholder="Recipient's Postal Code"  type="text">
+								<label class="hidden-print" for="postalCodeRecipient">Postal Code</label> <input class="form-control hidden-print" id="postalCodeRecipient" name="r_postal" placeholder="Recipient's Postal Code"  type="text">
 							</div>
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 						</div>
@@ -275,10 +282,10 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 						<div class="row">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
-								<label class="hidden-print" for="mobilePhoneRecipient">Mobile Phone</label> <input class="form-control hidden-print" id="mobilePhoneRecipient" placeholder="Recipient's Mobile Phone #" type="text">
+								<label class="hidden-print" for="mobilePhoneRecipient">Mobile Phone</label> <input class="form-control hidden-print" id="mobilePhoneRecipient" name="r_mobile" placeholder="Recipient's Mobile Phone #" type="text">
 							</div>
                             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
-								<label class="hidden-print" for="phoneRecipient">Alternate Phone</label> <input class="form-control hidden-print" id="phoneRecipient" placeholder="Recipient's Alternate Phone #" type="text">
+								<label class="hidden-print" for="phoneRecipient">Alternate Phone</label> <input class="form-control hidden-print" id="phoneRecipient" name="r_home" placeholder="Recipient's Alternate Phone #" type="text">
 							</div>
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 						</div>
@@ -287,7 +294,7 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 			</div>
 
 	</section>
-       </form>
+       
     <section id="top">
 		<div class="jumbotron hidden-print">
 			<div class="container-fluid">
@@ -313,13 +320,13 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
                             <h3>Parcel Dimensions</h3>
 							<div class="row" id="dimensionsRow">
 								<div class="col-xs-4 col-sm-4 col-md-4 num-col">
-									<input class="form-control num" id="length" name="lenght" placeholder="cm" type="number">
+									<input class="form-control num" id="length" name="l" placeholder="cm" type="number">
 								</div>
 								<div class="col-xs-4 col-sm-4 col-md-4 num-col">
-									<input class="form-control num" id="width" name="width" placeholder="cm" type="number">
+									<input class="form-control num" id="width" name="w" placeholder="cm" type="number">
 								</div>
 								<div class="col-xs-4 col-sm-4 col-md-4 num-col">
-									<input class="form-control num" id="height" name="height" placeholder="cm" type="number">
+									<input class="form-control num" id="height" name="h" placeholder="cm" type="number">
 								</div>
 							</div>
 						</div>
@@ -338,7 +345,7 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
                         <div class="row hidden-print">
 					<div class="col-xs-4 col-sm-4 col-md-4 num-col">
                         <h3>Value</h3>
-									<input class="form-control num" id="height" name="height" placeholder="$CAD" type="number">
+									<input class="form-control num" id="value" name="value" placeholder="$CAD" type="number">
 								</div>
 					</div>
                         
@@ -349,6 +356,7 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 			</div>
 		</div>
 	</section>
+      
     	<section id="middle" class="hidden-print">
 		<div class="container-fluid hidden-print" id="mainContainer">
 		   <div class="row">
@@ -365,20 +373,20 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 						<div class="row">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" placeholder="Description" type="text">
+								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" name="item1" placeholder="Description" type="text">
 							</div>
                              <div class="col-xs-12 col-sm-1 col-md-1 ">
                                  <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="height" placeholder="#" type="number">
+									<input class="form-control num" id="height" name="qty1" placeholder="#"  type="number">
 								</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 "></div>
                                
                             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" placeholder="Description" type="text">
+								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname"  name="item2" placeholder="Description" type="text">
 							</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 ">
                                 <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="height" placeholder="#" type="number">
+									<input class="form-control num" id="height" name="qty2" placeholder="#" type="number">
 								</div>
 							
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -389,20 +397,20 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 						<div class="row hidden-print">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" placeholder="Description" type="text">
+								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" name="item3" placeholder="Description" type="text">
 							</div>
                              <div class="col-xs-12 col-sm-1 col-md-1 ">
                                  <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="height" placeholder="#" type="number">
+									<input class="form-control num" id="height" name="qty3" placeholder="#" type="number">
 								</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 "></div>
                                
                             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" placeholder="Description" type="text">
+								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname"  name="item4" placeholder="Description" type="text">
 							</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 ">
                                 <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="height" placeholder="#" type="number">
+									<input class="form-control num" id="height" name="qty4" placeholder="#" type="number">
 								</div>
 							
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -410,20 +418,20 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
             <div class="row hidden-print">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" placeholder="Description" type="text">
+								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname"  name="item5" placeholder="Description" type="text">
 							</div>
                              <div class="col-xs-12 col-sm-1 col-md-1 ">
                                  <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="height" placeholder="#" type="number">
+									<input class="form-control num" id="height" name="qty5" placeholder="#" type="number">
 								</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 "></div>
                                
                             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" placeholder="Description" type="text">
+								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname"  name="item6" placeholder="Description" type="text">
 							</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 ">
                                 <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="height" placeholder="#" type="number">
+									<input class="form-control num" id="height" name="qty6" placeholder="#" type="number">
 								</div>
 							
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -431,20 +439,20 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
             <div class="row hidden-print">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" placeholder="Description" type="text">
+								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname"  name="item7" placeholder="Description" type="text">
 							</div>
                              <div class="col-xs-12 col-sm-1 col-md-1 ">
                                  <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="height" placeholder="#" type="number">
+									<input class="form-control num" id="height" name="qty7" placeholder="#" type="number">
 								</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 "></div>
                                
                             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" placeholder="Description" type="text">
+								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" name="item8" placeholder="Description" type="text">
 							</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 ">
                                 <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="height" placeholder="#" type="number">
+									<input class="form-control num" id="height" name="qty8" placeholder="#" type="number">
 								</div>
 							
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -452,20 +460,20 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
             <div class="row hidden-print">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" placeholder="Description" type="text">
+								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" name="item*" placeholder="Description" type="text">
 							</div>
                              <div class="col-xs-12 col-sm-1 col-md-1 ">
                                  <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="height" placeholder="#" type="number">
+									<input class="form-control num" id="height" name="qty9" placeholder="#" type="number">
 								</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 "></div>
                                
                             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" placeholder="Description" type="text">
+								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" name="item10" placeholder="Description" type="text">
 							</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 ">
                                 <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="height" placeholder="#" type="number">
+									<input class="form-control num" id="height" name="qty10" placeholder="#" type="number">
 								</div>
 							
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -473,20 +481,20 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
             <div class="row hidden-print">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" placeholder="Description" type="text">
+								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" name="item11" placeholder="Description" type="text">
 							</div>
                              <div class="col-xs-12 col-sm-1 col-md-1 ">
                                  <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="height" placeholder="#" type="number">
+									<input class="form-control num" id="height" name="qty11" placeholder="#" type="number">
 								</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 "></div>
                                
                             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" placeholder="Description" type="text">
+								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname"  name="item12" placeholder="Description" type="text">
 							</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 ">
                                 <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="height" placeholder="#" type="number">
+									<input class="form-control num" id="height" name="qty12" placeholder="#" type="number">
 								</div>
 							
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -494,20 +502,20 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
             <div class="row hidden-print">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" placeholder="Description" type="text">
+								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" name="item13" placeholder="Description" type="text">
 							</div>
                              <div class="col-xs-12 col-sm-1 col-md-1 ">
                                  <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="height" placeholder="#" type="number">
+									<input class="form-control num" id="height" name="qty13" placeholder="#" type="number">
 								</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 "></div>
                                
                             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" placeholder="Description" type="text">
+								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" name="item14" placeholder="Description" type="text">
 							</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 ">
                                 <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="height" placeholder="#" type="number">
+									<input class="form-control num" id="height" name="qty14" placeholder="#" type="number">
 								</div>
 							
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -516,7 +524,7 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 			</div>
 
 	</section>
-   
+    </form>
     <section id="top" class="visible-print">
 		<div class="container ">
 			<div class="container-fluid">

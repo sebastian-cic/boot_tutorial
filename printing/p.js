@@ -152,7 +152,7 @@ if (dd < 10) {
 if (mm < 10) {
 	mm = '0' + mm;
 }
-today = mm + '/' + dd + '/' + yyyy;
+today =  yyyy + '-' + mm + '-' +dd;
 document.getElementById('dateSpan').innerHTML = today;
 
 function setSea() {
