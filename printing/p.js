@@ -3,13 +3,13 @@
 function validateInput() {
 	"use strict";
 	if (!$('#firstName').val()) {
-		$("#senderNotification1").html("cannot be blank");
+		$("#senderNotification1").html("Required");
 		$('#senderNotification1').css('color', 'red');
 	} else {
 		$("#senderNotification1").html("");
 	}
-	if (!$('#lastname').val()) {
-		$("#senderNotification2").html("cannot be blank");
+	if (!$('#lastName').val()) {
+		$("#senderNotification2").html("**");
 		$('#senderNotification2').css('color', 'red');
 	} else {
 		$("#senderNotification2").html("");
@@ -50,56 +50,74 @@ function validateInput() {
 	} else {
 		$("#senderNotification8").html("");
 	}
-	if (!$('#firstNameReceiver').val()) {
+	if (!$('#firstNameRecipient').val()) {
 		$("#receiverNotification1").html("cannot be blank");
 		$('#receiverNotification1').css('color', 'red');
 	} else {
 		$("#receiverNotification1").html("");
 	}
-	if (!$('#lastnameReceiver').val()) {
+	if (!$('#lastNameRecipient').val()) {
 		$("#receiverNotification2").html("cannot be blank");
 		$('#receiverNotification2').css('color', 'red');
 	} else {
 		$("#receiverNotification2").html("");
 	}
-	if (!$('#streetReceiver').val()) {
+	if (!$('#streetAddressRecipient').val()) {
 		$("#receiverNotification3").html("cannot be blank");
 		$('#receiverNotification3').css('color', 'red');
 	} else {
 		$("#receiverNotification3").html("");
 	}
-	if (!$('#cityReceiver').val()) {
+	if (!$('#cityRecipient').val()) {
 		$("#receiverNotification4").html("cannot be blank");
 		$('#receiverNotification4').css('color', 'red');
 	} else {
 		$("#receiverNotification4").html("");
 	}
-	if (!$('#postalCodeReceiver').val()) {
+	if (!$('#postalCodeRecipient').val()) {
 		$("#receiverNotification5").html("cannot be blank");
 		$('#receiverNotification5').css('color', 'red');
 	} else {
 		$("#receiverNotification5").html("");
 	}
-	if (!$('#phoneReceiver').val() && !$('#phoneReceiver2').val()) {
+	if (!$('#mobilePhoneRecipient').val() && !$('#phoneRecipient').val()) {
 		$("#receiverNotification6").html("Required at least 1 phone number");
 		$('#receiverNotification6').css('color', 'red');
 		$("#receiverNotification9").html("Required at least 1 phone number");
 		$('#receiverNotification9').css('color', 'red');
 	} else {
 		$("#receiverNotification6").html("");
-		$("#receiverNotification8").html("");
+		$("#receiverNotification9").html("");
 	}
-	if (!$('#emailReceiver').val()) {
-		$("#receiverNotification7").html("cannot be blank");
-		$('#receiverNotification7').css('color', 'red');
+	if (!$('#length').val()) {
+		$("#receiverNotification10").html("cannot be blank");
+		$('#receiverNotification10').css('color', 'red');
 	} else {
-		$("#receiverNotification7").html("");
+		$("#receiverNotification10").html("");
 	}
-	if (!$('#countryReceiver').val()) {
-		$("#receiverNotification8").html("cannot be blank");
-		$('#receiverNotification8').css('color', 'red');
+	if (!$('#width').val()) {
+		$("#receiverNotification11").html("cannot be blank");
+		$('#receiverNotification11').css('color', 'red');
 	} else {
-		$("#receiverNotification8").html("");
+		$("#receiverNotification11").html("");
+	}
+    if (!$('#height').val()) {
+		$("#receiverNotification12").html("cannot be blank");
+		$('#receiverNotification12').css('color', 'red');
+	} else {
+		$("#receiverNotification12").html("");
+	}
+    if (!$('#value').val()) {
+		$("#receiverNotification13").html("cannot be blank");
+		$('#receiverNotification13').css('color', 'red');
+	} else {
+		$("#receiverNotification13").html("");
+	}
+    if (!$('#item1').val()) {
+		$("#receiverNotification14").html("cannot be blank");
+		$('#receiverNotification14').css('color', 'red');
+	} else {
+		$("#receiverNotification14").html("");
 	}
 }
 
@@ -113,29 +131,58 @@ function myFunction2() {
 	$("#demo").barcode("12345688", "ean8");
 	validateInput();
 	$("#senderFirstName").html($('#firstName').val());
-	$("#senderLastName").html($('#lastname').val());
+	$("#senderLastName").html($('#lastName').val());
 	$("#senderStreet").html($('#street').val());
 	$("#senderCity").html($('#city').val());
 	$("#senderPostalCode").html($('#postalCode').val());
-	$("#senderPhone").html($('#phone').val());
+	$("#senderPhone").html($('#mobilePhone').val());
+    $("#senderPhone2").html($('#phone').val());
 	$("#senderEmail").html($('#email').val());
 	$("#senderCountry").html($('#country').val());
-	$("#receiverFirstName").html($('#firstNameReceiver').val());
-	$("#receiverlastName").html($('#lastnameReceiver').val());
-	$("#receiverStreet").html($('#streetReceiver').val());
-	$("#receiverCity").html($('#cityReceiver').val());
-	$("#receiverPostalCode").html($('#postalCodeReceiver').val());
-	$("#receiverPhone").html($('#phoneReceiver').val());
-	$("#receiverEmail").html($('#emailReceiver').val());
-	$("#receivercountry").html($('#countryReceiver').val());
+	$("#receiverFirstName").html($('#firstNameRecipient').val());
+	$("#receiverlastName").html($('#lastNameRecipient').val());
+	$("#receiverStreet").html($('#streetAddressRecipient').val());
+	$("#receiverCity").html($('#cityRecipient').val());
+	$("#receiverPostalCode").html($('#postalCodeRecipient').val());
+	$("#receiverPhone").html($('#mobilePhoneRecipient').val());
+    $("#receiverPhone2").html($('#phoneRecipient').val());
+	$("#receivercountry").html($('#destinationCountrySelectList').val());
+    $("#unit1").html($('#item1').val());
+    $("#unit2").html($('#item2').val());
+    $("#unit3").html($('#item3').val());
+    $("#unit4").html($('#item4').val());
+    $("#unit5").html($('#item5').val());
+    $("#unit6").html($('#item6').val());
+    $("#unit7").html($('#item7').val());
+    $("#unit8").html($('#item8').val());
+    $("#unit9").html($('#item9').val());
+    $("#unit10").html($('#item10').val());
+    $("#unit11").html($('#item11').val());
+    $("#unit12").html($('#item12').val());
+    $("#unit13").html($('#item13').val());
+    $("#unit14").html($('#item14').val());
+    $("#amount1").html($('#qty1').val());
+    $("#amount2").html($('#qty2').val());
+    $("#amount3").html($('#qty3').val());
+    $("#amount4").html($('#qty4').val());
+    $("#amount5").html($('#qty5').val());
+    $("#amount6").html($('#qty6').val());
+    $("#amount7").html($('#qty7').val());
+    $("#amount8").html($('#qty8').val());
+    $("#amount9").html($('#qty9').val());
+    $("#amount10").html($('#qty10').val());
+    $("#amount11").html($('#qty11').val());
+    $("#amount12").html($('#qty12').val());
+    $("#amount13").html($('#qty13').val());
+    $("#amount14").html($('#qty14').val());
 }
 $(document).ready(function () {
     "use strict";
 	var settings = {
 		bgColor: "#FFFFFF",
         color: "#000000",
-        barWidth: 5,
-        barHeight: 70,
+        barWidth: 3,
+        barHeight: 55,
         fontSize: 30
 
 	};
@@ -152,13 +199,13 @@ if (dd < 10) {
 if (mm < 10) {
 	mm = '0' + mm;
 }
-today =  yyyy + '-' + mm + '-' +dd;
+today =  yyyy + '-' + mm + '-' + dd;
 document.getElementById('dateSpan').innerHTML = today;
 
 function setSea() {
     "use strict";
 	
-     $("#serviceType").removeClass("hidden-print").addClass("visible-print");
+    $("#serviceType").removeClass("hidden-print").addClass("visible-print");
     $("#serviceType2").removeClass("visible-print").addClass("hidden-print");
     $("#serviceType3").removeClass("visible-print").addClass("hidden-print");
 }
@@ -166,7 +213,7 @@ function setSea() {
 function setAir() {
     "use strict";
 	
-     $("#serviceType").removeClass("visible-print").addClass("hidden-print");
+    $("#serviceType").removeClass("visible-print").addClass("hidden-print");
     $("#serviceType2").removeClass("hidden-print").addClass("visible-print");
     $("#serviceType3").removeClass("visible-print").addClass("hidden-print");
 }
@@ -174,7 +221,7 @@ function setAir() {
 function setEco() {
     "use strict";
 	
-     $("#serviceType").removeClass("visible-print").addClass("hidden-print");
+    $("#serviceType").removeClass("visible-print").addClass("hidden-print");
     $("#serviceType2").removeClass("visible-print").addClass("hidden-print");
     $("#serviceType3").removeClass("hidden-print").addClass("visible-print");
 }
@@ -186,12 +233,12 @@ $("input:radio[name=radioAirSea]").click(function () {
     if (value === "sea") {
 			
 		
-       setSea();
+        setSea();
             //$( "#serviceType" ).toggleClass( "hidden-print");
 
-    }else if(value === "air"){
+    } else if (value === "air") {
         setAir();
-    }else if(value === "economy"){
+    } else if (value === "economy") {
         setEco();
     }
 	

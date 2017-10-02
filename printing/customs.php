@@ -35,14 +35,28 @@
 	//echo "Connected successfully";
 
     if( !empty($_POST)){
- echo $_POST; //item,qty,item,qty
+ //echo $_POST; 
+   /*     
         
-          /* 
-       
-           
-            ,item8,qty8 */
+    $fields = array('s_name, s_last,s_street,s_city,s_province,s_country,s_postal, s_email, r_name, r_last,r_street, r_city,r_country, r_postal, r_mobile, r_home, service, h, l , w,value,item1');
 
-print_r($_POST);
+$error = false; //No errors yet
+foreach($fields AS $fieldname) { //Loop trough each field
+  if(!isset($_POST[$fieldname]) || empty($_POST[$fieldname])) {
+    echo 'Field '.$fieldname.' misses!<br />'; //Display error with field
+    $error = true; //Yup there are errors
+  }
+}
+
+if(!$error) { //Only create queries when no error occurs
+  //Create queries....
+}
+        
+        */
+        
+        
+
+//print_r($_POST);
 $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province,s_country,s_postal, s_email, s_mobile, s_home, r_name, r_last, r_unit,r_street, r_city, r_province, r_country, r_postal, r_mobile, r_home, service, h, l , w,value,item1,qty1, item2,qty2,item3,qty3,item4,qty4 ,item5,qty5,item6,qty6,item7,qty7,item8,qty8,item9,qty9,item10,qty10,item11,qty11,item12,qty12,item13,qty13,item14,qty14,submitDate)
         VALUES ('".$_POST["s_name"]."','".$_POST["s_last"]."','".$_POST["s_unit"]."','".$_POST["s_street"]."','".$_POST["s_city"]."','".$_POST["s_province"]."','".$_POST["s_country"]."','".$_POST["s_postal"]."','".$_POST["s_email"]."','".$_POST["s_mobile"]."','".$_POST["s_home"]."','".$_POST["r_name"]."','".$_POST["r_last"]."','".$_POST["r_unit"]."','".$_POST["r_street"]."','".$_POST["r_city"]."','".$_POST["r_province"]."','".$_POST["r_country"]."','".$_POST["r_postal"]."','".$_POST["r_mobile"]."','".$_POST["r_home"]."','".$_POST["service"]."','".$_POST["h"]."','".$_POST["l"]."','".$_POST["w"]."','".$_POST["value"]."','".$_POST["item1"]."','".$_POST["qty1"]. "','".$_POST["item2"]."','".$_POST["qty2"]."','".$_POST["item3"]."','".$_POST["qty3"]."','".$_POST["item4"]."','".$_POST["qty4"]."','".$_POST["item5"]."','".$_POST["qty5"]."','".$_POST["item6"]."','".$_POST["qty6"]."','".$_POST["item7"]."','".$_POST["qty7"]."','".$_POST["item8"]."','".$_POST["qty8"]."','".$_POST["item9"]."','".$_POST["qty9"]."','".$_POST["item10"]."','".$_POST["qty10"]."','".$_POST["item11"]."','".$_POST["qty11"]."','".$_POST["item12"]."','".$_POST["qty12"]."','".$_POST["item13"]."','".$_POST["qty13"]."','".$_POST["item14"]."','".$_POST["qty14"]."','".date('Y-m-d').
 "')";
@@ -64,7 +78,7 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 	if ($result->num_rows > 0) {
 	    // output data of each row
 	    while($row = $result->fetch_assoc()) {
-	        echo "id: " . $row["id"]. " - Name: " . $row["s_name"]. " last " . $row["s_last"]. " unit: " . $row["s_unit"]." street: " . $row["s_street"]. " city " . $row["s_city"]. " prov: " . $row["s_province"]." country: " . $row["s_country"]." postal: " . $row["s_postal"]. " email " . $row["s_email"]. " mobile: " . $row["s_mobile"]." home: " . $row["s_home"]. "<br> - Name: " . $row["r_name"]. " last " . $row["r_last"]. " unit: " . $row["r_unit"]." street: " . $row["r_street"]. " city " . $row["r_city"]. " prov: " . $row["r_province"]." country: " . $row["r_country"]." postal: " . $row["r_postal"]." mobile: " . $row["r_mobile"]." home: " . $row["r_home"]." service: " . $row["service"]." height: " . $row["h"]." length: " . $row["l"]." width: " . $row["w"]." value: " . $row["value"]."<br>"." item1: " . $row["item1"]." qty1: " . $row["qty1"]." item2: " . $row["item2"]." qty2: " . $row["qty2"]." item3: " . $row["item3"]." qty3: " . $row["qty3"]. " item4: " . $row["item4"]." qty4: " . $row["qty4"]." item5: " . $row["item5"]." qty5: " . $row["qty5"]." item6: " . $row["item6"]." qty6: " . $row["qty6"]." item7: " . $row["item7"]." qty7: " . $row["qty7"]." item8: " . $row["item8"]." qty8: " . $row["qty8"]." item9: " . $row["item9"]." qty9: " . $row["qty9"]." item10: " . $row["item10"]." qty10: " . $row["qty10"]." item11: " . $row["item11"]." qty11: " . $row["qty11"]." item12: " . $row["item12"]." qty12: " . $row["qty12"]." item13: " . $row["item13"]." qty13: " . $row["qty13"]." item14: " . $row["item14"]." qty14: " . $row["qty14"].$row["submitDate"]."<br>";
+	       // echo "id: " . $row["id"]. " - Name: " . $row["s_name"]. " last " . $row["s_last"]. " unit: " . $row["s_unit"]." street: " . $row["s_street"]. " city " . $row["s_city"]. " prov: " . $row["s_province"]." country: " . $row["s_country"]." postal: " . $row["s_postal"]. " email " . $row["s_email"]. " mobile: " . $row["s_mobile"]." home: " . $row["s_home"]. "<br> - Name: " . $row["r_name"]. " last " . $row["r_last"]. " unit: " . $row["r_unit"]." street: " . $row["r_street"]. " city " . $row["r_city"]. " prov: " . $row["r_province"]." country: " . $row["r_country"]." postal: " . $row["r_postal"]." mobile: " . $row["r_mobile"]." home: " . $row["r_home"]." service: " . $row["service"]." height: " . $row["h"]." length: " . $row["l"]." width: " . $row["w"]." value: " . $row["value"]."<br>"." item1: " . $row["item1"]." qty1: " . $row["qty1"]." item2: " . $row["item2"]." qty2: " . $row["qty2"]." item3: " . $row["item3"]." qty3: " . $row["qty3"]. " item4: " . $row["item4"]." qty4: " . $row["qty4"]." item5: " . $row["item5"]." qty5: " . $row["qty5"]." item6: " . $row["item6"]." qty6: " . $row["qty6"]." item7: " . $row["item7"]." qty7: " . $row["qty7"]." item8: " . $row["item8"]." qty8: " . $row["qty8"]." item9: " . $row["item9"]." qty9: " . $row["qty9"]." item10: " . $row["item10"]." qty10: " . $row["qty10"]." item11: " . $row["item11"]." qty11: " . $row["qty11"]." item12: " . $row["item12"]." qty12: " . $row["qty12"]." item13: " . $row["item13"]." qty13: " . $row["qty13"]." item14: " . $row["item14"]." qty14: " . $row["qty14"].$row["submitDate"]."<br>";
 	    }
 	} else {
 	    echo "0 results";
@@ -130,17 +144,19 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 						<div class="row">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                <span id="senderNotification1"></span>
 								<label class="hidden-print" for="firstName">First Name</label> <input class="form-control hidden-print" id="firstName" name="s_name" placeholder="Your First Name" type="text" >
 							</div>
-							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"> <span id="senderNotification2"></span>
 								<label class="hidden-print" for="lastName">Last Name</label> <input class="form-control hidden-print" id="lastName" name="s_last" placeholder="Your Last Name" type="text">
+                               
 							</div>
 							<div class="col-xs-0 col-sm-4 col-md-4 col-lg-4"></div>
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 						</div>
                     </div>
 				</div>
-                <input type="submit"  value="">
+               
 						<div class="row hidden-print">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="row">
@@ -148,8 +164,8 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-1">
 								<label class="hidden-print" for="unit">Unit #</label> <input class="form-control hidden-print text-nowrap" id="unitRecipient" name="s_unit" placeholder="N/A" type="text" >
 							</div>
-							<div class="col-xs-12 col-sm-7 col-md-7 col-lg-9">
-								<label class="hidden-print" for="streetAddress">Street Address</label> <input class="form-control hidden-print" id="streetAddress" name="s_street" placeholder="Your Street Address" type="text">
+							<div class="col-xs-12 col-sm-7 col-md-7 col-lg-9"> <span id="senderNotification3"></span>
+								<label class="hidden-print" for="streetAddress">Street Address</label> <input class="form-control hidden-print" id="street" name="s_street" placeholder="Your Street Address" type="text">
 							</div>
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 						</div>
@@ -159,14 +175,14 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="row">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
-							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
+							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-2"> <span id="senderNotification4"></span>
 								<label class="hidden-print" for="city">City</label> <input class="form-control hidden-print" id="city" name="s_city" placeholder="Your City" value="Calgary" type="text">
 							</div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
 								<label class="hidden-print" for="province">Province</label> <input class="form-control hidden-print" id="province" name="s_province" placeholder="Your Province" value="AB" type="text">
 							</div>
                            
-                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
+                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2"> <span id="senderNotification8"></span>
 								<label class="hidden-print" for="country">Country</label> <input class="form-control hidden-print" id="country" name="s_country" placeholder="Your Country" value="Canada" type="text">
 							</div>
                             
@@ -179,7 +195,7 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 						<div class="row">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							
-                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
+                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2"> <span id="senderNotification5"></span>
 								<label class="hidden-print" for="postalCode">Postal Code</label> <input class="form-control hidden-print" id="postalCode" name="s_postal" placeholder="Your Postal Code"  type="text">
 							</div>
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -190,7 +206,7 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="row">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
-							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
+							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-2"> <span id="senderNotification7"></span>
 								<label class="hidden-print" for="email">Email</label> <input class="form-control hidden-print" id="email" name="s_email" placeholder="Your Email" type="text">
 							</div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
@@ -222,10 +238,10 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="row">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
-							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"> <span id="receiverNotification1"></span>
 								<label class="hidden-print" for="firstNameRecipient">First Name</label> <input class="form-control hidden-print" id="firstNameRecipient" name="r_name" placeholder="Recipient's First Name" type="text">
 							</div>
-							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"> <span id="receiverNotification2"></span>
 								<label class="hidden-print" for="lastNameRecipient">Last Name</label> <input class="form-control hidden-print" id="lastNameRecipient" name="r_last" placeholder="Recipient's Last Name" type="text">
 							</div>
 							<div class="col-xs-0 col-sm-4 col-md-4 col-lg-4"></div>
@@ -240,7 +256,7 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-1">
 								<label class="hidden-print" for="unitRecipient">Unit #</label> <input class="form-control hidden-print" id="unitRecipient" name="r_unit" placeholder="N/A" type="text">
 							</div>
-							<div class="col-xs-12 col-sm-7 col-md-7 col-lg-9">
+							<div class="col-xs-12 col-sm-7 col-md-7 col-lg-9"> <span id="receiverNotification3"></span>
 								<label class="hidden-print" for="streetAddressRecipient">Street Address</label> <input class="form-control hidden-print" id="streetAddressRecipient" name="r_street" placeholder="Recipient's Street Address" type="text">
 							</div>
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -251,7 +267,7 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="row">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
-							<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+							<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2"> <span id="receiverNotification4"></span>
 								<label class="hidden-print" for="cityRecipient">City</label> <input class="form-control hidden-print" id="cityRecipient" name="r_city" placeholder="Recipient's City" value="" type="text">
 							</div>
 							<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
@@ -270,7 +286,7 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 						<div class="row hidden-print">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							
-                            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2"> <span id="receiverNotification5"></span>
 								<label class="hidden-print" for="postalCodeRecipient">Postal Code</label> <input class="form-control hidden-print" id="postalCodeRecipient" name="r_postal" placeholder="Recipient's Postal Code"  type="text">
 							</div>
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -281,10 +297,10 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="row">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
-							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
+							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-2"> <span id="receiverNotification6"></span>
 								<label class="hidden-print" for="mobilePhoneRecipient">Mobile Phone</label> <input class="form-control hidden-print" id="mobilePhoneRecipient" name="r_mobile" placeholder="Recipient's Mobile Phone #" type="text">
 							</div>
-                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
+                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2"> <span id="receiverNotification9"></span>
 								<label class="hidden-print" for="phoneRecipient">Alternate Phone</label> <input class="form-control hidden-print" id="phoneRecipient" name="r_home" placeholder="Recipient's Alternate Phone #" type="text">
 							</div>
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -320,12 +336,15 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
                             <h3>Parcel Dimensions</h3>
 							<div class="row" id="dimensionsRow">
 								<div class="col-xs-4 col-sm-4 col-md-4 num-col">
+                                     <span id="receiverNotification10"></span>
 									<input class="form-control num" id="length" name="l" placeholder="cm" type="number">
 								</div>
 								<div class="col-xs-4 col-sm-4 col-md-4 num-col">
+                                     <span id="receiverNotification11"></span>
 									<input class="form-control num" id="width" name="w" placeholder="cm" type="number">
 								</div>
 								<div class="col-xs-4 col-sm-4 col-md-4 num-col">
+                                     <span id="receiverNotification12"></span>
 									<input class="form-control num" id="height" name="h" placeholder="cm" type="number">
 								</div>
 							</div>
@@ -345,6 +364,7 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
                         <div class="row hidden-print">
 					<div class="col-xs-4 col-sm-4 col-md-4 num-col">
                         <h3>Value</h3>
+                         <span id="receiverNotification13"></span>
 									<input class="form-control num" id="value" name="value" placeholder="$CAD" type="number">
 								</div>
 					</div>
@@ -373,20 +393,21 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 						<div class="row">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" name="item1" placeholder="Description" type="text">
+                                 <span id="receiverNotification14"></span>
+								<label class="hidden-print" for="item1">Item</label> <input class="form-control hidden-print" id="item1" name="item1" placeholder="Description" type="text">
 							</div>
                              <div class="col-xs-12 col-sm-1 col-md-1 ">
-                                 <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="qty1" placeholder="#"  type="number">
+                                 <label class="hidden-print" for="qty1">Quantity</label>
+									<input class="form-control num" id="qty1" name="qty1" placeholder="#"  type="number">
 								</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 "></div>
                                
                             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname"  name="item2" placeholder="Description" type="text">
+								<label class="hidden-print" for="item2">Item</label> <input class="form-control hidden-print" id="item2"  name="item2" placeholder="Description" type="text">
 							</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 ">
-                                <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="qty2" placeholder="#" type="number">
+                                <label class="hidden-print" for="qty2">Quantity</label>
+									<input class="form-control num" id="qty2" name="qty2" placeholder="#" type="number">
 								</div>
 							
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -397,20 +418,20 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 						<div class="row hidden-print">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" name="item3" placeholder="Description" type="text">
+								<label class="hidden-print" for="item3">Item</label> <input class="form-control hidden-print" id="item3" name="item3" placeholder="Description" type="text">
 							</div>
                              <div class="col-xs-12 col-sm-1 col-md-1 ">
-                                 <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="qty3" placeholder="#" type="number">
+                                 <label class="hidden-print" for="qty3">Quantity</label>
+									<input class="form-control num" id="qty3" name="qty3" placeholder="#" type="number">
 								</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 "></div>
                                
                             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname"  name="item4" placeholder="Description" type="text">
+								<label class="hidden-print" for="item4">Item</label> <input class="form-control hidden-print" id="item4"  name="item4" placeholder="Description" type="text">
 							</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 ">
-                                <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="qty4" placeholder="#" type="number">
+                                <label class="hidden-print" for="qty4">Quantity</label>
+									<input class="form-control num" id="qty4" name="qty4" placeholder="#" type="number">
 								</div>
 							
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -418,20 +439,20 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
             <div class="row hidden-print">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname"  name="item5" placeholder="Description" type="text">
+								<label class="hidden-print" for="item5">Item</label> <input class="form-control hidden-print" id="item5"  name="item5" placeholder="Description" type="text">
 							</div>
                              <div class="col-xs-12 col-sm-1 col-md-1 ">
-                                 <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="qty5" placeholder="#" type="number">
+                                 <label class="hidden-print" for="qty5">Quantity</label>
+									<input class="form-control num" id="qty5" name="qty5" placeholder="#" type="number">
 								</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 "></div>
                                
                             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname"  name="item6" placeholder="Description" type="text">
+								<label class="hidden-print" for="item6">Item</label> <input class="form-control hidden-print" id="item6"  name="item6" placeholder="Description" type="text">
 							</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 ">
-                                <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="qty6" placeholder="#" type="number">
+                                <label class="hidden-print" for="qty6">Quantity</label>
+									<input class="form-control num" id="qty6" name="qty6" placeholder="#" type="number">
 								</div>
 							
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -439,20 +460,20 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
             <div class="row hidden-print">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname"  name="item7" placeholder="Description" type="text">
+								<label class="hidden-print" for="item7">Item</label> <input class="form-control hidden-print" id="item7"  name="item7" placeholder="Description" type="text">
 							</div>
                              <div class="col-xs-12 col-sm-1 col-md-1 ">
-                                 <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="qty7" placeholder="#" type="number">
+                                 <label class="hidden-print" for="qty7">Quantity</label>
+									<input class="form-control num" id="qty7" name="qty7" placeholder="#" type="number">
 								</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 "></div>
                                
                             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" name="item8" placeholder="Description" type="text">
+								<label class="hidden-print" for="item8">Item</label> <input class="form-control hidden-print" id="item8" name="item8" placeholder="Description" type="text">
 							</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 ">
-                                <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="qty8" placeholder="#" type="number">
+                                <label class="hidden-print" for="qty8">Quantity</label>
+									<input class="form-control num" id="qty8" name="qty8" placeholder="#" type="number">
 								</div>
 							
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -460,20 +481,20 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
             <div class="row hidden-print">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" name="item*" placeholder="Description" type="text">
+								<label class="hidden-print" for="item9">Item</label> <input class="form-control hidden-print" id="item9" name="item9" placeholder="Description" type="text">
 							</div>
                              <div class="col-xs-12 col-sm-1 col-md-1 ">
-                                 <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="qty9" placeholder="#" type="number">
+                                 <label class="hidden-print" for="qty9">Quantity</label>
+									<input class="form-control num" id="qty9" name="qty9" placeholder="#" type="number">
 								</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 "></div>
                                
                             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" name="item10" placeholder="Description" type="text">
+								<label class="hidden-print" for="item10">Item</label> <input class="form-control hidden-print" id="item10" name="item10" placeholder="Description" type="text">
 							</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 ">
-                                <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="qty10" placeholder="#" type="number">
+                                <label class="hidden-print" for="qty10">Quantity</label>
+									<input class="form-control num" id="qty10" name="qty10" placeholder="#" type="number">
 								</div>
 							
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -481,20 +502,20 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
             <div class="row hidden-print">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" name="item11" placeholder="Description" type="text">
+								<label class="hidden-print" for="item11">Item</label> <input class="form-control hidden-print" id="item11" name="item11" placeholder="Description" type="text">
 							</div>
                              <div class="col-xs-12 col-sm-1 col-md-1 ">
-                                 <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="qty11" placeholder="#" type="number">
+                                 <label class="hidden-print" for="qty11">Quantity</label>
+									<input class="form-control num" id="qty11" name="qty11" placeholder="#" type="number">
 								</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 "></div>
                                
                             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname"  name="item12" placeholder="Description" type="text">
+								<label class="hidden-print" for="item12">Item</label> <input class="form-control hidden-print" id="item12"  name="item12" placeholder="Description" type="text">
 							</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 ">
-                                <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="qty12" placeholder="#" type="number">
+                                <label class="hidden-print" for="qty12">Quantity</label>
+									<input class="form-control num" id="qty12" name="qty12" placeholder="#" type="number">
 								</div>
 							
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
@@ -502,136 +523,186 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
             <div class="row hidden-print">
 							<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 							<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" name="item13" placeholder="Description" type="text">
+								<label class="hidden-print" for="item13">Item</label> <input class="form-control hidden-print" id="item13" name="item13" placeholder="Description" type="text">
 							</div>
                              <div class="col-xs-12 col-sm-1 col-md-1 ">
-                                 <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="qty13" placeholder="#" type="number">
+                                 <label class="hidden-print" for="qty13">Quantity</label>
+									<input class="form-control num" id="qty13" name="qty13" placeholder="#" type="number">
 								</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 "></div>
                                
                             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-								<label class="hidden-print" for="lastname">Item</label> <input class="form-control hidden-print" id="lastname" name="item14" placeholder="Description" type="text">
+								<label class="hidden-print" for="item14">Item</label> <input class="form-control hidden-print" id="item14" name="item14" placeholder="Description" type="text">
 							</div>
                             <div class="col-xs-12 col-sm-1 col-md-1 ">
-                                <label class="hidden-print" for="height">Quantity</label>
-									<input class="form-control num" id="height" name="qty14" placeholder="#" type="number">
+                                <label class="hidden-print" for="qty14">Quantity</label>
+									<input class="form-control num" id="qty14" name="qty14" placeholder="#" type="number">
 								</div>
 							
                             <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 						</div>
             
 			</div>
-
-	</section>
+            </section>
+       <button type="button" onclick="myFunction2()"  >Click Me!</button>
+        <input type="submit" value="submit">
     </form>
-    <section id="top" class="visible-print">
-		<div class="container ">
-			<div class="container-fluid">
-				<div class="row">
-                    <span> </span>
-					<div class="col-sm-1 col-md-1"></div>
-					<div class="col-sm-6 col-md-6">
-                         <div id="demo" class="visible-print">demo div</div>
-                        <div>AGEENT CODE ___  ___  ___
-                        <div id="serviceType" class="visible-print">
-                        
-                            <img id="parcelImg" src="img/ship.png"></div>
-                       
-                        <span id="serviceType2" class="serviceImg hidden-print">
-                        
-                       
-                        <img  id="parcelImg" src="img/plane.png">
-                    
-                        </span>
-                         <span id="serviceType3" class="serviceImg hidden-print">
-                        
-                       
-                        <img  id="parcelImg" src="img/parcel.png">
-                    
-                        </span>
-                        
-                            Date:<span id="dateSpan"></span></div>
-					</div>
-				<div class="col-sm-4 col-md-4">
-                 
-                    </div>
-					<div class="col-sm-1 col-md-1"></div>
-				</div>
-			</div>
-		</div>
-	</section>
+<div class="blended_grid">
+           <div class="headerBarcode">
+       <div id="demo"></div>
+</div>
+<div class="bar">
+    BARCODE<br>
    
     
-    <section id="top" class="visible-print">
-		<div class="container ">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-sm-1 col-md-1"></div>
-					<div class="col-sm-6 col-md-6">
-                       
-
-
-						 <div class="printOutResults">NAME:<span class="underLine" id="senderFirstName"></span> lastNAME:<span class="underLine" id="senderLastName"></span><br>
+</div>
+<div class="logo">
+    LOGO
+</div>
+<div class="addressSpan">
+    asfdadsf
+</div>
+<div class="address2"> Polimark<br>538 Cleveland Cres. S.E.<br>
+				Calgary Alberta<br>
+				T2G 4A9<br>
+				Canada
+</div>
+<div class="agent">
+    <span id="agentCode">AGENT CODE: </span>
+</div>
+<div class="shippingtype">
+    <span id="serviceType">SERVICE TYPE</span>
+</div>
+<div class="dateSub">
+    <span id="shipDate">DATE:</span>
+</div>
+<div class="declaredVal">
+    <span id="shipValue">DECLARED VALUE</span>
+</div>
+<div class="addressInput">
+    NAME:<span class="underLine" id="senderFirstName"></span> lastNAME:<span class="underLine" id="senderLastName"></span><br>
                         Street:<span class="underLine" id="senderStreet"></span><br>
                             city:<span class="underLine" id="senderCity"></span><br>
                             country:<span class="underLine" id="senderCountry"></span><br>
                             postal:<span class="underLine" id="senderPostalCode"></span><br>
-                            phone:<span class="underLine" id="senderPhone"></span><br>
-                            email:<span class="underLine" id="senderEmail"></span><br>
-                        </div>
-                          <div class="printOutResults" >Reciever NAME:<span class="underLine" id="receiverFirstName"></span> RecieverlastNAME:<span id="receiverlastName"></span><br>
-                       Reciever Street:<span class="underLine" id="receiverStreet"></span><br>
-                         Reciever   city:<span class="underLine" id="receiverCity"></span><br>
-                          Reciever  country:<span class="underLine" id="receiverPostalCode"></span><br>
-                          Reciever  postal:<span class="underLine" id="receiverPhone"></span><br>
-                          Reciever  phone:<span class="underLine" id="receiverEmail"></span><br>
-                         Reciever   email:<span class="underLine" id="receivercountry"></span><br>
-                        </div>
-                         
-                     
-					</div>
-				<div class="col-sm-4 col-md-4">
-                    <div class="printOutResults2" >Customs declaration<br>
-                         <span class="underLine" >description</span> <br>
-                         1:<span class="underLine"></span><br>
-                          2:<span class="underLine" ></span> <br>
-                         3:<span class="underLine"></span><br>
-                          4:<span class="underLine" ></span> <br>
-                         5:<span class="underLine"></span><br>
-                          6:<span class="underLine" ></span> <br>
-                         7:<span class="underLine"></span><br>
-                          8:<span class="underLine" ></span> <br>
-                         9:<span class="underLine"></span><br>
-                         10:<span class="underLine" ></span> <br>
-                         11:<span class="underLine"></span><br>
-                         12:<span class="underLine" ></span> <br>
-                         13:<span class="underLine"></span><br>
-                         14:<span class="underLine" ></span> <br>
-                         15:<span class="underLine"></span><br>
-                    </div>
-                    </div>
-					<div class="col-sm-1 col-md-1"></div>
-				</div>
-			</div>
-		</div>
-	</section>
-    <section id="top" class="visible-print">
-		<div class="container ">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-sm-1 col-md-1"></div>
-					<div class="col-sm-6 col-md-6">
-                        <div>WEIGHT: <span id="weightTag"></span> Dimensions:<span id="lenghtTag"></span>/<span id="widthTag"></span>/<span id="heightTag"></span></div>
-					</div>
-				<div class="col-sm-4 col-md-4">
-                 
-                    </div>
-					<div class="col-sm-1 col-md-1"></div>
-				</div>
-			</div>
-		</div>
-	</section>
+                            phone1:<span class="underLine" id="senderPhone"></span><br>
+                            phone2:<span class="underLine" id="senderPhone2"></span><br>
+                            email:<span class="underLine" id="senderEmail"></span><br><br>
+    
+      NAME:<span class="underLine" id="receiverFirstName"></span> lastNAME:<span class="underLine" id="receiverlastName"></span><br>
+                        Street:<span class="underLine" id="receiverStreet"></span><br>
+                            city:<span class="underLine" id="receiverCity"></span><br>
+                            country:<span class="underLine" id="receivercountry"></span><br>
+                            postal:<span class="underLine" id="receiverPostalCode"></span><br>
+                            phone1:<span class="underLine" id="receiverPhone"></span><br>
+                            phone2:<span class="underLine" id="receiverPhone2"></span><br>
+</div>
+<div class="itemList">
+    
+    <span class="underLine" >description</span><span id="quantity">Quantity</span> <br>
+    <table style="width:100%">
+  <tr>
+    <th class="numList"></th>
+    <th class="itemsList">Item Description</th> 
+    <th class="qtyList">#PCS</th>
+  </tr>
+  <tr>
+    <td>1:</td>
+    <td id="unit1"></td> 
+    <td id="amount1"></td>
+  </tr>
+  <tr>
+    <td>2:</td>
+    <td id="unit2"></td> 
+    <td id="amount2"></td>
+  </tr>
+        <tr>
+    <td>3:</td>
+    <td id="unit3"></td> 
+    <td id="amount3"></td>
+  </tr>
+  <tr>
+    <td>4:</td>
+    <td id="unit4"></td> 
+    <td id="amount4"></td>
+  </tr>
+        <tr>
+    <td>5:</td>
+    <td id="unit5"></td> 
+    <td id="amount5"></td>
+  </tr>
+  <tr>
+    <td>6:</td>
+    <td id="unit6"></td> 
+    <td id="amount6"></td>
+  </tr>
+        <tr>
+    <td>7:</td>
+    <td id="unit7"></td> 
+    <td id="amount7"></td>
+  </tr>
+  <tr>
+    <td>8:</td>
+    <td id="unit8"></td> 
+    <td id="amount8"></td>
+  </tr>
+        <tr>
+    <td>9:</td>
+    <td id="unit9"></td> 
+    <td id="amount9"></td>
+  </tr>
+  <tr>
+    <td>10:</td>
+    <td id="unit10"></td> 
+    <td id="amount"10></td>
+  </tr>
+        <tr>
+    <td>11:</td>
+    <td id="unit11"></td> 
+    <td id="amount11"> </td>
+  </tr>
+  <tr>
+    <td>12:</td>
+    <td id="unit12"></td> 
+    <td id="amount12"></td>
+  </tr>
+        <tr>
+    <td>13:</td>
+    <td id="unit13"></td> 
+    <td id="amount13"></td>
+  </tr>
+  <tr>
+    <td>14:</td>
+    <td id="unit14"></td> 
+    <td id="amount4"></td>
+  </tr>
+</table>
+    <!--
+    1:<div class="underLine sizeOfDescription"  id="unit1"></div><span id="amount1"></span><br>
+                          2:<div class="underLine sizeOfDescription" id="unit2"></div> <span id="amount2"></span><br>
+                         3:<span class="underLine sizeOfDescription" id="unit3"></span><span id="amount3"></span><br>
+                          4:<span class="underLine sizeOfDescription" id="unit4"></span> <span id="amount4"></span><br>
+                         5:<span class="underLine sizeOfDescription" id="unit5"></span><span id="amount5"></span><br>
+                          6:<span class="underLine sizeOfDescription" id="unit6" ></span><span id="amount6"></span> <br>
+                         7:<span class="underLine sizeOfDescription" id="unit7"></span><span id="amount7"></span><br>
+                          8:<span class="underLine sizeOfDescription"  id="unit8"></span><span id="amount8"></span> <br>
+                         9:<span class="underLine sizeOfDescription" id="unit9"></span><span id="amount9"></span><br>
+                         10:<span class="underLine sizeOfDescription" id="unit10"></span><span id="amount10"></span> <br>
+                         11:<span class="underLine sizeOfDescription" id="unit11"></span><span id="amount11"></span><br>
+                         12:<span class="underLine sizeOfDescription"  id="unit12"></span><span id="amount12"></span> <br>
+      13:<span class="underLine sizeOfDescription" id="unit13"></span><span id="amount13"></span><br>
+    14:<span class="underLine sizeOfDescription" id="unit14"></span> <span id="amount14"></span><br>-->
+                        
+</div>
+<div class="legalInformation">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</div>
+</div>
+	
+    
     <footer class="container-fluid hidden-print">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-4">
@@ -724,6 +795,7 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 }(document, 'script', 'facebook-jssdk'));</script>
 	<link href="css/app4.css" rel="stylesheet">
     <link href="css/print.css" rel="stylesheet">
+    <link href="css/printForm.css" rel="stylesheet">
      <script src="js/app1.js">
 	</script>
      <script src="js/p.js">
