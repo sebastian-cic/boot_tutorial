@@ -26,6 +26,15 @@ height : 100px;
     
     
 }
+#logoImg{
+    max-height: 35px;
+    width: auto;
+}
+#leftPic{
+     max-height: 70px;
+    padding-left: 100px;
+    width: auto;
+}
 .addressSpan{
 clear : none;
 float : left;
@@ -132,17 +141,33 @@ height : 100px;
     padding: none;
 }
 
-table {
+.tableItems {
   width: 100%;
   border: 1px solid #000;
 }
+
 th.numList{
-  width: 10%
+  width: 5% ;
 }
 th.itemsList {
-  width: 70%; 
+  width: 75%; 
 }
 
 th.qtyList {
   width: 20%; 
+}
+
+.addressTable{
+      width: 100%;
+    border: 1px solid black;
+}
+
+.senderTH2{
+    width: 80%;
+    border: 1px solid black;
+}
+
+.senderTH{
+    width: 20%;
+    border: 1px solid black;
 }

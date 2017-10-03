@@ -128,25 +128,48 @@ function myFunction() {
 
 function myFunction2() {
     "use strict";
+    var name = "", address1 = "", phone1 = "", name2 = "", address2 = "", phone2 = "", service = "", agent = "169";
+    
+    address1 = $('#city').val() + " " + $('#province').val() + " " + $('#postalCode').val();
+    phone1 = $('#mobilePhone').val() + " " + $('#phone').val();
+    name = $('#firstName').val();
+    name = name + " " + $('#lastName').val();
+    name2 = $('#firstNameRecipient').val() + " " + $('#lastNameRecipient').val();
+    address2 = $('#cityRecipient').val() + " " + $('#provinceRecipient').val() + " " + $('#postalCodeRecipient').val();
+    phone2 = $('#mobilePhoneRecipient').val() + " " + $('#phoneRecipient').val();
+    service = $('input[name=radioAirSea]:checked').val();
+    
+    if (service === "economy") {
+        agent = "168";
+        service = service + " Sea";
+    }
+    
+    console.log(service);
 	$("#demo").barcode("12345688", "ean8");
 	validateInput();
-	$("#senderFirstName").html($('#firstName').val());
-	$("#senderLastName").html($('#lastName').val());
+	$("#senderFirstName").html(name);
+	//$("#senderFirstName").html($('#lastName').val());
 	$("#senderStreet").html($('#street').val());
-	$("#senderCity").html($('#city').val());
-	$("#senderPostalCode").html($('#postalCode').val());
-	$("#senderPhone").html($('#mobilePhone').val());
-    $("#senderPhone2").html($('#phone').val());
+	$("#senderCity").html(address1);
+	//$("#senderPostalCode").html();
+	$("#senderPhone").html(phone1);
+   // $("#senderPhone2").html($('#').val());
 	$("#senderEmail").html($('#email').val());
 	$("#senderCountry").html($('#country').val());
-	$("#receiverFirstName").html($('#firstNameRecipient').val());
-	$("#receiverlastName").html($('#lastNameRecipient').val());
+	$("#receiverFirstName").html(name2);
+	//$("#receiverlastName").html();
 	$("#receiverStreet").html($('#streetAddressRecipient').val());
-	$("#receiverCity").html($('#cityRecipient').val());
-	$("#receiverPostalCode").html($('#postalCodeRecipient').val());
-	$("#receiverPhone").html($('#mobilePhoneRecipient').val());
-    $("#receiverPhone2").html($('#phoneRecipient').val());
-	$("#receivercountry").html($('#destinationCountrySelectList').val());
+	$("#receiverCity").html(address2);
+	//$("#receiverPostalCode").html($('#postalCodeRecipient').val());
+	$("#receiverPhone").html(phone2);
+   // $("#receiverPhone2").html($('#phoneRecipient').val());
+    
+	$("#receivercountry").html($("#destinationCountrySelectList option:selected").text());
+    $("#serviceType2").html(service.toUpperCase());
+    $('#agentCode2').html(agent);
+    $('#shipValue2').html("$" + $('#valueCustoms').val());
+    
+    
     $("#unit1").html($('#item1').val());
     $("#unit2").html($('#item2').val());
     $("#unit3").html($('#item3').val());
@@ -205,24 +228,24 @@ document.getElementById('dateSpan').innerHTML = today;
 function setSea() {
     "use strict";
 	
-    $("#serviceType").removeClass("hidden-print").addClass("visible-print");
-    $("#serviceType2").removeClass("visible-print").addClass("hidden-print");
+    //$("#serviceType").removeClass("hidden-print").addClass("visible-print");
+    //$("#serviceType2").removeClass("visible-print").addClass("hidden-print");
     $("#serviceType3").removeClass("visible-print").addClass("hidden-print");
 }
 
 function setAir() {
     "use strict";
 	
-    $("#serviceType").removeClass("visible-print").addClass("hidden-print");
-    $("#serviceType2").removeClass("hidden-print").addClass("visible-print");
+    //$("#serviceType").removeClass("visible-print").addClass("hidden-print");
+    //$("#serviceType2").removeClass("hidden-print").addClass("visible-print");
     $("#serviceType3").removeClass("visible-print").addClass("hidden-print");
 }
 
 function setEco() {
     "use strict";
 	
-    $("#serviceType").removeClass("visible-print").addClass("hidden-print");
-    $("#serviceType2").removeClass("visible-print").addClass("hidden-print");
+    //$("#serviceType").removeClass("visible-print").addClass("hidden-print");
+    //$("#serviceType2").removeClass("visible-print").addClass("hidden-print");
     $("#serviceType3").removeClass("hidden-print").addClass("visible-print");
 }
 

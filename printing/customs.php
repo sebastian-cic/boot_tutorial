@@ -56,7 +56,7 @@ if(!$error) { //Only create queries when no error occurs
         
         
 
-//print_r($_POST);
+print_r($_POST);
 $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province,s_country,s_postal, s_email, s_mobile, s_home, r_name, r_last, r_unit,r_street, r_city, r_province, r_country, r_postal, r_mobile, r_home, service, h, l , w,value,item1,qty1, item2,qty2,item3,qty3,item4,qty4 ,item5,qty5,item6,qty6,item7,qty7,item8,qty8,item9,qty9,item10,qty10,item11,qty11,item12,qty12,item13,qty13,item14,qty14,submitDate)
         VALUES ('".$_POST["s_name"]."','".$_POST["s_last"]."','".$_POST["s_unit"]."','".$_POST["s_street"]."','".$_POST["s_city"]."','".$_POST["s_province"]."','".$_POST["s_country"]."','".$_POST["s_postal"]."','".$_POST["s_email"]."','".$_POST["s_mobile"]."','".$_POST["s_home"]."','".$_POST["r_name"]."','".$_POST["r_last"]."','".$_POST["r_unit"]."','".$_POST["r_street"]."','".$_POST["r_city"]."','".$_POST["r_province"]."','".$_POST["r_country"]."','".$_POST["r_postal"]."','".$_POST["r_mobile"]."','".$_POST["r_home"]."','".$_POST["service"]."','".$_POST["h"]."','".$_POST["l"]."','".$_POST["w"]."','".$_POST["value"]."','".$_POST["item1"]."','".$_POST["qty1"]. "','".$_POST["item2"]."','".$_POST["qty2"]."','".$_POST["item3"]."','".$_POST["qty3"]."','".$_POST["item4"]."','".$_POST["qty4"]."','".$_POST["item5"]."','".$_POST["qty5"]."','".$_POST["item6"]."','".$_POST["qty6"]."','".$_POST["item7"]."','".$_POST["qty7"]."','".$_POST["item8"]."','".$_POST["qty8"]."','".$_POST["item9"]."','".$_POST["qty9"]."','".$_POST["item10"]."','".$_POST["qty10"]."','".$_POST["item11"]."','".$_POST["qty11"]."','".$_POST["item12"]."','".$_POST["qty12"]."','".$_POST["item13"]."','".$_POST["qty13"]."','".$_POST["item14"]."','".$_POST["qty14"]."','".date('Y-m-d').
 "')";
@@ -126,7 +126,7 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 		
 	</section>
     
-   <form method="POST" action="">
+   <form method="POST" action="" id="mainForm">
 	<section id="top"  class="hidden-print">
      
 		<div class="jumbotron hidden-print">
@@ -365,7 +365,7 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
 					<div class="col-xs-4 col-sm-4 col-md-4 num-col">
                         <h3>Value</h3>
                          <span id="receiverNotification13"></span>
-									<input class="form-control num" id="value" name="value" placeholder="$CAD" type="number">
+									<input class="form-control num" id="valueCustoms" name="value" placeholder="$CAD" type="number">
 								</div>
 					</div>
                         
@@ -552,55 +552,133 @@ $sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province
        <div id="demo"></div>
 </div>
 <div class="bar">
-    BARCODE<br>
+    <img src="img/parcel.png" id="leftPic"><br>
    
     
 </div>
 <div class="logo">
-    LOGO
+    <img src="img/PolimarkLogoWhite.jpg" id="logoImg">
 </div>
 <div class="addressSpan">
-    asfdadsf
+    &nbsp;&nbsp;&nbsp; WWW.POLIMARK.COM<br>
+     &nbsp;&nbsp;&nbsp; 1-888-888-1186<br>
+     &nbsp;&nbsp;&nbsp; 403-243-7333
+    
 </div>
-<div class="address2"> Polimark<br>538 Cleveland Cres. S.E.<br>
+<div class="address2">538 Cleveland Cres. S.E.<br>
 				Calgary Alberta<br>
-				T2G 4A9<br>
-				Canada
 </div>
 <div class="agent">
-    <span id="agentCode">AGENT CODE: </span>
+    <span id="agentCode">AGENT CODE:<br> </span>
+    <span id="agentCode2"></span>
 </div>
 <div class="shippingtype">
-    <span id="serviceType">SERVICE TYPE</span>
+    <span id="serviceType">SERVICE TYPE:<br></span>
+    <span id="serviceType2"> </span>
 </div>
 <div class="dateSub">
-    <span id="shipDate">DATE:</span>
+    <span id="shipDate">DATE:<br></span>
+    <span id="dateSpan"></span>
 </div>
 <div class="declaredVal">
-    <span id="shipValue">DECLARED VALUE</span>
+    <span id="shipValue">DECLARED VALUE:<br></span>
+     <span id="shipValue2"></span>
 </div>
 <div class="addressInput">
-    NAME:<span class="underLine" id="senderFirstName"></span> lastNAME:<span class="underLine" id="senderLastName"></span><br>
-                        Street:<span class="underLine" id="senderStreet"></span><br>
-                            city:<span class="underLine" id="senderCity"></span><br>
-                            country:<span class="underLine" id="senderCountry"></span><br>
-                            postal:<span class="underLine" id="senderPostalCode"></span><br>
-                            phone1:<span class="underLine" id="senderPhone"></span><br>
-                            phone2:<span class="underLine" id="senderPhone2"></span><br>
-                            email:<span class="underLine" id="senderEmail"></span><br><br>
+    <table class="addressTable" >
+	<tbody>
+        <tr>
+            <th class="senderTH">SENDER</th>
+            <th class="senderTH2"></th>
+        </tr>    
+		<tr>
+			<td>NAME: </td>
+			<td class="underLine" id="senderFirstName"> </td>
+		</tr> 
+		<tr>
+            <td>UNIT#:</td>
+			<td> </td>
+			
+		</tr>
+		<tr>
+			<td>ADDRESS:  </td>
+			<td class="underLine" id="senderStreet"> </td>
+		</tr>
+		<tr>
+			<td></td>
+			<td class="underLine" id="senderCity"> </td>
+		</tr>
+		<tr>
+			<td> </td>
+			<td class="underLine" id="senderCountry"> </td>
+		</tr>
+		<tr>
+			<td>PHONE: </td>
+			<td class="underLine" id="senderPhone"> </td>
+		</tr>
+		<tr>
+			<td>EMAIL: </td>
+			<td class="underLine" id="senderEmail"> </td>
+		</tr>
+		
+	</tbody>
+</table>
     
-      NAME:<span class="underLine" id="receiverFirstName"></span> lastNAME:<span class="underLine" id="receiverlastName"></span><br>
-                        Street:<span class="underLine" id="receiverStreet"></span><br>
-                            city:<span class="underLine" id="receiverCity"></span><br>
-                            country:<span class="underLine" id="receivercountry"></span><br>
-                            postal:<span class="underLine" id="receiverPostalCode"></span><br>
-                            phone1:<span class="underLine" id="receiverPhone"></span><br>
-                            phone2:<span class="underLine" id="receiverPhone2"></span><br>
+    <table class="addressTable" >
+	<tbody>
+        <tr>
+            <th class="senderTH">RECEIVER</th>
+            <th class="senderTH2"></th>
+        </tr>    
+		<tr>
+			<td>NAME: </td>
+			<td class="underLine" id="receiverFirstName"> </td>
+		</tr>
+        <tr>
+			<td>UNIT: </td>
+			<td> </td>
+		</tr>
+		<tr>
+			<td>STREET: </td>
+			<td class="underLine" id="receiverStreet"> </td>
+		</tr>
+        <tr>
+			<td > </td>
+			<td class="underLine" id="receiverCity"> </td>
+		</tr>
+		
+        <tr>
+			<td></td>
+			<td class="underLine" id="receivercountry"> </td>
+		</tr>
+         <tr>
+			<td>PHONE: </td>
+			<td class="underLine" id="receiverPhone"> </td>
+		</tr>
+		
+		
+	</tbody>
+</table>    
+  <!--  NAME:<span class="underLine" id="senderFirstName"></span> lastNAME:<span class="underLine" id="senderLastName"></span><br>
+                        Street:<span class="underLine" id="senderStreet"></span><br>
+                            city:<span ></span><br>
+                            country:<span ></span><br>
+                            postal:<span ></span><br>
+                            phone1:<span ></span><br>
+                            phone2:<span ></span><br>
+                            email:<span ></span><br><br>
+    
+      NAME:<span ></span> lastNAME:<span class="underLine" id="receiverlastName"></span><br>
+                        Street:<span ></span><br>
+                            city:<span ></span><br>
+                            country:<span ></span><br>
+                            postal:<span ></span><br>
+                            phone1:<span ></span><br>
+                            phone2:<span ></span><br>-->
 </div>
 <div class="itemList">
     
-    <span class="underLine" >description</span><span id="quantity">Quantity</span> <br>
-    <table style="width:100%">
+    <table class="tableItems" style="width:100%">
   <tr>
     <th class="numList"></th>
     <th class="itemsList">Item Description</th> 
