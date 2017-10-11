@@ -1040,13 +1040,65 @@ function chargeableWeightCustoms(length, width, height, weight) {
 		return " ";
 	}
 }
+function capitalizeFirstLetter(string) {
+    "use strict";
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
+function minsTypes() {
+    "use strict";
+    var  packageType = $('input[name=radioAirSea]:checked').val(), destination = $("#destinationCountrySelectList4").find("option:selected").text(), countryItem, weight, charW;
+    weight = $("#weightCustoms").val();
+    weight = (Math.ceil(weight * 2) / 2).toFixed(1);
+    
+    if (destination === "UKRAINE" || destination === "BELARUS" || destination === "KAZAKHSTAN" || destination === "UZBEKISTAN" || destination === "KYRGYZSTAN" || destination === "RUSSIA") {
+        if (weight < 5) {
+            weight = 5;
+            charW = chargeableWeightCustoms($('#length').val(), $('#width').val(), $('#height').val(), weight);
+            if (charW === " ") {
+                charW = 5;
+            }
+    
+        } else {
+            charW = chargeableWeightCustoms($('#length').val(), $('#width').val(), $('#height').val(), weight);
+        }
+    } else {
+        if (packageType === "air") {
+            if (weight < 1) {
+                weight = 1;
+                charW = chargeableWeightCustoms($('#length').val(), $('#width').val(), $('#height').val(), weight);
+                if (charW === " ") {
+                    charW = 1;
+                }
+            } else {
+                charW = chargeableWeightCustoms($('#length').val(), $('#width').val(), $('#height').val(), weight);
+            }
+    
+                
+        
+        } else {
+            if (weight < 4) {
+                weight = 4;
+                charW = chargeableWeightCustoms($('#length').val(), $('#width').val(), $('#height').val(), weight);
+                if (charW === " ") {
+                    charW = 4;
+                }
+            } else {
+                charW = chargeableWeightCustoms($('#length').val(), $('#width').val(), $('#height').val(), weight);
+            }
+    
+                
+        }
+    }
+
+    return charW;
+}
 function myFunction2() {
     "use strict";
     var name = "", address1 = "", phone1 = "", name2 = "", address2 = "", phone2 = "", service = "", agent = "169", weight = 0, charW;
     weight = $("#weightCustoms").val();
     weight = (Math.ceil(weight * 2) / 2).toFixed(1);
-    charW = chargeableWeightCustoms($('#length').val(), $('#width').val(), $('#height').val(), weight);
+    charW = minsTypes();
     address1 = $('#city').val() + " " + $('#province').val() + " " + $('#postalCode').val();
     phone1 = $('#mobilePhone').val() + " " + $('#phone').val();
     name = $('#firstName').val();
@@ -1073,8 +1125,8 @@ function myFunction2() {
 	$("#receiverStreet").html($('#streetAddressRecipient').val());
 	$("#receiverCity").html(address2);
 	$("#receiverPhone").html(phone2);
-    $("#countryRed").val($("#destinationCountrySelectList option:selected").text());
-	$("#receivercountry").html($("#destinationCountrySelectList option:selected").text());
+    $("#countryRed").val($("#destinationCountrySelectList4 option:selected").text());
+	$("#receivercountry").html($("#destinationCountrySelectList4 option:selected").text());
     $("#serviceType2").html(service.toUpperCase());
     $('#agentCode2').html(agent);
     $('#shipValue2').html("$" + $('#valueCustoms').val());
@@ -1146,7 +1198,7 @@ document.getElementById('dateSpan').innerHTML = today;
 
 function loadEcoButton() {
     "use strict";
-    if ($("#receivercountry").html($("#destinationCountrySelectList option:selected").text()) === "POLAND") {
+    if ($("#receivercountry").html($("#destinationCountrySelectList4 option:selected").text()) === "POLAND") {
       
 	    $("#eco").show();
         $("#ecoRad").show();
@@ -1186,3 +1238,12 @@ $("#destinationCountrySelectList4").change(function () {
         hideEcoRadio();
     }
 });
+
+function myFunction3() {
+    "use strict";
+    var form;
+    if (validateInput()) {
+        alert();
+      document.getElementById('theForm').submit()
+    }
+}
