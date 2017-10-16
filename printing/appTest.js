@@ -35,7 +35,7 @@ econo.push(new PopRegion("Poland", 3.30, "economy", 18.00, 4, 70, "12-16 weeks",
 
 
 // polimex air parcels
-polimexAir.push(new PopRegion("Austria", 11.00, "air", 25.00, 4, 30, "5-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Austria", 11.00, "air", 25.00, 1, 30, "5-14 business days", "Polimex"));
 polimexAir.push(new PopRegion("Belgium", 11.00, "air", 25.00, 4, 30, "5-14 business days", "Polimex"));
 polimexAir.push(new PopRegion("Croatia (Mainland)", 11.00, "air", 45.00, 4, 30, "7-14 business days", "Polimex"));
 polimexAir.push(new PopRegion("Czech Republic", 11.00, "air", 20.00, 4, 30, "5-10 business days", "Polimex"));
@@ -907,13 +907,7 @@ function validateInput() {
 	} else {
 		$("#senderNotification5").html("");
 	}
-	if (!$('#phone').val()) {
-		$("#senderNotification6").html("Required");
-		$('#senderNotification6').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#senderNotification6").html("");
-	}
+
 	if (!$('#email').val()) {
 		$("#senderNotification7").html("Required");
 		$('#senderNotification7').css('color', 'red');
@@ -1231,6 +1225,7 @@ $("#destinationCountrySelectList4").change(function () {
     
 	hideEcoRadio();
     var selectedText = $(this).find("option:selected").text();
+    selectedText.trim();
     if (selectedText === "POLAND") {
 	    $("#eco").show();
         $("#ecoRad").show();
@@ -1243,7 +1238,17 @@ function myFunction3() {
     "use strict";
     var form;
     if (validateInput()) {
-        alert();
-      document.getElementById('theForm').submit()
+        alert("Submitted: Click 'OK' and then 'print'");
+        document.getElementById('theForm').submit();
+    } else {
+        alert("Enter all required fields");
     }
 }
+
+$("tr.table").click(function() {
+    var tableData = $(this).children("td").map(function () {
+        return $(this).text();
+    }).get();
+
+    alert("Your data is: " + $.trim(tableData[0]) + " , " + $.trim(tableData[1]) + " , " + $.trim(tableData[2]));
+});

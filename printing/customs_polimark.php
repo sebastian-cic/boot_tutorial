@@ -29,64 +29,23 @@
 	    if ($conn->connect_error) {
 	        die("Connection failed: " . $conn->connect_error);
 	    } 
-	    
-	    
-
-	    //echo("ccccccccccccccccccccccccccccccccccccccccccc");
-	    
-	if((isset($_POST['s_name']) && !trim($_POST['s_name']) == '') && (isset($_POST['s_last']) && !trim($_POST['s_last']) == '') && (isset($_POST['s_street']) && !trim($_POST['s_street']) == '') && (isset($_POST['s_postal']) && !trim($_POST['s_postal']) == '') && (isset($_POST['s_email']) && !trim($_POST['s_email']) == '') && (isset($_POST['r_name']) && !trim($_POST['r_name']) == '') && (isset($_POST['r_last']) && !trim($_POST['r_last']) == '') && (isset($_POST['r_street']) && !trim($_POST['r_street']) == '') && (isset($_POST['r_city']) && !trim($_POST['r_city']) == '') && (isset($_POST['r_country']) && !trim($_POST['r_country']) == '') && (isset($_POST['r_postal']) && !trim($_POST['r_postal']) == '') && (isset($_POST['h']) && !trim($_POST['h']) == '') && (isset($_POST['l']) && !trim($_POST['l']) == '') && (isset($_POST['w']) && !trim($_POST['w']) == '') && (isset($_POST['value']) && !trim($_POST['value']) == '') && (isset($_POST['item1']) && !trim($_POST['item1']) == '') && (isset($_POST['weight']) && !trim($_POST['weight']) == '') ){
-	   // echo"set";
-
-	  // now do with your post data
-	 //echo $_POST; 
-	   /*     
-	        
-	    $fields = array('s_name, s_last,s_street,s_city,s_province,s_country,s_postal, s_email, r_name, r_last,r_street, r_city,r_country, r_postal, r_mobile, r_home, service, h, l , w,value,item1');
-
-	$error = false; //No errors yet
-	foreach($fields AS $fieldname) { //Loop trough each field
-	  if(!isset($_POST[$fieldname]) || empty($_POST[$fieldname])) {
-	    echo 'Field '.$fieldname.' misses!<br />'; //Display error with field
-	    $error = true; //Yup there are errors
-	  }
-	}
-
-	if(!$error) { //Only create queries when no error occurs
-	  //Create queries....
-	}
-	        
-	        */
-	        
-	        
-
-	//print_r($_POST);
-	$sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province,s_country,s_postal, s_email, s_mobile, s_home, r_name, r_last, r_unit,r_street, r_city, r_province, r_country, r_postal, r_mobile, r_home, service, h, l , w,value,item1,qty1, item2,qty2,item3,qty3,item4,qty4 ,item5,qty5,item6,qty6,item7,qty7,item8,qty8,item9,qty9,item10,qty10,item11,qty11,item12,qty12,item13,qty13,item14,qty14,submitDate,weight)
-	        VALUES ('".$_POST["s_name"]."','".$_POST["s_last"]."','".$_POST["s_unit"]."','".$_POST["s_street"]."','".$_POST["s_city"]."','".$_POST["s_province"]."','".$_POST["s_country"]."','".$_POST["s_postal"]."','".$_POST["s_email"]."','".$_POST["s_mobile"]."','".$_POST["s_home"]."','".$_POST["r_name"]."','".$_POST["r_last"]."','".$_POST["r_unit"]."','".$_POST["r_street"]."','".$_POST["r_city"]."','".$_POST["r_province"]."','".$_POST["r_country"]."','".$_POST["r_postal"]."','".$_POST["r_mobile"]."','".$_POST["r_home"]."','".$_POST["radioAirSea"]."','".$_POST["h"]."','".$_POST["l"]."','".$_POST["w"]."','".$_POST["value"]."','".$_POST["item1"]."','".$_POST["qty1"]. "','".$_POST["item2"]."','".$_POST["qty2"]."','".$_POST["item3"]."','".$_POST["qty3"]."','".$_POST["item4"]."','".$_POST["qty4"]."','".$_POST["item5"]."','".$_POST["qty5"]."','".$_POST["item6"]."','".$_POST["qty6"]."','".$_POST["item7"]."','".$_POST["qty7"]."','".$_POST["item8"]."','".$_POST["qty8"]."','".$_POST["item9"]."','".$_POST["qty9"]."','".$_POST["item10"]."','".$_POST["qty10"]."','".$_POST["item11"]."','".$_POST["qty11"]."','".$_POST["item12"]."','".$_POST["qty12"]."','".$_POST["item13"]."','".$_POST["qty13"]."','".$_POST["item14"]."','".$_POST["qty14"]."','".date('Y-m-d')."','".$_POST["weight"].
-	"')";
-	        $conn->query($sql);
-	     // printf("Last inserted record has id %d\n", $conn->insert_id);
-	}
-	  
-	   
-	       echo $mysqli->insert_id;
-	    /*$sql = "INSERT INTO customs2 ( name, last)
-	    VALUES ( 'D', 'john@example.com')";
-
-	    if ($conn->query($sql) === TRUE) { 
-	      echo "N
-	      ew record created successfully";
-	    } else {
-	        echo "Error: " . $sql . "<br>" . $conn->error;
-	    }
-	*/
 	    $sql = "SELECT id,s_name, s_last, s_unit, s_street,s_city,s_province,s_country,s_postal, s_email, s_mobile, s_home, r_name, r_last,r_unit, r_street, r_city, r_province, r_country, r_postal, r_mobile, r_home,service,h , l ,w,value ,item1,qty1, item2,qty2,item3,qty3,item4,qty4 ,item5,qty5,item6,qty6,item7,qty7,item8,qty8,item9,qty9,item10,qty10,item11,qty11,item12,qty12,item13,qty13,item14,qty14, submitDate, weight FROM customs3";
 	    $result = $conn->query($sql);
-	 
+	 echo "<table border='1'>
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+</tr>";
 	    if ($result->num_rows > 0) {
 	        // output data of each row
 	        while($row = $result->fetch_assoc()) {
-	          //echo "id: " . $row["id"]. " - Name: " . $row["s_name"]. " last " . $row["s_last"]. " unit: " . $row["s_unit"]." street: " . $row["s_street"]. " city " . $row["s_city"]. " prov: " . $row["s_province"]." country: " . $row["s_country"]." postal: " . $row["s_postal"]. " email " . $row["s_email"]. " mobile: " . $row["s_mobile"]." home: " . $row["s_home"]. "<br> - Name: " . $row["r_name"]. " last " . $row["r_last"]. " unit: " . $row["r_unit"]." street: " . $row["r_street"]. " city " . $row["r_city"]. " prov: " . $row["r_province"]." country: " . $row["r_country"]." postal: " . $row["r_postal"]." mobile: " . $row["r_mobile"]." home: " . $row["r_home"]." service: " . $row["service"]." height: " . $row["h"]." length: " . $row["l"]." width: " . $row["w"]." value: " . $row["value"]."<br>"." item1: " . $row["item1"]." qty1: " . $row["qty1"]." item2: " . $row["item2"]." qty2: " . $row["qty2"]." item3: " . $row["item3"]." qty3: " . $row["qty3"]. " item4: " . $row["item4"]." qty4: " . $row["qty4"]." item5: " . $row["item5"]." qty5: " . $row["qty5"]." item6: " . $row["item6"]." qty6: " . $row["qty6"]." item7: " . $row["item7"]." qty7: " . $row["qty7"]." item8: " . $row["item8"]." qty8: " . $row["qty8"]." item9: " . $row["item9"]." qty9: " . $row["qty9"]." item10: " . $row["item10"]." qty10: " . $row["qty10"]." item11: " . $row["item11"]." qty11: " . $row["qty11"]." item12: " . $row["item12"]." qty12: " . $row["qty12"]." item13: " . $row["item13"]." qty13: " . $row["qty13"]." item14: " . $row["item14"]." qty14: " . $row["qty14"].$row["submitDate"]." weight: " . $row["weight"]."<br>";
+	 
+                echo "<tr>";
+echo "<td>" . $row['id'] . "</td>";
+echo "<td>" . $row['s_name'] . "</td>";
+echo "</tr>";
 	        }
+            echo "</table>";
 	    } else {
 	        echo "0 results";
 	    }
@@ -121,10 +80,45 @@
 				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
 				<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 hidden-print">
 					<h2>Polimark Customs Declaration Form</h2>
-					
-                    
-                    
-                    <button class="btn btn-success" onclick="myFunction()" type="button">print</button> <button class="btn btn-warning" onclick="myFunction3()" type="button">submit</button>
+						<?php
+	   
+	    $servername = "sql5c11b.megasqlservers.com";
+	    $username = "polimarkco156110";
+	    $password = "ac2212ac";
+	    $dbname = "forms_polimarkco156110";
+
+	 
+	    // Create connection
+	    $conn = new mysqli($servername, $username, $password, $dbname);
+
+	    // Check connection
+	    if ($conn->connect_error) {
+	        die("Connection failed: " . $conn->connect_error);
+	    } 
+	    $sql = "SELECT id,s_name, s_last, s_unit, s_street,s_city,s_province,s_country,s_postal, s_email, s_mobile, s_home, r_name, r_last,r_unit, r_street, r_city, r_province, r_country, r_postal, r_mobile, r_home,service,h , l ,w,value ,item1,qty1, item2,qty2,item3,qty3,item4,qty4 ,item5,qty5,item6,qty6,item7,qty7,item8,qty8,item9,qty9,item10,qty10,item11,qty11,item12,qty12,item13,qty13,item14,qty14, submitDate, weight FROM customs3";
+	    $result = $conn->query($sql);
+    echo "<div id='sss'>";                
+	 echo "<table border='1'>
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+</tr>";
+	    if ($result->num_rows > 0) {
+	        // output data of each row
+	        while($row = $result->fetch_assoc()) {
+	 
+                echo "<tr class='table' id=".$row['id'].">";
+echo "<td>" . $row['id'] . "</td>";
+echo "<td>" . $row['s_name'] . "</td>";
+echo "</tr>";
+	        }
+            echo "</table>";
+            echo "</div>";
+	    } else {
+	        echo "0 results";
+	    }
+	    
+	    ?><button class="btn btn-success" onclick="myFunction()" type="button">print</button> <button class="btn btn-warning" onclick="myFunction3()" type="button">submit</button>
 				</div>
 				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
 			</div>

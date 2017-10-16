@@ -31,37 +31,37 @@ var econo = [];
 
 ///***** create all destination objects
 //economy destinations parcels
-econo.push(new PopRegion("Poland", 3.30, "economy", 18.00, 4, 70, "12-16 weeks", "Polimex"));
+econo.push(new PopRegion("Poland", 3.30, "economy", 20.00, 4, 70, "12-16 weeks", "Polimex"));
 
 
 // polimex air parcels
-polimexAir.push(new PopRegion("Austria", 11.00, "air", 25.00, 4, 30, "5-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Belgium", 11.00, "air", 25.00, 4, 30, "5-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Croatia (Mainland)", 11.00, "air", 45.00, 4, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Czech Republic", 11.00, "air", 20.00, 4, 30, "5-10 business days", "Polimex"));
-polimexAir.push(new PopRegion("Denmark", 11.00, "air", 25.00, 4, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Austria", 11.00, "air", 25.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Belgium", 11.00, "air", 25.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Croatia (Mainland)", 11.00, "air", 45.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Czech Republic", 11.00, "air", 20.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Denmark", 11.00, "air", 25.00, 1, 30, "7-14 days", "Polimex"));
 
-polimexAir.push(new PopRegion("Finland", 11.00, "air", 45.00, 4, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("France", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Germany", 11.00, "air", 20.00, 4, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Hungary", 11.00, "air", 25.00, 4, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Ireland", 11.00, "air", 45.00, 4, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Finland", 11.00, "air", 45.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("France", 11.00, "air", 35.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Germany", 11.00, "air", 20.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Hungary", 11.00, "air", 25.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Ireland", 11.00, "air", 45.00, 1, 30, "7-14 days", "Polimex"));
 
-polimexAir.push(new PopRegion("Italy (Mainland)", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Luxembourg", 11.00, "air", 25.00, 4, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Netherlands", 11.00, "air", 25.00, 4, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Portugal (Mainland)", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Spain (Mainland)", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Italy (Mainland)", 11.00, "air", 35.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Luxembourg", 11.00, "air", 25.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Netherlands", 11.00, "air", 25.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Portugal (Mainland)", 11.00, "air", 35.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Spain (Mainland)", 11.00, "air", 35.00, 1, 30, "7-14 days", "Polimex"));
 
-polimexAir.push(new PopRegion("Romania", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Slovakia", 11.00, "air", 20.00, 4, 30, "5-10 business days", "Polimex"));
-polimexAir.push(new PopRegion("Slovenia", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Sweden", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("United Kingdom", 11.00, "air", 25.00, 4, 30, "7-14 business days", "Polimex"));
-polimexAir.push(new PopRegion("Lithuania", 11.00, "air", 20.00, 4, 30, "2-3 weeks", "Polimex"));
-polimexAir.push(new PopRegion("Latvia", 11.00, "air", 20.00, 4, 30, "2-3 weeks", "Polimex"));
-
-polimexAir.push(new PopRegion("Poland", 11.00, "air", 18.00, 4, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Romania", 11.00, "air", 35.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Slovakia", 11.00, "air", 20.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Slovenia", 11.00, "air", 35.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Sweden", 11.00, "air", 35.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("United Kingdom", 11.00, "air", 25.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Lithuania", 11.00, "air", 20.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Latvia", 11.00, "air", 20.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Estonia", 11.00, "air", 20.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Poland", 11.00, "air", 20.00, 1, 30, "7-14 days ", "Polimex"));
 
 // polimex sea parcels
 polimexSea.push(new PopRegion("Austria", 5.25, "sea", 25.00, 4, 30, "4-7 weeks", "Polimex"));
@@ -90,7 +90,7 @@ polimexSea.push(new PopRegion("United Kingdom", 5.25, "sea", 25.00, 4, 30, "4-7 
 polimexSea.push(new PopRegion("Lithuania", 5.25, "sea", 20.00, 4, 30, "6-8 weeks", "Polimex"));
 polimexSea.push(new PopRegion("Latvia", 5.25, "sea", 20.00, 4, 30, "6-8 weeks", "Polimex"));
 
-polimexAir.push(new PopRegion("Estonia", 11.00, "air", 20.00, 4, 30, "2-3 weeks", "Polimex"));
+
 
 polimexSea.push(new PopRegion("Poland", 5.00, "sea", 8.00, 4, 70, "4-7 weeks", "Polimex"));
 
@@ -615,7 +615,11 @@ function calcPrice() {
 	height  = $("#height").val();
 	width  = $("#width").val();
 	//if no weight or under 1kg show msg and return
-	if (weight < 1) {
+    console.log(weight);
+    if (weight < 1 && weight !== "") {
+        weight = 1;
+    }
+    if (weight === "") {
 		$("#note").show();
 		$("#noteSpan").html("Please enter a weight");
 		if ($(window).width() < 768) {
@@ -675,7 +679,15 @@ function calcPrice() {
 	} else {
 		total = destObject.price * charWeight + destObject.deliveryCharge;
 	}
-	
+	if (destObject.sender.toLocaleLowerCase() === "polimex" && destObject.packageType.toLocaleLowerCase() === "air") {
+        if (charWeight <= 1.5) {
+            total = total + 4;
+        } else if (charWeight > 1 && charWeight <= 2.5) {
+            total = total + 3;
+        } else if (charWeight > 2 && charWeight <= 3.5) {
+            total = total + 2;
+        }
+    }
 	
 	$("#totalSpan").html("$" + total.toFixed(2));
 	$("#deliverySpan").html(destObject.deliveryMessage);
@@ -867,322 +879,3 @@ function init(valOfCountryToSet) {
 	}
 	addPriceTolandingPage();
 }
-
-function validateInput() {
-   
-	"use strict";
-    var flag = 0;
-	if (!$('#firstName').val()) {
-		$("#senderNotification1").html("Required");
-		$('#senderNotification1').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#senderNotification1").html("");
-	}
-	if (!$('#lastName').val()) {
-		$("#senderNotification2").html("Required");
-		$('#senderNotification2').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#senderNotification2").html("");
-	}
-	if (!$('#street').val()) {
-		$("#senderNotification3").html("Required");
-		$('#senderNotification3').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#senderNotification3").html("");
-	}
-	if (!$('#city').val()) {
-		$("#senderNotification4").html("Required");
-		$('#senderNotification4').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#senderNotification4").html("");
-	}
-	if (!$('#postalCode').val()) {
-		$("#senderNotification5").html("Required");
-		$('#senderNotification5').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#senderNotification5").html("");
-	}
-	if (!$('#phone').val()) {
-		$("#senderNotification6").html("Required");
-		$('#senderNotification6').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#senderNotification6").html("");
-	}
-	if (!$('#email').val()) {
-		$("#senderNotification7").html("Required");
-		$('#senderNotification7').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#senderNotification7").html("");
-	}
-	if (!$('#country').val()) {
-		$("#senderNotification8").html("Required");
-		$('#senderNotification8').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#senderNotification8").html("");
-	}
-	if (!$('#firstNameRecipient').val()) {
-		$("#receiverNotification1").html("Required");
-		$('#receiverNotification1').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#receiverNotification1").html("");
-	}
-	if (!$('#lastNameRecipient').val()) {
-		$("#receiverNotification2").html("Required");
-		$('#receiverNotification2').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#receiverNotification2").html("");
-	}
-	if (!$('#streetAddressRecipient').val()) {
-		$("#receiverNotification3").html("Required");
-		$('#receiverNotification3').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#receiverNotification3").html("");
-	}
-	if (!$('#cityRecipient').val()) {
-		$("#receiverNotification4").html("Required");
-		$('#receiverNotification4').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#receiverNotification4").html("");
-	}
-	if (!$('#postalCodeRecipient').val()) {
-		$("#receiverNotification5").html("Required");
-		$('#receiverNotification5').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#receiverNotification5").html("");
-	}
-	if (!$('#mobilePhoneRecipient').val() && !$('#phoneRecipient').val()) {
-		$("#receiverNotification6").html("Required at least 1 phone number");
-		$('#receiverNotification6').css('color', 'red');
-		$("#receiverNotification9").html("Required at least 1 phone number");
-		$('#receiverNotification9').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#receiverNotification6").html("");
-		$("#receiverNotification9").html("");
-	}
-	if (!$('#length').val()) {
-		$("#receiverNotification10").html("Required");
-		$('#receiverNotification10').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#receiverNotification10").html("");
-	}
-	if (!$('#width').val()) {
-		$("#receiverNotification11").html("Required");
-		$('#receiverNotification11').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#receiverNotification11").html("");
-	}
-    if (!$('#height').val()) {
-		$("#receiverNotification12").html("Required");
-		$('#receiverNotification12').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#receiverNotification12").html("");
-	}
-    if (!$('#valueCustoms').val()) {
-		$("#receiverNotification13").html("Required");
-		$('#receiverNotification13').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#receiverNotification13").html("");
-	}
-    if (!$('#item1').val()) {
-		$("#receiverNotification14").html("Required");
-		$('#receiverNotification14').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#receiverNotification14").html("");
-	}
-    if (!$('#weightCustoms').val()) {
-		$("#receiverNotification15").html("Required");
-		$('#receiverNotification15').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#receiverNotification15").html("");
-	}
-    
-    if (flag === 0) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function myFunction() {
-	"use strict";
-	window.print();
-}
-
-function chargeableWeightCustoms(length, width, height, weight) {
-	"use strict";
-    weight = (Math.ceil(weight * 2) / 2).toFixed(1);
-	var chargeableKg = (Number(length) * Number(height) * Number(width)) / 6000;
-	
-	if (chargeableKg > weight) {
-		chargeableKg = (Math.ceil(chargeableKg * 2) / 2).toFixed(1);
-		return chargeableKg;
-	} else {
-		return " ";
-	}
-}
-
-function myFunction2() {
-    "use strict";
-    var name = "", address1 = "", phone1 = "", name2 = "", address2 = "", phone2 = "", service = "", agent = "169", weight = 0, charW;
-    weight = $("#weightCustoms").val();
-    weight = (Math.ceil(weight * 2) / 2).toFixed(1);
-    charW = chargeableWeightCustoms($('#length').val(), $('#width').val(), $('#height').val(), weight);
-    address1 = $('#city').val() + " " + $('#province').val() + " " + $('#postalCode').val();
-    phone1 = $('#mobilePhone').val() + " " + $('#phone').val();
-    name = $('#firstName').val();
-    name = name + " " + $('#lastName').val();
-    name2 = $('#firstNameRecipient').val() + " " + $('#lastNameRecipient').val();
-    address2 = $('#cityRecipient').val() + " " + $('#provinceRecipient').val() + " " + $('#postalCodeRecipient').val();
-    phone2 = $('#mobilePhoneRecipient').val() + " " + $('#phoneRecipient').val();
-    service = $('input[name=radioAirSea]:checked').val();
-    
-    if (service === "economy") {
-        agent = "168";
-        service = service + " Sea";
-    }
-    
-	$("#senderFirstName").html(name);
-	$("#senderStreet").html($('#street').val());
-	$("#senderCity").html(address1);
-	$("#senderPhone").html(phone1);
-	$("#senderEmail").html($('#email').val());
-	$("#senderCountry").html($('#country').val());
-	$("#receiverFirstName").html(name2);
-    $("#r_unitTd").html($('#unitRecipient').val());
-    $("#s_unitTd").html($('#s_unit').val());
-	$("#receiverStreet").html($('#streetAddressRecipient').val());
-	$("#receiverCity").html(address2);
-	$("#receiverPhone").html(phone2);
-    $("#countryRed").val($("#destinationCountrySelectList option:selected").text());
-	$("#receivercountry").html($("#destinationCountrySelectList option:selected").text());
-    $("#serviceType2").html(service.toUpperCase());
-    $('#agentCode2').html(agent);
-    $('#shipValue2').html("$" + $('#valueCustoms').val());
-    $("#lenghtTD").html($('#length').val());
-    $("#widthTD").html($('#width').val());
-    $("#heightTD").html($('#height').val());
-    $("#weightTd").html(weight);
-    $("#chargealeTD").html(charW);
-    $("#unit1").html($('#item1').val());
-    $("#unit2").html($('#item2').val());
-    $("#unit3").html($('#item3').val());
-    $("#unit4").html($('#item4').val());
-    $("#unit5").html($('#item5').val());
-    $("#unit6").html($('#item6').val());
-    $("#unit7").html($('#item7').val());
-    $("#unit8").html($('#item8').val());
-    $("#unit9").html($('#item9').val());
-    $("#unit10").html($('#item10').val());
-    $("#unit11").html($('#item11').val());
-    $("#unit12").html($('#item12').val());
-    $("#unit13").html($('#item13').val());
-    $("#unit14").html($('#item14').val());
-    $("#amount1").html($('#qty1').val());
-    $("#amount2").html($('#qty2').val());
-    $("#amount3").html($('#qty3').val());
-    $("#amount4").html($('#qty4').val());
-    $("#amount5").html($('#qty5').val());
-    $("#amount6").html($('#qty6').val());
-    $("#amount7").html($('#qty7').val());
-    $("#amount8").html($('#qty8').val());
-    $("#amount9").html($('#qty9').val());
-    $("#amount10").html($('#qty10').val());
-    $("#amount11").html($('#qty11').val());
-    $("#amount12").html($('#qty12').val());
-    $("#amount13").html($('#qty13').val());
-    $("#amount14").html($('#qty14').val());
-    
-   
-    
-}
-
-$(document).ready(function () {
-    "use strict";
-	var settings = {
-		bgColor: "#FFFFFF",
-        color: "#000000",
-        barWidth: 3,
-        barHeight: 55,
-        fontSize: 30
-
-	};
-
-	$("#demo").barcode($("#barcodeId").val(), "code128", settings);
-});
-
-
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth() + 1; //January is 0!
-var yyyy = today.getFullYear();
-if (dd < 10) {
-	dd = '0' + dd;
-}
-if (mm < 10) {
-	mm = '0' + mm;
-}
-today =  yyyy + '-' + mm + '-' + dd;
-document.getElementById('dateSpan').innerHTML = today;
-
-function loadEcoButton() {
-    "use strict";
-    if ($("#receivercountry").html($("#destinationCountrySelectList option:selected").text()) === "POLAND") {
-      
-	    $("#eco").show();
-        $("#ecoRad").show();
-    }
-}
-
-function loadInfo() {
-    "use strict";
-    loadEcoButton();
-    myFunction2();
-}
-
-function loadEcoButton() {
-    "use strict";
-   
-    if ($("#destinationCountrySelectList4 option:selected").text() === "POLAND") {
-      
-	    $("#eco").show();
-        $("#ecoRad").show();
-    }
-}
-function hideEcoRadio() {
-	"use strict";
-	$("#eco").hide();
-	$("#ecoRad").hide();
-	$("#radioSea").prop("checked", true);
-}
-$("#destinationCountrySelectList4").change(function () {
-	"use strict";
-    
-	hideEcoRadio();
-    var selectedText = $(this).find("option:selected").text();
-    if (selectedText === "POLAND") {
-	    $("#eco").show();
-        $("#ecoRad").show();
-    } else {
-        hideEcoRadio();
-    }
-});

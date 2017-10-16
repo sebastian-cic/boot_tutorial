@@ -94,7 +94,7 @@ height : 350px;
 clear : none;
 float : left;
 position : relative;
-width : 350px;
+width : 340px;
 height : 350px;
    
 }
@@ -120,6 +120,7 @@ float : left;
 position : relative;
 width : 1000px;
 height : 350px;
+    font-size: 11px;
     
 }
 .headerBarcode{
@@ -192,7 +193,8 @@ th.qtyList {
     border: 1px solid black;
 }
 
-.legalInformation{
-    max-width: 90%;
-    font-size: 10px;
+
+#sss{
+    height: 300px !important;
+    overflow: scroll;
 }

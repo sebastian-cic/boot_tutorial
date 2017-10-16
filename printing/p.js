@@ -40,13 +40,6 @@ function validateInput() {
 	} else {
 		$("#senderNotification5").html("");
 	}
-	if (!$('#phone').val()) {
-		$("#senderNotification6").html("Required");
-		$('#senderNotification6').css('color', 'red');
-        flag = flag + 1;
-	} else {
-		$("#senderNotification6").html("");
-	}
 	if (!$('#email').val()) {
 		$("#senderNotification7").html("Required");
 		$('#senderNotification7').css('color', 'red');
