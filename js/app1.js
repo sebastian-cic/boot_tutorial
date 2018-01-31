@@ -31,37 +31,37 @@ var econo = [];
 
 ///***** create all destination objects
 //economy destinations parcels
-econo.push(new PopRegion("Poland", 3.30, "economy", 20.00, 4, 70, "12-16 weeks", "Polimex"));
+econo.push(new PopRegion("Poland", 3.30, "economy", 18.00, 4, 70, "12-16 weeks", "Polimex"));
 
 
 // polimex air parcels
-polimexAir.push(new PopRegion("Austria", 11.00, "air", 25.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Belgium", 11.00, "air", 25.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Croatia (Mainland)", 11.00, "air", 45.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Czech Republic", 11.00, "air", 20.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Denmark", 11.00, "air", 25.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Austria", 11.00, "air", 25.00, 4, 30, "5-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Belgium", 11.00, "air", 25.00, 4, 30, "5-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Croatia (Mainland)", 11.00, "air", 45.00, 4, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Czech Republic", 11.00, "air", 20.00, 4, 30, "5-10 business days", "Polimex"));
+polimexAir.push(new PopRegion("Denmark", 11.00, "air", 25.00, 4, 30, "7-14 business days", "Polimex"));
 
-polimexAir.push(new PopRegion("Finland", 11.00, "air", 45.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("France", 11.00, "air", 35.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Germany", 11.00, "air", 20.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Hungary", 11.00, "air", 25.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Ireland", 11.00, "air", 45.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Finland", 11.00, "air", 45.00, 4, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("France", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Germany", 11.00, "air", 20.00, 4, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Hungary", 11.00, "air", 25.00, 4, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Ireland", 11.00, "air", 45.00, 4, 30, "7-14 business days", "Polimex"));
 
-polimexAir.push(new PopRegion("Italy (Mainland)", 11.00, "air", 35.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Luxembourg", 11.00, "air", 25.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Netherlands", 11.00, "air", 25.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Portugal (Mainland)", 11.00, "air", 35.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Spain (Mainland)", 11.00, "air", 35.00, 1, 30, "7-14 days", "Polimex"));
+polimexAir.push(new PopRegion("Italy (Mainland)", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Luxembourg", 11.00, "air", 25.00, 4, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Netherlands", 11.00, "air", 25.00, 4, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Portugal (Mainland)", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Spain (Mainland)", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
 
-polimexAir.push(new PopRegion("Romania", 11.00, "air", 35.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Slovakia", 11.00, "air", 20.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Slovenia", 11.00, "air", 35.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Sweden", 11.00, "air", 35.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("United Kingdom", 11.00, "air", 25.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Lithuania", 11.00, "air", 20.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Latvia", 11.00, "air", 20.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Estonia", 11.00, "air", 20.00, 1, 30, "7-14 days", "Polimex"));
-polimexAir.push(new PopRegion("Poland", 11.00, "air", 20.00, 1, 30, "7-14 days ", "Polimex"));
+polimexAir.push(new PopRegion("Romania", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Slovakia", 11.00, "air", 20.00, 4, 30, "5-10 business days", "Polimex"));
+polimexAir.push(new PopRegion("Slovenia", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Sweden", 11.00, "air", 35.00, 4, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("United Kingdom", 11.00, "air", 25.00, 4, 30, "7-14 business days", "Polimex"));
+polimexAir.push(new PopRegion("Lithuania", 11.00, "air", 20.00, 4, 30, "2-3 weeks", "Polimex"));
+polimexAir.push(new PopRegion("Latvia", 11.00, "air", 20.00, 4, 30, "2-3 weeks", "Polimex"));
+
+polimexAir.push(new PopRegion("Poland", 11.00, "air", 18.00, 4, 30, "7-14 business days", "Polimex"));
 
 // polimex sea parcels
 polimexSea.push(new PopRegion("Austria", 5.25, "sea", 25.00, 4, 30, "4-7 weeks", "Polimex"));
@@ -90,7 +90,7 @@ polimexSea.push(new PopRegion("United Kingdom", 5.25, "sea", 25.00, 4, 30, "4-7 
 polimexSea.push(new PopRegion("Lithuania", 5.25, "sea", 20.00, 4, 30, "6-8 weeks", "Polimex"));
 polimexSea.push(new PopRegion("Latvia", 5.25, "sea", 20.00, 4, 30, "6-8 weeks", "Polimex"));
 
-
+polimexAir.push(new PopRegion("Estonia", 11.00, "air", 20.00, 4, 30, "2-3 weeks", "Polimex"));
 
 polimexSea.push(new PopRegion("Poland", 5.00, "sea", 8.00, 4, 70, "4-7 weeks", "Polimex"));
 
@@ -107,8 +107,8 @@ pysankaAir.push(new PopRegion("Kazakhstan", 0, "air", 0, 0, 999, "Air shipping n
 pysankaAir.push(new PopRegion("Uzbekistan", 0, "air", 0, 0, 999, "Air shipping not available", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));
 pysankaAir.push(new PopRegion("Kyrgyzstan", 0, "air", 0, 0, 999, "Air shipping not available", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));
 //pysanka sea parcels
-pysankaSea.push(new PopRegion("Ukraine (West)", 4.45, "sea", 10.00, 5, 30, "5-8 weeks", "Pysanka"));
-pysankaSea.push(new PopRegion("Ukraine (East)", 4.45, "sea", 15.00, 5, 30, "5-8 weeks", "Pysanka"));
+pysankaSea.push(new PopRegion("Ukraine (West)", 5.75, "sea", 10.00, 5, 30, "N/a", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));
+pysankaSea.push(new PopRegion("Ukraine (East)", 5.75, "sea", 15.00, 5, 30, "6-8 weeks", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));
 
 pysankaSea.push(new PopRegion("Belarus", 5.25, "sea", 20.00, 5, 10, "6-8 weeks", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));
 pysankaSea.push(new PopRegion("Kazakhstan", 8.25, "sea", 25.00, 5, 30, "6-8 weeks", "Pysanka", "Please contact us about delivery time as it has been unstable recently for this country"));
@@ -615,11 +615,7 @@ function calcPrice() {
 	height  = $("#height").val();
 	width  = $("#width").val();
 	//if no weight or under 1kg show msg and return
-    console.log(weight);
-    if (weight < 1 && weight !== "") {
-        weight = 1;
-    }
-    if (weight === "") {
+	if (weight < 1) {
 		$("#note").show();
 		$("#noteSpan").html("Please enter a weight");
 		if ($(window).width() < 768) {
@@ -655,7 +651,7 @@ function calcPrice() {
 	if (weight < destObject.minKg) {
 		weight = destObject.minKg;
 		$("#note").show();
-		$("#noteSpan").html("Results for minimum chargeable weight of " + destObject.minKg + " kg.");
+		$("#noteSpan").html("Results for minimum weight of " + destObject.minKg + " kg.");
 	}
 	//set chargeable weight 
 	
@@ -679,15 +675,7 @@ function calcPrice() {
 	} else {
 		total = destObject.price * charWeight + destObject.deliveryCharge;
 	}
-	if (destObject.sender.toLocaleLowerCase() === "polimex" && destObject.packageType.toLocaleLowerCase() === "air") {
-        if (charWeight <= 1.5) {
-            total = total + 4;
-        } else if (charWeight > 1 && charWeight <= 2.5) {
-            total = total + 3;
-        } else if (charWeight > 2 && charWeight <= 3.5) {
-            total = total + 2;
-        }
-    }
+	
 	
 	$("#totalSpan").html("$" + total.toFixed(2));
 	$("#deliverySpan").html(destObject.deliveryMessage);

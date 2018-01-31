@@ -309,7 +309,7 @@ td {
 	
     max-width: 80px;
     word-wrap: break-word;
-    
+    width: 100%;
 }
 
 .russiaRow{
@@ -343,9 +343,39 @@ td {
   flex-wrap: wrap;
 }
 
+/* css for printing page */
+.printOutResults{
+   border: 1px solid black;
+    font-size: 20px;
+}
+#demo{
+    width: 175px;
+    height: auto;
+}
+.underLine{
+    text-decoration: underline;
+}
+#parcelImg{
+    width: 80px;
+    height: auto;
+}
+#polimarkImg{
+    height: 60px;
+    width: auto;
+}
 
+@media print{
+    .printOutResults{
+        width: 70%;
+        float: left;
+        margin: 5px;
+    }  
+    .printOutResults{
+       
+    }
+    
+}
 #landPic{
 	max-height: 450px;
 }
 #loadOverlay{display: none;}
-
