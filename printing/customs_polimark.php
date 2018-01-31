@@ -14,43 +14,7 @@
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 </head>
 <body onload="loadInfo()">
-	<?php
-	   
-	    $servername = "sql5c11b.megasqlservers.com";
-	    $username = "polimarkco156110";
-	    $password = "ac2212ac";
-	    $dbname = "forms_polimarkco156110";
-
-	 
-	    // Create connection
-	    $conn = new mysqli($servername, $username, $password, $dbname);
-
-	    // Check connection
-	    if ($conn->connect_error) {
-	        die("Connection failed: " . $conn->connect_error);
-	    } 
-	    $sql = "SELECT id,s_name, s_last, s_unit, s_street,s_city,s_province,s_country,s_postal, s_email, s_mobile, s_home, r_name, r_last,r_unit, r_street, r_city, r_province, r_country, r_postal, r_mobile, r_home,service,h , l ,w,value ,item1,qty1, item2,qty2,item3,qty3,item4,qty4 ,item5,qty5,item6,qty6,item7,qty7,item8,qty8,item9,qty9,item10,qty10,item11,qty11,item12,qty12,item13,qty13,item14,qty14, submitDate, weight FROM customs3";
-	    $result = $conn->query($sql);
-	 echo "<table border='1'>
-<tr>
-<th>Firstname</th>
-<th>Lastname</th>
-</tr>";
-	    if ($result->num_rows > 0) {
-	        // output data of each row
-	        while($row = $result->fetch_assoc()) {
-	 
-                echo "<tr>";
-echo "<td>" . $row['id'] . "</td>";
-echo "<td>" . $row['s_name'] . "</td>";
-echo "</tr>";
-	        }
-            echo "</table>";
-	    } else {
-	        echo "0 results";
-	    }
-	    
-	    ?>
+	
 	<header class="container-fluid hidden-print">
 		<div id="headerImg"><img class="img-responsive center-block hidden-print" id="polimark" src="img/PolimarkLogo.png"></div>
 		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
@@ -77,14 +41,14 @@ echo "</tr>";
 	<section class="hidden-print" id="middle">
 		<div class="container-fluid hidden-print" id="mainContainer">
 			<div class="row">
-				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
-				<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 hidden-print">
+				
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hidden-print">
 					<h2>Polimark Customs Declaration Form</h2>
 						<?php
 	   
 	    $servername = "sql5c11b.megasqlservers.com";
 	    $username = "polimarkco156110";
-	    $password = "ac2212ac";
+	    $password = "ui1iIgOFqzz0aCx3";
 	    $dbname = "forms_polimarkco156110";
 
 	 
@@ -98,9 +62,13 @@ echo "</tr>";
 	    $sql = "SELECT id,s_name, s_last, s_unit, s_street,s_city,s_province,s_country,s_postal, s_email, s_mobile, s_home, r_name, r_last,r_unit, r_street, r_city, r_province, r_country, r_postal, r_mobile, r_home,service,h , l ,w,value ,item1,qty1, item2,qty2,item3,qty3,item4,qty4 ,item5,qty5,item6,qty6,item7,qty7,item8,qty8,item9,qty9,item10,qty10,item11,qty11,item12,qty12,item13,qty13,item14,qty14, submitDate, weight FROM customs3";
 	    $result = $conn->query($sql);
     echo "<div id='sss'>";                
-	 echo "<table border='1'>
+	 echo "<table class='table'>
 <tr>
 <th>Firstname</th>
+<th>Lastname</th>
+<th>Lastname</th>
+<th>Lastname</th>
+<th>Lastname</th>
 <th>Lastname</th>
 </tr>";
 	    if ($result->num_rows > 0) {
@@ -108,19 +76,23 @@ echo "</tr>";
 	        while($row = $result->fetch_assoc()) {
 	 
                 echo "<tr class='table' id=".$row['id'].">";
-echo "<td>" . $row['id'] . "</td>";
-echo "<td>" . $row['s_name'] . "</td>";
-echo "</tr>";
+                echo "<td  class='col-md-1'>" . $row['id'] . "</td>";
+                echo "<td  class='col-md-2'>" . $row['s_name'] . "</td>";
+                echo "<td  class='col-md-2'>" . $row['s_last'] . "</td>";
+                echo "<td  class='col-md-1'>" . $row['r_country'] . "</td>";
+                echo "<td  class='col-md-3'>" . $row['s_email'] . "</td>";
+                echo "<td  class='col-md-1'>" . $row['submitDate'] . "</td>";
+                echo "</tr>";
 	        }
             echo "</table>";
             echo "</div>";
 	    } else {
 	        echo "0 results";
 	    }
-	    
+	    $conn->close();
 	    ?><button class="btn btn-success" onclick="myFunction()" type="button">print</button> <button class="btn btn-warning" onclick="myFunction3()" type="button">submit</button>
 				</div>
-				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+				
 			</div>
 		</div>
 	</section>
@@ -848,9 +820,9 @@ echo "</tr>";
 							<span class="shareCols">&nbsp;</span>
 						</div>
 					</div>
-					<div class="col-sm-12 col-xs-4">
-						<!--    <div class="fb-like" data-action="like" data-href="http://www.polimark.com" data-layout="button_count" data-share="false" data-show-faces="true"></div>-->
-						<div class="fb-like" data-action="like" data-href="http://www.polimark.com" data-layout="button" data-share="false" data-show-faces="false" data-size="small"></div>
+					<!--<div class="col-sm-12 col-xs-4">
+						<!--    <div class="fb-like" data-action="like" data-href="http://www.polimark.com" data-layout="button_count" data-share="false" data-show-faces="true"></div>
+						<div class="fb-like" data-action="like" data-href="http://www.polimark.com" data-layout="button" data-share="false" data-show-faces="false" data-size="small"></div>-->
 					</div>
 					<div class="col-sm-12 hidden-xs">
 						<div>
@@ -874,11 +846,11 @@ echo "</tr>";
 							<span class="shareCols">&nbsp;</span>
 						</div>
 					</div>
-					<div class="col-sm-12 cols-xs-6">
+					<!--<div class="col-sm-12 cols-xs-6">
 						<a class="twitter-share-button" data-show-count="false" data-text="Calgary&#39;s affordable alternative for shipping to Europe and Russia." href="https://twitter.com/share">Tweet</a> 
 						<script async charset="utf-8" src="//platform.twitter.com/widgets.js">
 						</script>
-					</div>
+					</div>-->
 					<div class="col-sm-12 hidden-xs">
 						<div>
 							<span class="shareCols">&nbsp;</span>
@@ -910,7 +882,7 @@ echo "</tr>";
 			</div>
 		</div>
 	</footer>
-	<div id="fb-root"></div>
+	<!--<div id="fb-root"></div>
 	<script>
 	(function(d, s, id) {
 	 var js, fjs = d.getElementsByTagName(s)[0];
@@ -919,10 +891,10 @@ echo "</tr>";
 	 js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
 	 fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
-	</script>
-	<link href="css/app4.css" rel="stylesheet"><!--<link href="css/print.css" rel="stylesheet">-->
-	<link href="css/printForm.css" rel="stylesheet">
-	<script src="js/appTest.js">
+	</script>-->
+	<link href="css/customs_polimark.css" rel="stylesheet"><!--<link href="css/print.css" rel="stylesheet">-->
+	<!--<link href="css/printForm.css" rel="stylesheet">-->
+	<script src="js/customs_polimark.js">
 	</script>
 </body>
 </html>

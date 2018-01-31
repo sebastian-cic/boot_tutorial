@@ -1,0 +1,162 @@
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+#copyright{
+	margin-top: 30px;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+header, footer {
+	/*background-color: #333;*/
+	background-color: black;
+	color: #ddd;
+	padding: 0px;
+	text-align: center;
+}
+#polimark {
+	box-sizing: 50%;
+	padding-top: 15px;
+}
+.jumbotron {
+	max-height: inherit;
+	margin-bottom: 0px;
+	background-color: #8eaebd;
+	background-image: linear-gradient( to top right, #fff, #8eaebd);
+}
+
+#mainContainer {
+	background-color: #8eaebd;
+	background-image: linear-gradient( to bottom right, #fff, #8eaebd);
+}
+.main-cols {
+	float: left;
+	height: 500px;
+	overflow: auto !important;
+}
+
+
+
+#mailto{
+	max-height: 20px;
+}
+.center-text{
+	text-align: center;
+	
+}
+.reviewbtn{
+    text-align: center;
+    font-size: 15px;
+    color: gray;
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+	body {
+		background-color: black;
+	}
+}
+
+a {
+	color: #0254EB
+}
+a:visited {
+	color: grey;
+}
+a.morelink {
+	text-decoration: none;
+	outline: none;
+}
+.morecontent span {
+	display: none;
+}
+.comment {
+	width: 400px;
+	background-color: #f0f0f0;
+	margin: 10px;
+}
+.navbar, .navbar-inverse {
+	border-radius: 0;
+	border: none;
+	margin-bottom: 0;
+	min-height: 30px;
+	background-color: black;
+}
+
+.nav li {
+	display: inline;
+	color: white;
+	border: none;
+	margin-left: 10px;
+	text-align: center;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: #ffffff;
+	font-family: Lato;
+	font-size: 1.7em;
+	font-weight: 300;
+	padding-top:5px !important; 
+	padding-bottom:5px !important;
+	
+	
+}
+
+
+.navbar-inverse .navbar-nav li a:hover {
+	background-color: #444444;
+	transition: 0.7s all linear;
+	height: 100%;
+	
+}
+
+.navbar-inverse .navbar-nav  {
+	/*background-color: black;*/
+	transition: 0.7s all linear;
+	height: 100%;
+	
+}
+
+
+.navbar-collapse {
+  text-align:center;
+}
+.navbar-nav {
+    display:inline-block;
+    float:none;
+}
+
+.navbar-header{
+    text-align:center;
+}
+
+.navbar-toggle {
+    float: none;
+    margin-right:0;
+}
+
+.navbar .nav > .inactive > a {
+    color: #6b6d72;
+}
+
+
+.spanHover{
+	cursor:pointer;
+}
+
+#loadOverlay{display: none;}
+

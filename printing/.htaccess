@@ -1,0 +1,8 @@
+
+AddHandler phpCGI .xml .php
+Action phpCGI /cgi-bin/php5.6fcgi
+# for php5 and securewebexchange
+<IfDefine SSL>
+    AddHandler phpCGI .xml .php
+    Action phpCGI https://secure11.securewebexchange.com/polimark.com/cgi-bin/php5.6fcgi
+</IfDefine>

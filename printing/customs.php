@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 	<script src="http://code.jquery.com/jquery-latest.min.js">
 	</script>
 	<script src="js/jquery-barcode.js" type="text/javascript">
@@ -13,102 +12,32 @@
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 </head>
+
 <body onload="loadInfo()">
-	<?php
-	   
-	    $servername = "sql5c11b.megasqlservers.com";
-	    $username = "polimarkco156110";
-	    $password = "ac2212ac";
-	    $dbname = "forms_polimarkco156110";
-
-	 
-	    // Create connection
-	    $conn = new mysqli($servername, $username, $password, $dbname);
-
-	    // Check connection
-	    if ($conn->connect_error) {
-	        die("Connection failed: " . $conn->connect_error);
-	    } 
-	    
-	    
-
-	    //echo("ccccccccccccccccccccccccccccccccccccccccccc");
-	    
-	if((isset($_POST['s_name']) && !trim($_POST['s_name']) == '') && (isset($_POST['s_last']) && !trim($_POST['s_last']) == '') && (isset($_POST['s_street']) && !trim($_POST['s_street']) == '') && (isset($_POST['s_postal']) && !trim($_POST['s_postal']) == '') && (isset($_POST['s_email']) && !trim($_POST['s_email']) == '') && (isset($_POST['r_name']) && !trim($_POST['r_name']) == '') && (isset($_POST['r_last']) && !trim($_POST['r_last']) == '') && (isset($_POST['r_street']) && !trim($_POST['r_street']) == '') && (isset($_POST['r_city']) && !trim($_POST['r_city']) == '') && (isset($_POST['r_country']) && !trim($_POST['r_country']) == '') && (isset($_POST['r_postal']) && !trim($_POST['r_postal']) == '') && (isset($_POST['h']) && !trim($_POST['h']) == '') && (isset($_POST['l']) && !trim($_POST['l']) == '') && (isset($_POST['w']) && !trim($_POST['w']) == '') && (isset($_POST['value']) && !trim($_POST['value']) == '') && (isset($_POST['item1']) && !trim($_POST['item1']) == '') && (isset($_POST['weight']) && !trim($_POST['weight']) == '') ){
-	   // echo"set";
-
-	  // now do with your post data
-	 //echo $_POST; 
-	   /*     
-	        
-	    $fields = array('s_name, s_last,s_street,s_city,s_province,s_country,s_postal, s_email, r_name, r_last,r_street, r_city,r_country, r_postal, r_mobile, r_home, service, h, l , w,value,item1');
-
-	$error = false; //No errors yet
-	foreach($fields AS $fieldname) { //Loop trough each field
-	  if(!isset($_POST[$fieldname]) || empty($_POST[$fieldname])) {
-	    echo 'Field '.$fieldname.' misses!<br />'; //Display error with field
-	    $error = true; //Yup there are errors
-	  }
-	}
-
-	if(!$error) { //Only create queries when no error occurs
-	  //Create queries....
-	}
-	        
-	        */
-	        
-	        
-
-	//print_r($_POST);
-	$sql = "INSERT INTO customs3 ( s_name, s_last,s_unit, s_street,s_city,s_province,s_country,s_postal, s_email, s_mobile, s_home, r_name, r_last, r_unit,r_street, r_city, r_province, r_country, r_postal, r_mobile, r_home, service, h, l , w,value,item1,qty1, item2,qty2,item3,qty3,item4,qty4 ,item5,qty5,item6,qty6,item7,qty7,item8,qty8,item9,qty9,item10,qty10,item11,qty11,item12,qty12,item13,qty13,item14,qty14,submitDate,weight)
-	        VALUES ('".$_POST["s_name"]."','".$_POST["s_last"]."','".$_POST["s_unit"]."','".$_POST["s_street"]."','".$_POST["s_city"]."','".$_POST["s_province"]."','".$_POST["s_country"]."','".$_POST["s_postal"]."','".$_POST["s_email"]."','".$_POST["s_mobile"]."','".$_POST["s_home"]."','".$_POST["r_name"]."','".$_POST["r_last"]."','".$_POST["r_unit"]."','".$_POST["r_street"]."','".$_POST["r_city"]."','".$_POST["r_province"]."','".$_POST["r_country"]."','".$_POST["r_postal"]."','".$_POST["r_mobile"]."','".$_POST["r_home"]."','".$_POST["radioAirSea"]."','".$_POST["h"]."','".$_POST["l"]."','".$_POST["w"]."','".$_POST["value"]."','".$_POST["item1"]."','".$_POST["qty1"]. "','".$_POST["item2"]."','".$_POST["qty2"]."','".$_POST["item3"]."','".$_POST["qty3"]."','".$_POST["item4"]."','".$_POST["qty4"]."','".$_POST["item5"]."','".$_POST["qty5"]."','".$_POST["item6"]."','".$_POST["qty6"]."','".$_POST["item7"]."','".$_POST["qty7"]."','".$_POST["item8"]."','".$_POST["qty8"]."','".$_POST["item9"]."','".$_POST["qty9"]."','".$_POST["item10"]."','".$_POST["qty10"]."','".$_POST["item11"]."','".$_POST["qty11"]."','".$_POST["item12"]."','".$_POST["qty12"]."','".$_POST["item13"]."','".$_POST["qty13"]."','".$_POST["item14"]."','".$_POST["qty14"]."','".date('Y-m-d')."','".$_POST["weight"].
-	"')";
-	        $conn->query($sql);
-	     // printf("Last inserted record has id %d\n", $conn->insert_id);
-	}
-	  
-	   
-	       echo $mysqli->insert_id;
-	    /*$sql = "INSERT INTO customs2 ( name, last)
-	    VALUES ( 'D', 'john@example.com')";
-
-	    if ($conn->query($sql) === TRUE) { 
-	      echo "N
-	      ew record created successfully";
-	    } else {
-	        echo "Error: " . $sql . "<br>" . $conn->error;
-	    }
-	*/
-	    $sql = "SELECT id,s_name, s_last, s_unit, s_street,s_city,s_province,s_country,s_postal, s_email, s_mobile, s_home, r_name, r_last,r_unit, r_street, r_city, r_province, r_country, r_postal, r_mobile, r_home,service,h , l ,w,value ,item1,qty1, item2,qty2,item3,qty3,item4,qty4 ,item5,qty5,item6,qty6,item7,qty7,item8,qty8,item9,qty9,item10,qty10,item11,qty11,item12,qty12,item13,qty13,item14,qty14, submitDate, weight FROM customs3";
-	    $result = $conn->query($sql);
-	 
-	    if ($result->num_rows > 0) {
-	        // output data of each row
-	        while($row = $result->fetch_assoc()) {
-	          //echo "id: " . $row["id"]. " - Name: " . $row["s_name"]. " last " . $row["s_last"]. " unit: " . $row["s_unit"]." street: " . $row["s_street"]. " city " . $row["s_city"]. " prov: " . $row["s_province"]." country: " . $row["s_country"]." postal: " . $row["s_postal"]. " email " . $row["s_email"]. " mobile: " . $row["s_mobile"]." home: " . $row["s_home"]. "<br> - Name: " . $row["r_name"]. " last " . $row["r_last"]. " unit: " . $row["r_unit"]." street: " . $row["r_street"]. " city " . $row["r_city"]. " prov: " . $row["r_province"]." country: " . $row["r_country"]." postal: " . $row["r_postal"]." mobile: " . $row["r_mobile"]." home: " . $row["r_home"]." service: " . $row["service"]." height: " . $row["h"]." length: " . $row["l"]." width: " . $row["w"]." value: " . $row["value"]."<br>"." item1: " . $row["item1"]." qty1: " . $row["qty1"]." item2: " . $row["item2"]." qty2: " . $row["qty2"]." item3: " . $row["item3"]." qty3: " . $row["qty3"]. " item4: " . $row["item4"]." qty4: " . $row["qty4"]." item5: " . $row["item5"]." qty5: " . $row["qty5"]." item6: " . $row["item6"]." qty6: " . $row["qty6"]." item7: " . $row["item7"]." qty7: " . $row["qty7"]." item8: " . $row["item8"]." qty8: " . $row["qty8"]." item9: " . $row["item9"]." qty9: " . $row["qty9"]." item10: " . $row["item10"]." qty10: " . $row["qty10"]." item11: " . $row["item11"]." qty11: " . $row["qty11"]." item12: " . $row["item12"]." qty12: " . $row["qty12"]." item13: " . $row["item13"]." qty13: " . $row["qty13"]." item14: " . $row["item14"]." qty14: " . $row["qty14"].$row["submitDate"]." weight: " . $row["weight"]."<br>";
-	        }
-	    } else {
-	        echo "0 results";
-	    }
-	    
-	    ?>
 	<header class="container-fluid hidden-print">
 		<div id="headerImg"><img class="img-responsive center-block hidden-print" id="polimark" src="img/PolimarkLogo.png"></div>
 		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
 					<button class="navbar-toggle collapsed" data-target="#navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
-				</div><!-- Collect the nav links, forms, and other content for toggling -->
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active">
-							<a href="index.html">Shipping Calculator</a>
-						</li>
+					 <ul class="nav navbar-nav">
 						<li class="inactive">
-							<a href="shipping-pricing.html">Price Details</a>
+							<a href="index.html">Home</a>
+						</li>
+                        <li class="inactive">
+							<a href="parcel-shipping-calculator.html">Shipping Calculator</a>
+						</li> 
+						<li class="inactive">
+							<a href="shipping-pricing.html">Pricing Details</a>
 						</li>
 						<li class="inactive">
 							<a href="shipping-information.html">Before You Ship</a>
+						</li>
+                        <li class="active">
+							<a href="customs.php">Customs Form</a>
 						</li>
 					</ul>
 				</div>
@@ -121,10 +50,8 @@
 				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
 				<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 hidden-print">
 					<h2>Polimark Customs Declaration Form</h2>
-					
-                    
-                    
-                    <button class="btn btn-success" onclick="myFunction()" type="button">print</button> <button class="btn btn-warning" onclick="myFunction3()" type="button">submit</button>
+					<p>A Customs Declaration is required for each parcel being shipped. Please fill in all the required (*) information below and then submit the form. Once the form is successfully submitted click the green print button. If you are shipping multiple packages, after printing your form return to this page, update the information, click submit and print your next form. </p>
+                    <p>For parcel pick up from home, if you do not have a printer to print your forms please contact us at 1-888-888-1186. </p><p>**If you are using Internet Explorer you may need to <a href="https://support.microsoft.com/en-ca/help/973479/unable-to-print-or-view-the-print-preview-of-a-webpage-in-internet-exp">disable "protected mode"</a> to be able to print forms. Please use Windows Edge, Chrome, Firefox or Safari as your browser if you are experiencing problems. </p><button class="btn btn-warning" onclick="submit()" type="button">Submit</button>
 				</div>
 				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
 			</div>
@@ -582,14 +509,14 @@
 					</div>
 					<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 				</div>
-				<div class="row hidden-print">
+				<!-- <div class="row hidden-print">
 					<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 					<div class="col-xs-12 col-sm-1 col-md-1">
 						<br>
-						<input class="form-control num hide" hidden="" id="barcodeId" name="barcodeId" type="number" value="<?php echo $conn->insert_id ?>">
+						<input class="form-control num hide" hidden="" id="barcodeId" name="barcodeId" type="number" value="">
 					</div>
 					<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
-				</div>
+				</div> -->
 				<div class="row hidden-print">
 					<div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
 					<div class="col-xs-12 col-sm-10 col-md-10">
@@ -605,240 +532,8 @@
 					</div>
 				</div>
 			</div>
-		</section><!--   <button type="button" onclick="myFunction2()"  >Click Me!</button>
-        <button type="button" onclick="myFunction3()"  >testing!</button>
-        <button type="button" onclick="myFunction()"  >print</button>
-        <input type="submit" id="sub" name="submit2" value="submit2" action="">-->
+		</section>
 	</form>
-	<div class="visible-print">
-		<div class="blended_grid">
-			<div class="headerBarcode">
-				<div id="demo"></div>
-			</div>
-			<div class="bar">
-				<img id="leftPic" src="img/parcel.png"><br>
-			</div>
-			<div class="logo"><img id="logoImg" src="img/PolimarkLogoWhite.jpg"></div>
-			<div class="addressSpan">
-				&nbsp;&nbsp;&nbsp; WWW.POLIMARK.COM<br>
-				&nbsp;&nbsp;&nbsp; 1-888-888-1186<br>
-				&nbsp;&nbsp;&nbsp; 403-243-7333
-			</div>
-			<div class="address2">
-				538 Cleveland Cres. S.E.<br>
-				Calgary Alberta<br>
-			</div>
-			<div class="agent">
-				<span id="agentCode">AGENT CODE:<br></span> <span id="agentCode2"></span>
-			</div>
-			<div class="shippingtype">
-				<span id="serviceType">SERVICE TYPE:<br></span> <span id="serviceType2"></span>
-			</div>
-			<div class="dateSub">
-				<span id="shipDate">DATE:<br></span> <span id="dateSpan"></span>
-			</div>
-			<div class="declaredVal">
-				<span id="shipValue">DECLARED VALUE:<br></span> <span id="shipValue2"></span>
-			</div>
-			<div class="addressInput">
-				<table class="addressTable">
-					<tbody>
-						<tr>
-							<th class="senderTH">SENDER</th>
-							<th class="senderTH2"></th>
-						</tr>
-						<tr>
-							<td>NAME:</td>
-							<td class="underLine" id="senderFirstName"></td>
-						</tr>
-						<tr>
-							<td>UNIT#:</td>
-							<td id="s_unitTd"></td>
-						</tr>
-						<tr>
-							<td>ADDRESS:</td>
-							<td class="underLine" id="senderStreet"></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td class="underLine" id="senderCity"></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td class="underLine" id="senderCountry"></td>
-						</tr>
-						<tr>
-							<td>PHONE:</td>
-							<td class="underLine" id="senderPhone"></td>
-						</tr>
-						<tr>
-							<td>EMAIL:</td>
-							<td class="underLine" id="senderEmail"></td>
-						</tr>
-					</tbody>
-				</table>
-				<table class="addressTable">
-					<tbody>
-						<tr>
-							<th class="senderTH">RECEIVER</th>
-							<th class="senderTH2"></th>
-						</tr>
-						<tr>
-							<td>NAME:</td>
-							<td class="underLine" id="receiverFirstName"></td>
-						</tr>
-						<tr>
-							<td>UNIT:</td>
-							<td id="r_unitTd"></td>
-						</tr>
-						<tr>
-							<td>STREET:</td>
-							<td class="underLine" id="receiverStreet"></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td class="underLine" id="receiverCity"></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td class="underLine" id="receivercountry"></td>
-						</tr>
-						<tr>
-							<td>PHONE:</td>
-							<td class="underLine" id="receiverPhone"></td>
-						</tr>
-					</tbody>
-				</table><!--  NAME:<span class="underLine" id="senderFirstName"></span> lastNAME:<span class="underLine" id="senderLastName"></span><br>
-                        Street:<span class="underLine" id="senderStreet"></span><br>
-                            city:<span ></span><br>
-                            country:<span ></span><br>
-                            postal:<span ></span><br>
-                            phone1:<span ></span><br>
-                            phone2:<span ></span><br>
-                            email:<span ></span><br><br>
-    
-      NAME:<span ></span> lastNAME:<span class="underLine" id="receiverlastName"></span><br>
-                        Street:<span ></span><br>
-                            city:<span ></span><br>
-                            country:<span ></span><br>
-                            postal:<span ></span><br>
-                            phone1:<span ></span><br>
-                            phone2:<span ></span><br>-->
-			</div>
-			<div class="itemList">
-				<table class="tableItems" style="width:100%">
-					<tr>
-						<th class="numList"></th>
-						<th class="itemsList">Item Description</th>
-						<th class="qtyList">#PCS</th>
-					</tr>
-					<tr>
-						<td>1:</td>
-						<td id="unit1"></td>
-						<td id="amount1"></td>
-					</tr>
-					<tr>
-						<td>2:</td>
-						<td id="unit2"></td>
-						<td id="amount2"></td>
-					</tr>
-					<tr>
-						<td>3:</td>
-						<td id="unit3"></td>
-						<td id="amount3"></td>
-					</tr>
-					<tr>
-						<td>4:</td>
-						<td id="unit4"></td>
-						<td id="amount4"></td>
-					</tr>
-					<tr>
-						<td>5:</td>
-						<td id="unit5"></td>
-						<td id="amount5"></td>
-					</tr>
-					<tr>
-						<td>6:</td>
-						<td id="unit6"></td>
-						<td id="amount6"></td>
-					</tr>
-					<tr>
-						<td>7:</td>
-						<td id="unit7"></td>
-						<td id="amount7"></td>
-					</tr>
-					<tr>
-						<td>8:</td>
-						<td id="unit8"></td>
-						<td id="amount8"></td>
-					</tr>
-					<tr>
-						<td>9:</td>
-						<td id="unit9"></td>
-						<td id="amount9"></td>
-					</tr>
-					<tr>
-						<td>10:</td>
-						<td id="unit10"></td>
-						<td id="amount10"></td>
-					</tr>
-					<tr>
-						<td>11:</td>
-						<td id="unit11"></td>
-						<td id="amount11"></td>
-					</tr>
-					<tr>
-						<td>12:</td>
-						<td id="unit12"></td>
-						<td id="amount12"></td>
-					</tr>
-					<tr>
-						<td>13:</td>
-						<td id="unit13"></td>
-						<td id="amount13"></td>
-					</tr>
-					<tr>
-						<td>14:</td>
-						<td id="unit14"></td>
-						<td id="amount14"></td>
-					</tr>
-				</table>
-			</div>
-			<div>
-				<table class="tableItems" style="width:100%">
-					<tr>
-						<th class="weightTable">WEIGHT</th>
-						<th class="chargeableTable">CHARGEABLE WEIGHT</th>
-						<th class="widthCol">WIDTH</th>
-						<th class="heightCol">HEIGHT</th>
-						<th class="lengthCol">LENGTH</th>
-					</tr>
-					<tr>
-						<td id="weightTd"></td>
-						<td id="chargealeTD"></td>
-						<td id="lenghtTD"></td>
-						<td id="widthTD"></td>
-						<td id="heightTD"></td>
-					</tr>
-				</table>
-				<p></p>
-			</div>
-			<h4>CONDITIONS OF CARRY</h4>
-			<div class="legalInformation">
-				Condition one: Receipt and Freight: Received on the date specified from the consignor mentioned herein, consigned and destined herein, which the carrier agrees to carry and to deliver to the consignee at the said destination subject to the rates and classification in effect on the date of shipment. Freight charges are prepaid.<br>
-				Condition two: Limitation of liability: (a) Carrier shall not be liable for any loss, damage or destruction arising from the following causes: Acts of God, the Queen’s or public enemies, riots, strikes, authority of the law, nuclear reaction, radioactive contamination. (b) The amount of any loss for which the carrier is liable for shall not exceed the lesser of Cdn $3.00 per KG or Cdn $60.00 per shipment unless additional insurance is purchased, and then the maximum liability shall be the declared value as it appears on the customs Declaration. Shall any loss, damage or destruction take place on the territory of Poland the reimbursement may be made to the consignee in Polish currency. In case of any discrepancy , the value will be taken by consignor’s i.e. store receipt and/or product market value. (c) Unless the parties agree otherwise in writing, the carrier shall not be liable for any special, consequential or other damages caused by any delay of a shipment, regardless of the cause of delay.<br>
-				Condition three: Notice of Claim: (a) No Carrier is liable for loss or damage to any goods carried under this contract unless notice thereof setting out particulars of the damage or loss and the estimated amount claimed respect of such loss or damage is given in writing together with a customer’s copy of the Customs Declaration to the originating carrier within sixty (60) days after the delivery of the goods, or, in the case of failure to make deliver, within six (6) months from the date of shipment. (b) The final statement of claim must be filed within six (6) months from the date of shipment together with a customer copy of the Custom Declaration.<br>
-				Condition four: Partial Invalidity: Any provision herein prohibited by law shall to the extent prohibited be ineffective without invalidating any other portion hereof.<br>
-				Condition five: Modification of Contract: No agent, servant or representative of the carrier has the authority to alter, modify or waive any provisions of this contract.<br>
-				Condition six: Check before signing! It is a duty of the receiving party to check the contents of a parcel in the presence of the delivery person. Possible claims can be considered only on the base of a written report, 6 months from the date of shipment.<br><br>
-                Polimark is not responsible for shipments containing glass, ceramic or other fragile items that are not properly packed for shipment.<br>
-                Shipper certifies that the particulars on the face hereof are correct and that insofar as any part of the cosignment contains restricted articles such part is properly described by name and is in a proper condition for carriage by air according to the international Air Transportation's Restricted Articles Regulations. False declaration of goods will be subject to penalties<br>
-                I agree with the terms and conditions above. <br><br>
-                SIGNATURE:_________________________________________________
-                
-			</div>
-		</div>
-	</div>
 	<footer class="container-fluid hidden-print">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-4">
@@ -855,7 +550,6 @@
 						</div>
 					</div>
 					<div class="col-sm-12 col-xs-4">
-						<!--    <div class="fb-like" data-action="like" data-href="http://www.polimark.com" data-layout="button_count" data-share="false" data-show-faces="true"></div>-->
 						<div class="fb-like" data-action="like" data-href="http://www.polimark.com" data-layout="button" data-share="false" data-show-faces="false" data-size="small"></div>
 					</div>
 					<div class="col-sm-12 hidden-xs">
@@ -918,17 +612,16 @@
 	</footer>
 	<div id="fb-root"></div>
 	<script>
-	(function(d, s, id) {
-	 var js, fjs = d.getElementsByTagName(s)[0];
-	 if (d.getElementById(id)) return;
-	 js = d.createElement(s); js.id = id;
-	 js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
-	 fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
 	</script>
-	<link href="css/app4.css" rel="stylesheet"><!--<link href="css/print.css" rel="stylesheet">-->
+	<link href="css/app4.css" rel="stylesheet">
 	<link href="css/printForm.css" rel="stylesheet">
-	<script src="js/appTest.js">
-	</script>
+	<script src="js/customsmain_min.js"></script>
 </body>
 </html>
